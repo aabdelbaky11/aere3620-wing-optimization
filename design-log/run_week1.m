@@ -23,7 +23,7 @@ V_bl = wingVolume(cr_bl, ct_bl, TC_0012, TC_0012, SEMISPAN, K);
 V_bl_closed = K * TC_0012 * SEMISPAN * (cr_bl^2 + cr_bl*ct_bl + ct_bl^2) / 3;
 
 fprintf('BASELINE WING\n');
-fprintf('  NACA 0012 root and tip, cr = ct = %.2f m, b/2 = %.2f m\n', ...
+fprintf('  NACA 0012 root and tip, cr = %.2f m, ct = %.2f m, b/2 = %.2f m\n', ...
         cr_bl, ct_bl, SEMISPAN);
 fprintf('  V_bl (numerical)  = %.6f m^3\n', V_bl);
 fprintf('  V_bl (closed form)= %.6f m^3\n', V_bl_closed);
@@ -65,7 +65,7 @@ fprintf('Saved feasible_taper_region.png\n\n');
 %% ---------------- (3) Example: check a tapered candidate ---------------
 % Illustrates how much root chord is needed to pay back a taper to ct = 0.6
 d.name      = 'C001-example';
-d.cr        = 1.32;
+d.cr        = 1.36;
 d.ct        = 0.60;
 d.tc_root   = TC_0012;
 d.tc_tip    = TC_0012;
