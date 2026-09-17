@@ -1,0 +1,2 @@
+case_id,date_issued,workflow,p_root,p_tip,sweep_deg,twist_tip_deg,c_root_m,c_tip_m,alpha_deg,CL,CD,V_m3,vol_check,lift_check,improvement_pct,reason_for_change,status,notes
+C000,2026-09-17,both,NACA 0012,NACA 0012,0.0,0.0,1.00,1.00,TBD,0.400,TBD,0.247,baseline,target,0.00,Baseline configuration defined by project spec. Alpha to be solved for CL=0.4.,issued,Reference case. All later designs compared against this CD.
