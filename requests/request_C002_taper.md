@@ -1,7 +1,7 @@
 # Evaluation Request C002 — Taper 0.45
 
 **Issued by:** Abdelrahman (Design Lead)
-**Date prepared:** 2026-10-02
+**Date prepared:** 2026-10-02 · **Issued:** 2026-10-08 (AI workflow now; conventional after its C000 is re-run)
 **Sent to:** AI Workflow Lead, Conventional Workflow Lead
 **Priority:** run as soon as C000 is converged — use the SAME mesh settings, y+ target, near-wall treatment, and solver settings locked for C000
 
@@ -30,12 +30,21 @@ Identical to C000 (see `request_C000_baseline.md`). A_ref stays 3.00 m^2 and c_r
 
 ## 3. Finding alpha for CL = 0.4 (3 runs, not a sweep)
 
-1. Run at **alpha1 = 4.80 deg** (lifting-line estimate from `llScreen.m`)
-2. Run at **alpha2 = 5.80 deg**
+Starting angles are now workflow-specific (run_week4.m scales the lifting-line estimate by each workflow's own C000 result):
+
+| | AI workflow | Conventional workflow |
+|---|---|---|
+| alpha1 | **5.31 deg** | **4.65 deg** |
+| alpha2 | 6.31 deg | 5.65 deg |
+
+1. Run at alpha1
+2. Run at alpha2 = alpha1 + 1 deg
 3. `alpha3 = trimAlpha(alpha1, CL1, alpha2, CL2)` → run at alpha3
 4. If |CL3 − 0.4| > 0.001, repeat step 3 with the last two points
 
 Report the final alpha with CL ≥ 0.4 (the constraint is strict — 0.3999 voids the case).
+
+Predicted result (run_week4.m, calibrated to your own C000): AI −2.33%, Conv −2.21% in CD.
 
 ## 4. What I need back
 
