@@ -1,0 +1,402 @@
+[geo] surf_mesh_cells=5367 -> span_grid=56 [56], tip_grid=7, chord_grid=85
+[geo] exported wing.xyz / wing.stl / wing.iges to /home/dafoamuser/mount/wing_mesh_0001
+[geo] generated wing_pygeo.iges for pyGeo/FEA
+[config] y_plus=70.0, mach_number=0.3, reynolds_number=5000000.0, ref_chord=1.0 -> d0=4.619173e-04 m
+[config] extrusion setup
+[config] input=wing.xyz
+[config] out_dir=constant/polyMesh
+[config] collapsed_edge_poly_count=2
+[config] layers=68, L=10, d0=0.000461917302106
+[config] diffusion controls: sweeps=10, relax=1.0, neighbor_rings=10, smoothing_onset_distance=0.02 m, diffuse_ramp_length=0.02 m
+[config] non_orth_tol=65 deg
+[config] symmetry damping=enabled (axis=y, decay=auto: 0.5 * max|axis-coordinate|)
+[config] 2d_mesh=False
+[config] quiet=False
+[main] loading Plot3D mesh
+[timing] load Plot3D: 2.71 s
+Number of surface faces: 5836 (quad=5832, tri=0, poly=4, degenerated=24)
+[surface] merged collapsed-edge triangle fans: components=2, polygons=4
+Total mesh cells: 396848
+[main] extruding layers
+[extrude] start: N=68, d0=0.000461917302106, L=10, r=1.123, symmetry_axis=y, symmetry_decay_length=1.5298
+[timing] orient faces: 10.35 s
+[timing] front setup: 11.96 s
+n=  1 L= 4.6e-04 d= 4.6e-04 minV= 2.4e-11 maxAngle= 25.2 sweep= 10 ring= 10 t= 24.3 s
+n=  2 L= 9.8e-04 d= 5.2e-04 minV= 3.8e-11 maxAngle= 24.9 sweep= 10 ring= 10 t= 26.6 s
+n=  3 L= 1.6e-03 d= 5.8e-04 minV= 5.6e-11 maxAngle= 27.2 sweep= 10 ring= 10 t= 29.0 s
+n=  4 L= 2.2e-03 d= 6.5e-04 minV= 8.2e-11 maxAngle= 29.2 sweep= 10 ring= 10 t= 31.2 s
+n=  5 L= 3.0e-03 d= 7.3e-04 minV= 1.2e-10 maxAngle= 30.9 sweep= 10 ring= 10 t= 33.5 s
+n=  6 L= 3.8e-03 d= 8.2e-04 minV= 1.6e-10 maxAngle= 32.5 sweep= 10 ring= 10 t= 35.7 s
+n=  7 L= 4.7e-03 d= 9.3e-04 minV= 2.2e-10 maxAngle= 33.9 sweep= 10 ring= 10 t= 37.8 s
+n=  8 L= 5.7e-03 d= 1.0e-03 minV= 3.1e-10 maxAngle= 35.2 sweep= 10 ring= 10 t= 40.0 s
+n=  9 L= 6.9e-03 d= 1.2e-03 minV= 4.2e-10 maxAngle= 36.3 sweep= 10 ring= 10 t= 42.3 s
+n= 10 L= 8.2e-03 d= 1.3e-03 minV= 5.6e-10 maxAngle= 37.3 sweep= 10 ring= 10 t= 44.5 s
+n= 11 L= 9.7e-03 d= 1.5e-03 minV= 7.5e-10 maxAngle= 38.2 sweep= 10 ring= 10 t= 46.8 s
+n= 12 L= 1.1e-02 d= 1.7e-03 minV= 1.0e-09 maxAngle= 39.1 sweep= 10 ring= 10 t= 49.0 s
+n= 13 L= 1.3e-02 d= 1.9e-03 minV= 1.3e-09 maxAngle= 39.9 sweep= 10 ring= 10 t= 51.3 s
+n= 14 L= 1.5e-02 d= 2.1e-03 minV= 1.8e-09 maxAngle= 40.6 sweep= 10 ring= 10 t= 53.5 s
+n= 15 L= 1.8e-02 d= 2.3e-03 minV= 2.3e-09 maxAngle= 41.2 sweep= 10 ring= 10 t= 55.7 s
+n= 16 L= 2.0e-02 d= 2.6e-03 minV= 3.1e-09 maxAngle= 41.8 sweep= 10 ring= 10 t= 58.0 s
+n= 17 L= 2.3e-02 d= 3.0e-03 minV= 4.1e-09 maxAngle= 42.2 sweep= 10 ring= 10 t= 60.2 s
+n= 18 L= 2.7e-02 d= 3.3e-03 minV= 5.2e-09 maxAngle= 47.3 sweep= 10 ring= 10 t= 62.4 s
+n= 19 L= 3.0e-02 d= 3.7e-03 minV= 6.9e-09 maxAngle= 62.3 sweep= 10 ring= 10 t= 64.7 s
+n= 20 L= 3.4e-02 d= 4.2e-03 minV= 9.6e-09 maxAngle= 63.9 sweep= 10 ring= 10 t= 67.0 s
+n= 21 L= 3.9e-02 d= 4.7e-03 minV= 1.4e-08 maxAngle= 61.9 sweep= 10 ring= 10 t= 69.3 s
+n= 22 L= 4.4e-02 d= 5.3e-03 minV= 1.9e-08 maxAngle= 61.6 sweep= 10 ring= 10 t= 71.6 s
+n= 23 L= 5.0e-02 d= 5.9e-03 minV= 2.7e-08 maxAngle= 60.4 sweep= 10 ring= 10 t= 73.8 s
+n= 24 L= 5.7e-02 d= 6.7e-03 minV= 3.8e-08 maxAngle= 58.9 sweep= 10 ring= 10 t= 76.0 s
+n= 25 L= 6.4e-02 d= 7.5e-03 minV= 5.3e-08 maxAngle= 57.1 sweep= 10 ring= 10 t= 78.3 s
+n= 26 L= 7.3e-02 d= 8.4e-03 minV= 7.4e-08 maxAngle= 55.3 sweep= 10 ring= 10 t= 80.6 s
+n= 27 L= 8.2e-02 d= 9.4e-03 minV= 1.0e-07 maxAngle= 53.3 sweep= 10 ring= 10 t= 82.8 s
+n= 28 L= 9.3e-02 d= 1.1e-02 minV= 1.4e-07 maxAngle= 51.3 sweep= 10 ring= 10 t= 85.2 s
+n= 29 L= 1.0e-01 d= 1.2e-02 minV= 2.0e-07 maxAngle= 49.1 sweep= 10 ring= 10 t= 87.4 s
+n= 30 L= 1.2e-01 d= 1.3e-02 minV= 2.7e-07 maxAngle= 46.9 sweep= 10 ring= 10 t= 89.6 s
+n= 31 L= 1.3e-01 d= 1.5e-02 minV= 3.8e-07 maxAngle= 44.7 sweep= 10 ring= 10 t= 91.9 s
+n= 32 L= 1.5e-01 d= 1.7e-02 minV= 5.2e-07 maxAngle= 42.5 sweep= 10 ring= 10 t= 94.1 s
+n= 33 L= 1.7e-01 d= 1.9e-02 minV= 7.1e-07 maxAngle= 44.1 sweep= 10 ring= 10 t= 96.4 s
+n= 34 L= 1.9e-01 d= 2.1e-02 minV= 9.7e-07 maxAngle= 46.0 sweep= 10 ring= 10 t= 98.6 s
+n= 35 L= 2.1e-01 d= 2.4e-02 minV= 1.3e-06 maxAngle= 47.7 sweep= 10 ring= 10 t=100.9 s
+n= 36 L= 2.4e-01 d= 2.7e-02 minV= 1.8e-06 maxAngle= 49.3 sweep= 10 ring= 10 t=103.1 s
+n= 37 L= 2.7e-01 d= 3.0e-02 minV= 2.3e-06 maxAngle= 50.7 sweep= 10 ring= 10 t=105.3 s
+n= 38 L= 3.0e-01 d= 3.4e-02 minV= 3.0e-06 maxAngle= 52.0 sweep= 10 ring= 10 t=107.6 s
+n= 39 L= 3.4e-01 d= 3.8e-02 minV= 3.9e-06 maxAngle= 53.2 sweep= 10 ring= 10 t=109.8 s
+n= 40 L= 3.9e-01 d= 4.3e-02 minV= 5.0e-06 maxAngle= 54.2 sweep= 10 ring= 10 t=112.1 s
+n= 41 L= 4.3e-01 d= 4.8e-02 minV= 6.6e-06 maxAngle= 55.2 sweep= 10 ring= 10 t=114.4 s
+n= 42 L= 4.9e-01 d= 5.4e-02 minV= 8.6e-06 maxAngle= 56.0 sweep= 10 ring= 10 t=116.7 s
+n= 43 L= 5.5e-01 d= 6.0e-02 minV= 1.1e-05 maxAngle= 56.8 sweep= 10 ring= 10 t=118.9 s
+n= 44 L= 6.1e-01 d= 6.8e-02 minV= 1.5e-05 maxAngle= 57.5 sweep= 10 ring= 10 t=121.1 s
+n= 45 L= 6.9e-01 d= 7.6e-02 minV= 1.9e-05 maxAngle= 58.1 sweep= 10 ring= 10 t=123.3 s
+n= 46 L= 7.8e-01 d= 8.5e-02 minV= 2.6e-05 maxAngle= 58.7 sweep= 10 ring= 10 t=125.6 s
+n= 47 L= 8.7e-01 d= 9.6e-02 minV= 3.4e-05 maxAngle= 59.4 sweep= 10 ring= 10 t=127.8 s
+n= 48 L= 9.8e-01 d= 1.1e-01 minV= 4.5e-05 maxAngle= 60.0 sweep= 10 ring= 10 t=130.0 s
+n= 49 L= 1.1e+00 d= 1.2e-01 minV= 5.9e-05 maxAngle= 60.5 sweep= 10 ring= 10 t=132.3 s
+n= 50 L= 1.2e+00 d= 1.4e-01 minV= 7.9e-05 maxAngle= 61.0 sweep= 10 ring= 10 t=134.6 s
+n= 51 L= 1.4e+00 d= 1.5e-01 minV= 1.0e-04 maxAngle= 61.5 sweep= 10 ring= 10 t=136.8 s
+n= 52 L= 1.6e+00 d= 1.7e-01 minV= 1.4e-04 maxAngle= 61.9 sweep= 10 ring= 10 t=139.0 s
+n= 53 L= 1.8e+00 d= 1.9e-01 minV= 1.9e-04 maxAngle= 62.2 sweep= 10 ring= 10 t=141.3 s
+n= 54 L= 2.0e+00 d= 2.2e-01 minV= 2.5e-04 maxAngle= 62.6 sweep= 10 ring= 10 t=143.5 s
+n= 55 L= 2.2e+00 d= 2.4e-01 minV= 3.3e-04 maxAngle= 62.8 sweep= 10 ring= 10 t=145.9 s
+n= 56 L= 2.5e+00 d= 2.7e-01 minV= 4.4e-04 maxAngle= 63.1 sweep= 10 ring= 10 t=148.2 s
+n= 57 L= 2.8e+00 d= 3.1e-01 minV= 6.0e-04 maxAngle= 63.3 sweep= 10 ring= 10 t=150.3 s
+n= 58 L= 3.1e+00 d= 3.4e-01 minV= 8.0e-04 maxAngle= 63.5 sweep= 10 ring= 10 t=152.7 s
+n= 59 L= 3.5e+00 d= 3.9e-01 minV= 1.1e-03 maxAngle= 63.7 sweep= 10 ring= 10 t=154.9 s
+n= 60 L= 4.0e+00 d= 4.3e-01 minV= 1.5e-03 maxAngle= 63.8 sweep= 10 ring= 10 t=157.1 s
+n= 61 L= 4.4e+00 d= 4.9e-01 minV= 2.0e-03 maxAngle= 64.0 sweep= 10 ring= 10 t=159.4 s
+n= 62 L= 5.0e+00 d= 5.5e-01 minV= 2.6e-03 maxAngle= 64.1 sweep= 10 ring= 10 t=161.6 s
+n= 63 L= 5.6e+00 d= 6.1e-01 minV= 3.6e-03 maxAngle= 64.1 sweep= 10 ring= 10 t=163.8 s
+n= 64 L= 6.3e+00 d= 6.9e-01 minV= 4.8e-03 maxAngle= 64.2 sweep= 10 ring= 10 t=166.0 s
+n= 65 L= 7.1e+00 d= 7.7e-01 minV= 6.5e-03 maxAngle= 64.3 sweep= 10 ring= 10 t=168.1 s
+n= 66 L= 7.9e+00 d= 8.7e-01 minV= 8.8e-03 maxAngle= 64.3 sweep= 10 ring= 10 t=170.2 s
+n= 67 L= 8.9e+00 d= 9.8e-01 minV= 1.2e-02 maxAngle= 64.3 sweep= 10 ring= 10 t=172.2 s
+n= 68 L= 1.0e+01 d= 1.1e+00 minV= 1.6e-02 maxAngle= 64.3 sweep= 10 ring= 10 t=174.3 s
+[timing] extrusion loop: 174.31 s
+[extrude] assembling topology layer...
+[timing] topology assembly: 215.50 s
+[profile] function-level timing summary
+[profile] build_connectivity_s=0.17 s
+[profile] compute_face_geometry_s=0.69 s
+[profile] compute_node_area_support_s=26.24 s
+[profile] compute_node_normals_s=76.52 s
+[profile] apply_symmetry_plane_constraint_s=1.64 s
+[profile] build_node_neighbors_s=0.10 s
+[profile] build_k_ring_neighbors_s=9.96 s
+[profile] build_neighbor_csr_s=0.09 s
+[profile] build_face_csr_s=0.01 s
+[profile] build_internal_edge_pairs_s=0.12 s
+[profile] smooth_node_normals_explicit_s=42.79 s
+[profile] compute_layer_cell_volumes_s=1.33 s
+[profile] compute_layer_cell_centers_s=0.16 s
+[profile] compute_layer_non_orthogonality_s=2.83 s
+[profile] orient_faces_s=10.35 s
+[profile] setup_front_s=1.61 s
+[profile] march_loop_s=162.35 s
+[profile] assemble_topology_s=41.10 s
+[write] output dir: /home/dafoamuser/mount/wing_mesh_0001/constant/polyMesh
+[write] points
+[write] faces
+[write] owner
+[write] neighbour
+[write] boundary
+[write] done in 52.89 s
+[timing] write polyMesh: 271.63 s
+Wrote OpenFOAM polyMesh to: /home/dafoamuser/mount/wing_mesh_0001/constant/polyMesh
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : createPatch -overwrite
+Date   : Oct 01 2026
+Time   : 20:58:36
+Host   : docker-desktop
+PID    : 1557
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_mesh_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Create mesh for time = 0
+
+Reading "system/createPatchDict"
+
+
+
+Adding patches to mesh region0
+
+Adding new patch wing from 
+{
+    type            wall;
+    nFaces          0;
+    startFace       0;
+}
+
+Adding new patch inout from 
+{
+    type            patch;
+    nFaces          0;
+    startFace       0;
+}
+
+Adding new patch sym from 
+{
+    type            symmetry;
+    nFaces          0;
+    startFace       0;
+}
+
+
+
+
+Repatching mesh region0
+
+Moving faces from patch innerWall to patch 3
+Moving faces from patch outerWall to patch 4
+Moving faces from patch sideWall to patch 5
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+Removed zero-sized patch innerWall type wall at position 0
+Removed zero-sized patch outerWall type wall at position 1
+Removed zero-sized patch sideWall type wall at position 2
+
+
+Writing repatched mesh region0 to 0
+
+End
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : renumberMesh -overwrite
+Date   : Oct 01 2026
+Time   : 20:59:50
+Host   : docker-desktop
+PID    : 1560
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_mesh_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Create mesh for time = 0
+
+Mesh region0 size: 396848
+Before renumbering
+    band           : 5836
+    profile        : 2282499690
+
+Using renumber-method: CuthillMcKee [default]
+
+Reading fields
+    volScalarField: T alphat epsilon k nuTilda nut omega p
+    volVectorField: U
+
+After renumbering
+    band           : 5051
+    profile        : 1464238464
+
+Writing mesh to "constant"
+
+Timings:
+    read mesh   : 24.068854267
+    read fields : 2.035073573
+    decompose   : 0
+    cell-cells  : 0
+    renumber    : 1.41995275
+    write       : 30.62907544
+TotalTime = 60.48152372 s
+
+ExecutionTime = 53.39 s  ClockTime = 61 s
+
+End
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : foamToVTK -latestTime -patches (wing sym) -one-boundary
+Date   : Oct 01 2026
+Time   : 21:00:53
+Host   : docker-desktop
+PID    : 1566
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_mesh_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Including patches (wing sym)
+
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Initial memory 371816 kB
+Create mesh for time = 0
+
+VTK mesh topology: 21.01 s, 447224 kB
+Time: 0
+    volScalar    : T alphat epsilon k nuTilda nut omega p
+    volVector    : U
+    Internal  : "VTK/wing_mesh_0001_0/internal.vtu"
+    Boundaries: "VTK/wing_mesh_0001_0/boundary.vtp"
+Wrote in 19.71 s, 697844 kB
+
+End: 40.72 s, 707300 kB (peak)
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : checkMesh
+Date   : Oct 01 2026
+Time   : 21:06:33
+Host   : docker-desktop
+PID    : 2456
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_mesh_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Create mesh for time = 0
+
+Check mesh...
+
+Time = 0
+
+Mesh stats 
+    points:           406617
+    faces:            1200188
+    internal faces:   1181988
+    cells:            396848
+    faces per cell:   6.002741603838246
+    boundary patches: 3
+    point zones:      0
+    face zones:       0
+    cell zones:       0
+
+Overall number of cells of each type:
+    hexahedra:     396576
+    prisms:        0
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     272
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+           10   272
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+                   Patch    Faces   Points  Surface topology
+                    wing     5836     5893  ok (non-closed singly connected)
+                   inout     5836     5893  ok (non-closed singly connected)
+                     sym     6528     6624  ok (non-closed singly connected)
+                    ".*"    18200    18218      ok (closed singly connected)
+
+
+Checking faceZone topology for multiply connected surfaces...
+    No faceZones found.
+
+Checking basic cellZone addressing...
+    No cellZones found.
+
+Checking basic pointZone addressing...
+    No pointZones found.
+
+Checking geometry...
+    Overall domain bounding box (-9.999999992979999 0 -10.0398565839) (10.9913140977 13.0445896095 10.0398567646)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (-5.247311298414827e-18 6.015766425110951e-16 1.508025493296209e-18) OK.
+    Max cell openness = 6.131509874646547e-16 OK.
+    Max aspect ratio = 330.0573363189947 OK.
+    Minimum face area = 4.219993718890932e-08. Maximum face area = 0.7097139659054439.  Face area magnitudes OK.
+    Min volume = 2.443860593929595e-11. Max volume = 0.1795488840704927.  Total volume = 3110.844335078048.  Cell volumes OK.
+    Mesh non-orthogonality Max: 64.04207650493933 average: 9.751101888611771
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 1.753256046160208 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+

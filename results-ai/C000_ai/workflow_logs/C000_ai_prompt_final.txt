@@ -1,0 +1,7 @@
+Run evaluation request C000 (baseline wing) with the MDO Agent Deck wing agent: one run-cfd-simulation case with its generate-cfd-mesh prerequisite (scenario single-skill-with-prereq-single-run).
+
+Mesh (generate-cfd-mesh) inputs: airfoil_profiles = ['naca0012', 'naca0012'], chords = [1.0, 1.0], spans = [3.0], sweeps = [0.0], dihedrals = [0.0], twists = [0.0], mesh_cells = 360000, y_plus = 70, mach_number = 0.3, reynolds_number = 5000000.
+Mesh advanced parameters: farfield_scale = 10.
+
+CFD (run-cfd-simulation) inputs: fixed_lift_coeff = 0.4, angle_of_attack = 5.4, n_cpu_cores = 10.
+CFD advanced parameters: primal_func_std_tol = 1e-6, max_flow_iters = 1500.

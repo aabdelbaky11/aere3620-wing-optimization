@@ -1,0 +1,2882 @@
+--------------------------------------------------------------------------
+WARNING: Linux kernel CMA support was requested via the
+btl_vader_single_copy_mechanism MCA variable, but CMA support is
+not available due to restrictive ptrace settings.
+
+The vader shared memory BTL will fall back on another single-copy
+mechanism if one is available. This may result in lower performance.
+
+  Local host: docker-desktop
+--------------------------------------------------------------------------
+[docker-desktop:03747] [[15484,0],0] ORTE_ERROR_LOG: Data unpack had inadequate space in file ../../../orte/util/show_help.c at line 513
+[docker-desktop:03747] [[15484,0],0] ORTE_ERROR_LOG: Data unpack would read past end of buffer in file ../../../orte/util/show_help.c at line 513
+[docker-desktop:03747] 7 more processes have sent help message help-btl-vader.txt / cma-permission-denied
+[docker-desktop:03747] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+ 
+-------------------------------------------------------------------------------
+|                               DAFoam v5.1.1                                 |
+-------------------------------------------------------------------------------
+ 
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : decomposePar
+Date   : Oct 01 2026
+Time   : 21:13:15
+Host   : docker-desktop
+PID    : 4298
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+
+Decomposing mesh
+
+Create mesh
+
+Calculating distribution of cells
+Decomposition method scotch [10] (region region0)
+
+Finished decomposition in 15.88 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 0
+    Number of cells = 39748
+    Number of points = 43574
+    Number of faces shared with processor 1 = 1094
+    Number of faces shared with processor 2 = 1557
+    Number of faces shared with processor 3 = 369
+    Number of faces shared with processor 4 = 325
+    Number of faces shared with processor 7 = 509
+    Number of faces shared with processor 9 = 1125
+    Number of processor patches = 6
+    Number of processor faces = 4979
+    Number of boundary faces = 2451
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 1
+    Number of cells = 39676
+    Number of points = 43477
+    Number of faces shared with processor 0 = 1094
+    Number of faces shared with processor 3 = 1156
+    Number of faces shared with processor 4 = 1234
+    Number of faces shared with processor 5 = 320
+    Number of faces shared with processor 6 = 920
+    Number of faces shared with processor 7 = 97
+    Number of faces shared with processor 9 = 283
+    Number of processor patches = 7
+    Number of processor faces = 5104
+    Number of boundary faces = 2280
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 2
+    Number of cells = 39295
+    Number of points = 43272
+    Number of faces shared with processor 0 = 1557
+    Number of faces shared with processor 3 = 864
+    Number of faces shared with processor 4 = 911
+    Number of faces shared with processor 7 = 498
+    Number of faces shared with processor 9 = 853
+    Number of processor patches = 5
+    Number of processor faces = 4683
+    Number of boundary faces = 3033
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 3
+    Number of cells = 39429
+    Number of points = 43331
+    Number of faces shared with processor 0 = 369
+    Number of faces shared with processor 1 = 1156
+    Number of faces shared with processor 2 = 864
+    Number of faces shared with processor 4 = 1335
+    Number of faces shared with processor 5 = 263
+    Number of faces shared with processor 6 = 673
+    Number of faces shared with processor 9 = 524
+    Number of processor patches = 7
+    Number of processor faces = 5184
+    Number of boundary faces = 2394
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 4
+    Number of cells = 39393
+    Number of points = 43190
+    Number of faces shared with processor 0 = 325
+    Number of faces shared with processor 1 = 1234
+    Number of faces shared with processor 2 = 911
+    Number of faces shared with processor 3 = 1335
+    Number of faces shared with processor 5 = 934
+    Number of faces shared with processor 7 = 324
+    Number of faces shared with processor 9 = 122
+    Number of processor patches = 7
+    Number of processor faces = 5185
+    Number of boundary faces = 2191
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 5
+    Number of cells = 40016
+    Number of points = 43524
+    Number of faces shared with processor 1 = 320
+    Number of faces shared with processor 3 = 263
+    Number of faces shared with processor 4 = 934
+    Number of faces shared with processor 6 = 2025
+    Number of faces shared with processor 7 = 975
+    Number of faces shared with processor 8 = 434
+    Number of faces shared with processor 9 = 243
+    Number of processor patches = 7
+    Number of processor faces = 5194
+    Number of boundary faces = 1392
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 6
+    Number of cells = 39769
+    Number of points = 43324
+    Number of faces shared with processor 1 = 920
+    Number of faces shared with processor 3 = 673
+    Number of faces shared with processor 5 = 2025
+    Number of faces shared with processor 7 = 16
+    Number of faces shared with processor 8 = 864
+    Number of faces shared with processor 9 = 729
+    Number of processor patches = 6
+    Number of processor faces = 5227
+    Number of boundary faces = 1475
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 7
+    Number of cells = 39841
+    Number of points = 43212
+    Number of faces shared with processor 0 = 509
+    Number of faces shared with processor 1 = 97
+    Number of faces shared with processor 2 = 498
+    Number of faces shared with processor 4 = 324
+    Number of faces shared with processor 5 = 975
+    Number of faces shared with processor 6 = 16
+    Number of faces shared with processor 8 = 1427
+    Number of faces shared with processor 9 = 1341
+    Number of processor patches = 8
+    Number of processor faces = 5187
+    Number of boundary faces = 1045
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 8
+    Number of cells = 39601
+    Number of points = 42936
+    Number of faces shared with processor 5 = 434
+    Number of faces shared with processor 6 = 864
+    Number of faces shared with processor 7 = 1427
+    Number of faces shared with processor 9 = 2452
+    Number of processor patches = 4
+    Number of processor faces = 5177
+    Number of boundary faces = 955
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+Processor 9
+    Number of cells = 40080
+    Number of points = 44532
+    Number of faces shared with processor 0 = 1125
+    Number of faces shared with processor 1 = 283
+    Number of faces shared with processor 2 = 853
+    Number of faces shared with processor 3 = 524
+    Number of faces shared with processor 4 = 122
+    Number of faces shared with processor 5 = 243
+    Number of faces shared with processor 6 = 729
+    Number of faces shared with processor 7 = 1341
+    Number of faces shared with processor 8 = 2452
+    Number of processor patches = 9
+    Number of processor faces = 7672
+    Number of boundary faces = 984
+
+Number of processor faces = 26796
+Max number of cells = 40080 (0.995847276539121% above average 39684.8)
+Max number of processor patches = 9 (36.36363636363637% above average 6.6)
+Max number of faces between processors = 7672 (43.15569487983282% above average 5359.2)
+
+Time = 0
+
+Processor 0: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 1: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 2: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 3: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 4: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 5: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 6: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 7: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 8: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Processor 9: field transfer
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+End
+
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 10
+Hosts  :
+(
+    (docker-desktop 10)
+)
+Pstream initialized with:
+    node communication : off [type=host] (10 ranks, 1 nodes)
+    topology controls  : none
+    consensus exchange : 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+Initializing mesh and runtime for DASolver
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Create mesh for time = 0
+Replacing wallDist.method meshWave -> meshWaveFrozen
+Creating forcePerS... 
+DAOption created. DASolver initialized.
+[1] UPstream::init : could not attach buffer
+[3] UPstream::init : could not attach buffer
+[4] UPstream::init : could not attach buffer
+[5] UPstream::init : could not attach buffer
+[6] UPstream::init : could not attach buffer
+[7] UPstream::init : could not attach buffer
+[9] UPstream::init : could not attach buffer
+[0] UPstream::init : could not attach buffer
+[8] UPstream::init : could not attach buffer
+[2] UPstream::init : could not attach buffer
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 10
+Hosts  :
+(
+    (docker-desktop 10)
+)
+Pstream initialized with:
+    node communication : off [type=host] (10 ranks, 1 nodes)
+    topology controls  : none
+    consensus exchange : 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+Initializing mesh and runtime for DASolver
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Create mesh for time = 0
+Replacing wallDist.method meshWave -> meshWaveFrozen
+Creating forcePerS... 
+DAOption created. DASolver initialized.
+Initializing fields for DARhoSimpleFoam
+Create simpleControl.
+
+SIMPLE: no convergence criteria found. Calculations will run for 1500 steps.
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    mixture         pureMixture;
+    specie          specie;
+    equationOfState perfectGas;
+    energy          sensibleInternalEnergy;
+    thermo          hConst;
+    type            hePsiThermo;
+    transport       const;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating source term. 
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model SpalartAllmaras
+Selecting patchDistMethod meshWaveFrozen
+ft2 term: inactive
+No MRF models present
+
+Turbulence model is compressible
+Adjoint States: 
+5
+(
+U volVectorState
+nuTilda modelState
+phi surfaceScalarState
+p volScalarState
+T volScalarState
+)
+Global Cells: 396848
+Global Faces: 1226984
+Global Xv: 1303116
+Undecomposed points: 406617
+Global Adjoint States: 3608072
+
+SIMPLE: no convergence criteria found. Calculations will run for 1500 steps.
+
+DACheckMesh Thresholds: 
+maxNonOrth: 80
+maxSkewness: 6
+maxAspectRatio: 10000
+maxIncorrectlyOrientedFaces: 0
+    Adding all faces of patches: (wing) ...
+    Found matching patch wing with 5836 faces
+    Adding all faces of patches: (wing) ...
+    Found matching patch wing with 5836 faces
+    Adding all faces of patches: (wing) ...
+    Found matching patch wing with 5836 faces
+Initializing fields for DARhoSimpleFoam
+Create simpleControl.
+
+SIMPLE: no convergence criteria found. Calculations will run for 1500 steps.
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    mixture         pureMixture;
+    specie          specie;
+    equationOfState perfectGas;
+    energy          sensibleInternalEnergy;
+    thermo          hConst;
+    type            hePsiThermo;
+    transport       const;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating source term. 
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model SpalartAllmaras
+Selecting patchDistMethod meshWaveFrozen
+ft2 term: inactive
+No MRF models present
+
+Turbulence model is compressible
+Adjoint States: 
+5
+(
+U volVectorState
+nuTilda modelState
+phi surfaceScalarState
+p volScalarState
+T volScalarState
+)
+Global Cells: 396848
+Global Faces: 1226984
+Global Xv: 1303116
+Undecomposed points: 406617
+Global Adjoint States: 3608072
+
+SIMPLE: no convergence criteria found. Calculations will run for 1500 steps.
+
+DACheckMesh Thresholds: 
+maxNonOrth: 80
+maxSkewness: 6
+maxAspectRatio: 10000
+maxIncorrectlyOrientedFaces: 0
+    Adding all faces of patches: (wing) ...
+    Found matching patch wing with 5836 faces
+    Adding all faces of patches: (wing) ...
+    Found matching patch wing with 5836 faces
+    Adding all faces of patches: (wing) ...
+    Found matching patch wing with 5836 faces
+Init solver done! ElapsedClockTime 64.000000 s
+Init solver done! ElapsedCpuTime 60.110000 s
+Setting up primal initial conditions based on pyOptions: 
+Setting initial condition for U. InitVal: 3(103.6943621135095 0 9.802003156109162)
+Setting initial condition for p. InitVal: 101325
+Setting initial condition for T. InitVal: 300
+Setting initial condition for nuTilda. InitVal: 0.0002065038373969889
+The requested variable k is not found! Skipping its initial field setting
+The requested variable omega is not found! Skipping its initial field setting
+initState: 
+7
+(
+nuTilda 0.0002065038373970542
+phi 0
+U1 0
+U2 9.802003156117095
+p 101325
+T 300
+U0 103.6943621134753
+)
+The requested variable k is not found! Skipping its initial field setting
+The requested variable omega is not found! Skipping its initial field setting
+Setting up primal boundary conditions based on pyOptions: 
+Setting primal boundary conditions...
+Setting U = (103.6943621135095 0 9.802003156109162) at inout
+Setting primal boundary conditions...
+Setting p = 101325 at inout
+Setting primal boundary conditions...
+Setting T = 300 at inout
+Setting primal boundary conditions...
+Setting nuTilda = 0.0002065038373969889 at inout
+k not found, skip it.
+omega not found, skip it.
+Setting thermalphysicalProperties mu to 2.430197598635295e-05
+Setting nut wall BC for wing. BCType=nutUSpaldingWallFunction
+Setting alphat wall BC for wingBCType=compressible::alphatWallFunction. Default Prt=0.85
+Reading OpenFOAM mesh information...
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 10
+Hosts  :
+(
+    (docker-desktop 10)
+)
+Pstream initialized with:
+    node communication : off [type=host] (10 ranks, 1 nodes)
+    topology controls  : none
+    consensus exchange : 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+Reading the OpenFOAM mesh..
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Checking if we need to compress the mesh files
+Checking if we need to compress the mesh files
+Finalising parallel run
+DAFoam option dictionary: 
+{
+    solverName      DARhoSimpleFoam;
+    primalMinResTol 1e-07;
+    primalFuncStdTol
+    {
+        stdTol          1e-06;
+        slopeTol        1e-06;
+        funcNames       2 ( CD CL );
+        nStepsFrac      0.2;
+    }
+    primalBC
+    {
+        U0
+        {
+            variable        U;
+            patches         1 ( inout );
+            value           3 ( 103.6943621135095 0 9.802003156109162 );
+        }
+        p0
+        {
+            variable        p;
+            patches         1 ( inout );
+            value           1 ( 101325 );
+        }
+        T0
+        {
+            variable        T;
+            patches         1 ( inout );
+            value           1 ( 300 );
+        }
+        nuTilda0
+        {
+            variable        nuTilda;
+            patches         1 ( inout );
+            value           1 ( 0.0002065038373969889 );
+        }
+        k0
+        {
+            variable        k;
+            patches         1 ( inout );
+            value           1 ( 1.62729 );
+        }
+        omega0
+        {
+            variable        omega;
+            patches         1 ( inout );
+            value           1 ( 7880.192545147001 );
+        }
+        thermo:mu       2.430197598635295e-05;
+        useWallFunction 1;
+    }
+    primalInitCondition
+    {
+        U               3 ( 103.6943621135095 0 9.802003156109162 );
+        p               101325;
+        T               300;
+        nuTilda         0.0002065038373969889;
+        k               1.62729;
+        omega           7880.192545147001;
+    }
+    normalizeStates
+    {
+        U               104.1566128481528;
+        p               101325;
+        T               300;
+        nuTilda         0.002065038373969888;
+        k               16.2729;
+        omega           788.0192545147002;
+        phi             1;
+    }
+    function
+    {
+        CD
+        {
+            type            force;
+            source          patchToFace;
+            patches         1 ( wing );
+            directionMode   parallelToFlow;
+            patchVelocityInputName patchV;
+            scale           5.221816226010651e-05;
+            timeOp          average;
+            nStepsFrac      0.2;
+        }
+        CL
+        {
+            type            force;
+            source          patchToFace;
+            patches         1 ( wing );
+            directionMode   normalToFlow;
+            patchVelocityInputName patchV;
+            scale           5.221816226010651e-05;
+            timeOp          average;
+            nStepsFrac      0.2;
+        }
+        CM
+        {
+            type            moment;
+            source          patchToFace;
+            patches         1 ( wing );
+            axis            3 ( 0 1 0 );
+            center          3 ( 0.4166819803399121 0 -4.251319539336134e-07 );
+            scale           5.267569822164717e-05;
+            timeOp          average;
+            nStepsFrac      0.2;
+        }
+    }
+    inputInfo
+    {
+        aero_vol_coords
+        {
+            type            volCoord;
+            components      2 ( solver function );
+        }
+        patchV
+        {
+            type            patchVelocity;
+            patches         1 ( inout );
+            flowAxis        x;
+            normalAxis      z;
+            components      2 ( solver function );
+        }
+    }
+    outputInfo
+    {
+    }
+    designSurfaces  1 ( wing );
+    fvSource
+    {
+    }
+    prepareCaseOnly 0;
+    adjEqnSolMethod Krylov;
+    dynamicMesh
+    {
+        active          0;
+        mode            rotation;
+        center          3 ( 0.25 0 0 );
+        axis            z;
+        omega           0.1;
+        s               2;
+        t0              0.35;
+    }
+    primalVarBounds
+    {
+        UMax            1000;
+        UMin            -1000;
+        pMax            500000;
+        pMin            20000;
+        p_rghMax        500000;
+        p_rghMin        20000;
+        eMax            55000;
+        eMin            -220000;
+        TMax            1000;
+        TMin            100;
+        hMax            200000;
+        hMin            -200000;
+        DMax            1e+16;
+        DMin            -1e+16;
+        rhoMax          5;
+        rhoMin          0.2;
+        nuTildaMax      1e+16;
+        nuTildaMin      1e-16;
+        kMax            1e+16;
+        kMin            1e-16;
+        omegaMax        1e+16;
+        omegaMin        1e-16;
+        epsilonMax      1e+16;
+        epsilonMin      1e-16;
+        ReThetatMax     1e+16;
+        ReThetatMin     1e-16;
+        gammaIntMax     1e+16;
+        gammaIntMin     1e-16;
+    }
+    discipline      aero;
+    adjPartDerivFDStep
+    {
+        State           1e-06;
+    }
+    transonicPCOption 0;
+    unsteadyAdjoint
+    {
+        mode            None;
+        PCMatPrecomputeInterval 100;
+        PCMatUpdateInterval 1;
+        reduceIO        1;
+        additionalOutput 1 ( None );
+        additionalOldTime 1 ( None );
+        readZeroFields  1;
+    }
+    adjPCLag        10000;
+    useAD
+    {
+        mode            reverse;
+        dvName          None;
+        seedIndex       -9999;
+    }
+    useConstrainHbyA 1;
+    forceMeshWaveFrozen 1;
+    useDdtCorr      0;
+    writeSurfForces
+    {
+        active          1;
+        patchNames      1 ( wing );
+    }
+    regressionModel
+    {
+        active          0;
+    }
+    useMeanStates   0;
+    solveLinearFunctionName None;
+    printDAOptions  1;
+    debug           0;
+    writeJacobians  1 ( None );
+    printInterval   10;
+    printIntervalUnsteady 1;
+    primalMinResTolDiff 1000;
+    adjUseColoring  1;
+    adjEqnOption
+    {
+        globalPCIters   0;
+        asmOverlap      1;
+        localPCIters    1;
+        jacMatReOrdering natural;
+        pcFillLevel     1;
+        gmresMaxIters   1000;
+        gmresRestart    1000;
+        gmresRelTol     0.0001;
+        gmresAbsTol     1e-14;
+        gmresTolDiff    100;
+        useNonZeroInitGuess 0;
+        useMGSO         0;
+        printInfo       1;
+        fpMaxIters      1000;
+        fpRelTol        1e-06;
+        fpMinResTolDiff 100;
+        fpPCUpwind      0;
+        dynAdjustTol    0;
+        KSPCalcEigen    0;
+        KSPCalcSingularVal 0;
+        readPCMat       0;
+    }
+    normalizeResiduals 11 ( URes pRes p_rghRes nuTildaRes phiRes TRes DRes kRes omegaRes epsilonRes alpha.waterRes );
+    maxResConLv4JacPCMat
+    {
+        pRes            2;
+        phiRes          1;
+        URes            2;
+        TRes            2;
+        nuTildaRes      2;
+        kRes            2;
+        epsilonRes      2;
+        omegaRes        2;
+        p_rghRes        2;
+        DRes            2;
+        gammaIntRes     2;
+        ReThetatRes     2;
+        alpha.waterRes  2;
+    }
+    jacLowerBounds
+    {
+        dRdW            1e-30;
+        dRdWPC          1e-30;
+    }
+    maxTractionBCIters 100;
+    decomposeParDict
+    {
+        method          scotch;
+        simpleCoeffs
+        {
+            n               3 ( 2 2 1 );
+            delta           0.001;
+        }
+        kahipCoeffs
+        {
+            config          fast;
+            imbalance       0.01;
+        }
+        preservePatches 1 ( None );
+        singleProcessorFaceSets 1 ( None );
+        args            1 ( None );
+    }
+    adjStateOrdering cell;
+    checkMeshThreshold
+    {
+        maxAspectRatio  10000;
+        maxNonOrth      80;
+        maxSkewness     6;
+        maxIncorrectlyOrientedFaces 0;
+    }
+    writeDeformedFFDs 0;
+    writeDeformedConstraints 0;
+    writeAdjointFields 0;
+    maxCorrectBCCalls 2;
+    writeMinorIterations 0;
+    primalMinIters  100;
+    tensorflow
+    {
+        active          0;
+    }
+    wallDistanceMethod default;
+    unsteadyCompOutput
+    {
+    }
+}
+
+pyDAFoam initialization done!
++----------------------------------------+
+|          All IDWarp Options:           |
++----------------------------------------+
+{'LdefFact': 1.0,
+ 'aExp': 3.0,
+ 'alpha': 0.25,
+ 'bExp': 5.0,
+ 'bucketSize': 8,
+ 'cornerAngle': 30.0,
+ 'errTol': 0.0005,
+ 'evalMode': 'fast',
+ 'fileType': 'OpenFOAM',
+ 'gridFile': '/home/dafoamuser/mount/wing_cfd_0001',
+ 'restartFile': None,
+ 'specifiedSurfaces': None,
+ 'symmTol': 1e-06,
+ 'symmetryPlanes': [[[0.0, 0.0, 0.0], [0.0, 1.0, 0.0]]],
+ 'symmetrySurfaces': None,
+ 'useRotations': True,
+ 'zeroCornerRotations': True}
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 10
+Hosts  :
+(
+    (docker-desktop 10)
+)
+Pstream initialized with:
+    node communication : off [type=host] (10 ranks, 1 nodes)
+    topology controls  : none
+    consensus exchange : 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+Reading the OpenFOAM mesh..
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Checking if we need to compress the mesh files
+Checking if we need to compress the mesh files
+#------------------------------#
+ Total Volume Nodes :    434372 
+#------------------------------#
+Finalising parallel run
++-------------------- Symmetry Planes -------------------+
+|           Point                        Normal          |
+| (  0.000   0.000   0.000)    (  0.000   1.000   0.000) |
++--------------------------------------------------------+
+#--------------------------------#
+ Unique Surface Nodes :      5893 
+#--------------------------------#
+ Computing Denominator Estimate...
+ Load Balancing...
+ Finished Mesh Initialization.
+OrderedDict({'inout': [0], 'procBoundary0to1': [1], 'procBoundary0to2': [2], 'procBoundary0to3': [3], 'procBoundary0to4': [4], 'procBoundary0to7': [5], 'procBoundary0to9': [6], 'sym': [7], 'wing': [8], 'allSurfaces': [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8)], 'allWalls': [np.int64(8)], 'designSurfaces': [np.int64(8)]})
+Initializing DVGeometryVSP
+Loading the vsp model took: 0.8080422878265381
+Building a quad mesh for fast projections.
+Initialized DVGeometry VSP in 1.3751723766326904 seconds.
+dRdWT Jacobian Free created!
+DVGeometryVSP note:
+Adding pointset x_aero0_geometry_output took 1.2561511993408203 seconds.
+Maximum distance between the added points and the VSP geometry is 0.0002703308879338154
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+Finding a feasible design using the Newton method. 
+Constraints:  ['scenario0.aero_post.CL']
+Design Vars:  ['patchV0']
+Target:  [0.4]
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+/home/dafoamuser/dafoam/packages/miniconda3/lib/python3.12/site-packages/openmdao/drivers/pyoptsparse_driver.py:295: OMDeprecationWarning:The 'hist_file' attribute is deprecated. Use the 'hist_file' option instead.
+DAInputVolCoord. 
+Setting volume coordinates. 
+DAInputPatchVelocity. 
+Setting UMag = 104.1566128481528 AoA = 5.4 degs at 1(inout)
+I/O    : uncollated
+Checking mesh quality for time = 0
+    Overall domain bounding box (-9.999999992979999 0 -10.0398565839) (10.9913140977 13.0445896095 10.0398567646)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (4.774627331374283e-17 1.307707707985957e-16 1.221305563416615e-16) OK.
+    Max cell openness = 6.131509874646547e-16 OK.
+    Max aspect ratio = 330.0573363189947 OK.
+    Minimum face area = 4.219993718890932e-08. Maximum face area = 0.7097139659054439.  Face area magnitudes OK.
+    Min volume = 2.443860593929595e-11. Max volume = 0.1795488840704927.  Total volume = 3110.844335078024.  Cell volumes OK.
+    Mesh non-orthogonality Max: 64.04207650493933 average: 9.751101888640953
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 1.753256046160208 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+Running Primal Solver 001
+Previous solution time -1e+10 not found and nothing deleted.
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+U0 initRes: 0.9999996386696144 finalRes: 0.08340850766330142 nIters: 6
+U1 initRes: 1 finalRes: 0.07297218813899474 nIters: 4
+U2 initRes: 0.9999998424117792 finalRes: 0.07254947295027572 nIters: 6
+he initRes: 0.9999995622967529 finalRes: 0.06459169788066083 nIters: 3
+p initRes: 0.9999999999545603 finalRes: 0.0934117422655147 nIters: 18
+Time step continuity errors : sum local = 0.003157935641424889
+                                 global = -0.00215860611390938
+                             cumulative = -0.00215860611390938
+nuTilda initRes: 0.9999999999800978 finalRes: 0.08197674701638531 nIters: 4
+CD: 1.001536113477187 average: 1.001536113477187 std: 0 slope: 0
+CL: 2.016400849657411 average: 2.016400849657411 std: 0 slope: 0
+CM: -0.1844654168111263 average: -0.1844654168111263
+yPlus min: 53.12189098098293 max: 87.52236540247647 mean: 66.56729860464895
+ExecutionTime = 217.04 s  ClockTime = 226 s
+
+Time = 10
+
+U0 initRes: 0.005301087206324356 finalRes: 0.0005198187572024382 nIters: 5
+U1 initRes: 0.0722254090638232 finalRes: 0.004943697927515305 nIters: 6
+U2 initRes: 0.008467248524020633 finalRes: 0.0005748234602807882 nIters: 6
+he initRes: 0.007336409645671675 finalRes: 0.0006512575731158311 nIters: 5
+p initRes: 0.285351436342112 finalRes: 0.02571824071472881 nIters: 5
+Time step continuity errors : sum local = 0.01436471984575857
+                                 global = -0.008906753120538733
+                             cumulative = -0.01106535923444811
+nuTilda initRes: 0.0004140564336736564 finalRes: 2.81039752322103e-05 nIters: 5
+CD: 0.004654987683185785 average: 0.07035984116236096 std: 0.3229145806960199 slope: -0.6458291613920395
+CL: 0.1796161802255665 average: 0.3053122558263645 std: 0.2455830927633948 slope: -0.4911661855267896
+CM: 0.1238231886293257 average: 0.09129027748854296
+yPlus min: 15.05803331400936 max: 186.0305961853125 mean: 57.31224781595924
+ExecutionTime = 268.08 s  ClockTime = 277 s
+
+Time = 20
+
+U0 initRes: 0.002388608855467756 finalRes: 0.0001786479460037787 nIters: 5
+U1 initRes: 0.03693480357765123 finalRes: 0.00298264578535691 nIters: 5
+U2 initRes: 0.01012985587034664 finalRes: 0.0008956545944311667 nIters: 5
+he initRes: 0.02660756797854297 finalRes: 0.002517877113150344 nIters: 4
+p initRes: 0.2861017471955866 finalRes: 0.02816168321210534 nIters: 3
+Time step continuity errors : sum local = 0.01027586526148504
+                                 global = -0.002287260827556482
+                             cumulative = -0.01335262006200459
+nuTilda initRes: 0.0002246317904321612 finalRes: 2.18333704685985e-05 nIters: 4
+CD: 0.002558224661060184 average: 0.01825760872052051 std: 0.7395724206014525 slope: -0.6575774118243881
+CL: 0.3111209950970204 average: 0.3136001497072316 std: 0.05507078805561763 slope: -0.04807604607966581
+CM: 0.06545278640804264 average: 0.07290469339960935
+yPlus min: 3.24894186995442 max: 85.71371882970485 mean: 48.29654307955008
+ExecutionTime = 316.91 s  ClockTime = 326 s
+
+Time = 30
+
+U0 initRes: 0.001007550300184835 finalRes: 6.445245772210088e-05 nIters: 5
+U1 initRes: 0.007662096693827316 finalRes: 0.00053153926701654 nIters: 5
+U2 initRes: 0.005913181775428105 finalRes: 0.0004266793323216275 nIters: 5
+he initRes: 0.02212873807856476 finalRes: 0.001792469978813527 nIters: 4
+p initRes: 0.13581458535009 finalRes: 0.007801171097397847 nIters: 3
+Time step continuity errors : sum local = 0.00244262803154487
+                                 global = -0.000201690662013235
+                             cumulative = -0.01355431072401783
+nuTilda initRes: 0.0001657000105326993 finalRes: 1.102226945783853e-05 nIters: 4
+CD: 0.02225926468987276 average: 0.02141749810130064 std: 0.3215983269910718 slope: -0.1701253998169747
+CL: 0.3578439577191894 average: 0.3451353281996803 std: 0.01745784791450776 slope: -0.004499042068498293
+CM: 0.06940676606121809 average: 0.07185613427662867
+yPlus min: 5.391105032013325 max: 87.01622876785039 mean: 47.09850266732389
+ExecutionTime = 361.66 s  ClockTime = 371 s
+
+Time = 40
+
+U0 initRes: 0.0004528442318030926 finalRes: 4.249354313278572e-05 nIters: 4
+U1 initRes: 0.001930804310406966 finalRes: 0.0001176014319003985 nIters: 5
+U2 initRes: 0.003072821814764113 finalRes: 0.0002169836002215636 nIters: 5
+he initRes: 0.005396269257287319 finalRes: 0.0003843254294466303 nIters: 4
+p initRes: 0.06482796204587915 finalRes: 0.00320988367202545 nIters: 3
+Time step continuity errors : sum local = 0.0008047345311237903
+                                 global = -1.810226535006288e-06
+                             cumulative = -0.01355612095055284
+nuTilda initRes: 0.0001558003909278525 finalRes: 1.024643494834782e-05 nIters: 4
+CD: 0.02187295307715272 average: 0.02152292556309066 std: 0.08547697173711433 slope: -0.02637718853701095
+CL: 0.3723180188659392 average: 0.3645472480295832 std: 0.01305243274687068 slope: 0.00348236814759034
+CM: 0.07427490302284201 average: 0.07400904190471076
+yPlus min: 5.171624957750036 max: 88.41773786893158 mean: 46.73231318272015
+ExecutionTime = 404.45 s  ClockTime = 414 s
+
+Time = 50
+
+U0 initRes: 0.0001843344671934051 finalRes: 1.665326961962205e-05 nIters: 4
+U1 initRes: 0.0007889080615432198 finalRes: 4.740446097928525e-05 nIters: 5
+U2 initRes: 0.001675434072064199 finalRes: 0.0001007033461413019 nIters: 5
+he initRes: 0.002643196661739193 finalRes: 0.0001783522005658672 nIters: 4
+p initRes: 0.02168402798940637 finalRes: 0.001205923267411723 nIters: 3
+Time step continuity errors : sum local = 0.0003429571263570746
+                                 global = 2.281593244618033e-06
+                             cumulative = -0.01355383935730822
+nuTilda initRes: 0.0001378382028039888 finalRes: 7.933991327463628e-06 nIters: 4
+CD: 0.02038617507721173 average: 0.02071974907477549 std: 0.02193081440413781 slope: -0.006637271015091052
+CL: 0.3760762695170548 average: 0.3734047163212896 std: 0.005021199640882638 slope: 0.001502833814241654
+CM: 0.07694861307023554 average: 0.07596541841390556
+yPlus min: 5.375555489324335 max: 89.37682041440756 mean: 46.36606888467736
+ExecutionTime = 447.26 s  ClockTime = 457 s
+
+Time = 60
+
+U0 initRes: 9.178845904058532e-05 finalRes: 6.86950099523356e-06 nIters: 4
+U1 initRes: 0.0004150375577471377 finalRes: 3.657914576133967e-05 nIters: 4
+U2 initRes: 0.0007634275339809617 finalRes: 6.891372047753566e-05 nIters: 4
+he initRes: 0.002164668457654217 finalRes: 0.0001472866385450671 nIters: 4
+p initRes: 0.007032445341656532 finalRes: 0.0004470546285524405 nIters: 3
+Time step continuity errors : sum local = 0.0001399362116011325
+                                 global = -2.190868873958652e-06
+                             cumulative = -0.01355603022618218
+nuTilda initRes: 0.0001109686385435232 finalRes: 9.721852551567446e-06 nIters: 3
+CD: 0.01976370178021904 average: 0.02007712570589871 std: 0.01259585605800149 slope: -0.003612218863883856
+CL: 0.3768379260846664 average: 0.3763005119685583 std: 0.0009627662502418694 slope: 0.0002518233384275726
+CM: 0.07851712072693423 average: 0.07767179948364582
+yPlus min: 5.968601127695466 max: 89.85232211906741 mean: 46.19018886458888
+ExecutionTime = 487.64 s  ClockTime = 497 s
+
+Time = 70
+
+U0 initRes: 4.909693586006907e-05 finalRes: 3.084980507106242e-06 nIters: 4
+U1 initRes: 0.0001896503505312762 finalRes: 1.458400637212262e-05 nIters: 4
+U2 initRes: 0.0003732705706156009 finalRes: 3.357805817065863e-05 nIters: 4
+he initRes: 0.002336321486613731 finalRes: 0.0001552325761300174 nIters: 4
+p initRes: 0.002971063126425595 finalRes: 0.0002034807662850766 nIters: 3
+Time step continuity errors : sum local = 6.674177263099731e-05
+                                 global = -9.169612575109183e-07
+                             cumulative = -0.01355694718743969
+nuTilda initRes: 9.007468844108817e-05 finalRes: 5.851005397187168e-06 nIters: 3
+CD: 0.01933570957091478 average: 0.01958916382813087 std: 0.00891269685986907 slope: -0.002191071221927555
+CL: 0.3770492116689377 average: 0.3768356721275825 std: 0.000401573988841143 slope: 7.625457019393911e-05
+CM: 0.07942931547876858 average: 0.07884422306215266
+yPlus min: 5.787334373104827 max: 90.10939964462891 mean: 46.24846980352113
+ExecutionTime = 526.39 s  ClockTime = 536 s
+
+Time = 80
+
+U0 initRes: 2.75606242249122e-05 finalRes: 2.242138778234332e-06 nIters: 4
+U1 initRes: 0.0001100251089551437 finalRes: 1.053831159852306e-05 nIters: 4
+U2 initRes: 0.0002422370425986594 finalRes: 2.349055311462628e-05 nIters: 4
+he initRes: 0.001325511695702773 finalRes: 0.0001023166838465462 nIters: 4
+p initRes: 0.001446902093921885 finalRes: 9.660485732809689e-05 nIters: 3
+Time step continuity errors : sum local = 3.230142308442206e-05
+                                 global = -4.928443707968778e-06
+                             cumulative = -0.01356187563114766
+nuTilda initRes: 7.294668214283641e-05 finalRes: 4.450142564042923e-06 nIters: 3
+CD: 0.01913964627622172 average: 0.01928679703526124 std: 0.006292776928427637 slope: -0.001347034757728661
+CL: 0.3774972452518308 average: 0.3770974831928138 std: 0.0004888961038409579 slope: 0.0001017621380569031
+CM: 0.07982088682165578 average: 0.07950659696496515
+yPlus min: 5.61240930175216 max: 90.24041462931523 mean: 46.37598123078652
+ExecutionTime = 565.16 s  ClockTime = 575 s
+
+Time = 90
+
+U0 initRes: 1.923561864087658e-05 finalRes: 1.810674938996377e-06 nIters: 4
+U1 initRes: 6.262717178043701e-05 finalRes: 3.893951733313885e-06 nIters: 5
+U2 initRes: 0.0001470536715927907 finalRes: 1.00769808579862e-05 nIters: 5
+he initRes: 0.0004652120126628627 finalRes: 4.227314924731524e-05 nIters: 4
+p initRes: 0.0006836104788238185 finalRes: 4.530071475450867e-05 nIters: 3
+Time step continuity errors : sum local = 1.521832622394783e-05
+                                 global = -2.119772624147376e-06
+                             cumulative = -0.0135639954037718
+nuTilda initRes: 5.242694866319923e-05 finalRes: 4.131900767575479e-06 nIters: 3
+CD: 0.0191387462102995 average: 0.01915389569646432 std: 0.002718896190385168 slope: -0.0004668477061215047
+CL: 0.378690905555185 average: 0.3776756915098308 std: 0.001175197242906611 slope: 0.0002212313432945263
+CM: 0.0798419338492633 average: 0.07979826915633843
+yPlus min: 5.349679005039815 max: 90.3050747528966 mean: 46.48306743539071
+ExecutionTime = 605.26 s  ClockTime = 615 s
+
+Time = 100
+
+U0 initRes: 1.864905936334136e-05 finalRes: 1.286529378086701e-06 nIters: 5
+U1 initRes: 5.726089870451893e-05 finalRes: 4.639048988343004e-06 nIters: 5
+U2 initRes: 0.0001710002715225317 finalRes: 1.367673494745727e-05 nIters: 5
+he initRes: 0.000235950237158573 finalRes: 1.853358394111521e-05 nIters: 4
+p initRes: 0.0003453063049809175 finalRes: 2.704144138219873e-05 nIters: 3
+Time step continuity errors : sum local = 9.085443997151345e-06
+                                 global = -1.01219541031889e-06
+                             cumulative = -0.01356500759918212
+nuTilda initRes: 3.324150961384514e-05 finalRes: 3.037837940352805e-06 nIters: 3
+CD: 0.01930160303187944 average: 0.01917024146722523 std: 0.002565988367855738 slope: 0.0003828110052152025
+CL: 0.3811553066055322 average: 0.3789686616618709 std: 0.00273490707518375 slope: 0.0004656787366144367
+CM: 0.07947180075123661 average: 0.07976896179595365
+yPlus min: 5.097820501712683 max: 90.3426191513101 mean: 46.53924415680873
+ExecutionTime = 647.08 s  ClockTime = 657 s
+
+Time = 110
+
+U0 initRes: 2.197632395421678e-05 finalRes: 1.788256274822136e-06 nIters: 5
+U1 initRes: 9.329143069471672e-05 finalRes: 8.194124135288696e-06 nIters: 5
+U2 initRes: 0.0002577655641195567 finalRes: 2.020189954123883e-05 nIters: 5
+he initRes: 0.0001642725911477376 finalRes: 1.30122374021044e-05 nIters: 4
+p initRes: 0.000228046462494425 finalRes: 1.949670230609431e-05 nIters: 5
+Time step continuity errors : sum local = 6.554299403153136e-06
+                                 global = -4.418888737107365e-06
+                             cumulative = -0.01356942648791923
+nuTilda initRes: 2.499333676269292e-05 finalRes: 1.653628994036625e-06 nIters: 3
+CD: 0.01954776192350993 average: 0.01930772424249367 std: 0.006543835364032588 slope: 0.001020646121626163
+CL: 0.3846980217707217 average: 0.3812199228808812 std: 0.004849854164459215 slope: 0.0007595657299813908
+CM: 0.07888805838848095 average: 0.07945170404173647
+yPlus min: 5.037855836168538 max: 90.38147826715098 mean: 46.5515449320227
+ExecutionTime = 692.6799999999999 s  ClockTime = 703 s
+
+Time = 120
+
+U0 initRes: 2.382913604045183e-05 finalRes: 2.193429498952004e-06 nIters: 5
+U1 initRes: 0.0001369869748315673 finalRes: 1.157107737630155e-05 nIters: 5
+U2 initRes: 0.0003244533466783836 finalRes: 2.440026008565437e-05 nIters: 5
+he initRes: 0.000136829137155934 finalRes: 1.26321511385794e-05 nIters: 4
+p initRes: 0.0001913982216637423 finalRes: 1.816512175195054e-05 nIters: 4
+Time step continuity errors : sum local = 6.134212159896773e-06
+                                 global = 2.821988138235185e-06
+                             cumulative = -0.01356660449978099
+nuTilda initRes: 2.352170993756652e-05 finalRes: 1.052426921481886e-06 nIters: 3
+CD: 0.01976006953855399 average: 0.01950564101683231 std: 0.008459597573133606 slope: 0.001221467964902744
+CL: 0.3882966570412105 average: 0.3841880648799481 std: 0.006415960940917441 slope: 0.0009263376981054835
+CM: 0.07844795457385495 average: 0.07899778208949315
+yPlus min: 5.128664834919942 max: 90.43314284183374 mean: 46.55417205702687
+ExecutionTime = 743.7 s  ClockTime = 754 s
+
+Time = 130
+
+U0 initRes: 2.176105636644383e-05 finalRes: 2.156028227444625e-06 nIters: 5
+U1 initRes: 0.0001551676535546989 finalRes: 1.232880863526456e-05 nIters: 5
+U2 initRes: 0.0003181431795435605 finalRes: 2.311520774110058e-05 nIters: 5
+he initRes: 0.0001160582027904724 finalRes: 8.588042526349128e-06 nIters: 5
+p initRes: 0.0001873047879640722 finalRes: 1.620960626689443e-05 nIters: 5
+Time step continuity errors : sum local = 5.510111641606112e-06
+                                 global = 3.472428895581907e-06
+                             cumulative = -0.01356313207088541
+nuTilda initRes: 1.847650273708192e-05 finalRes: 8.239954243089471e-07 nIters: 3
+CD: 0.01987215984479106 average: 0.0196896321414734 std: 0.007418101376079084 slope: 0.0009779902808080255
+CL: 0.3911610413637956 average: 0.3872809286911496 std: 0.006662368269010643 slope: 0.0008870702185188034
+CM: 0.07829051542189264 average: 0.07860898288527035
+yPlus min: 5.195887506769587 max: 90.49689374571392 mean: 46.56786823612067
+ExecutionTime = 793.11 s  ClockTime = 803 s
+
+Time = 140
+
+U0 initRes: 1.866482870098971e-05 finalRes: 1.756989126599764e-06 nIters: 5
+U1 initRes: 0.0001356355407268767 finalRes: 1.011675995022578e-05 nIters: 5
+U2 initRes: 0.0002480768134298449 finalRes: 1.781847032130046e-05 nIters: 5
+he initRes: 0.0001010918391582669 finalRes: 8.764890317278329e-06 nIters: 5
+p initRes: 0.0001600078774811417 finalRes: 1.352668463573046e-05 nIters: 5
+Time step continuity errors : sum local = 4.62749230637534e-06
+                                 global = 3.092091450478446e-06
+                             cumulative = -0.01356003997943493
+nuTilda initRes: 1.146888046877671e-05 finalRes: 5.466438055152867e-07 nIters: 3
+CD: 0.01990821314277671 average: 0.01981471657278903 std: 0.004744384006882605 slope: 0.0005634977016607876
+CL: 0.3931891491332506 average: 0.3899825451232345 std: 0.005851809234223842 slope: 0.0007203895317837724
+CM: 0.07829510960236008 average: 0.07838888294536428
+yPlus min: 5.217049707298634 max: 90.56446172360241 mean: 46.58892732438436
+ExecutionTime = 840.74 s  ClockTime = 851 s
+
+Time = 150
+
+U0 initRes: 1.483205782470152e-05 finalRes: 1.259896556372146e-06 nIters: 5
+U1 initRes: 9.866247226930214e-05 finalRes: 6.998359452483727e-06 nIters: 5
+U2 initRes: 0.0001705629605583943 finalRes: 1.242351756886693e-05 nIters: 5
+he initRes: 0.0001087108320750422 finalRes: 7.575889166370501e-06 nIters: 5
+p initRes: 0.0001190832425452704 finalRes: 1.004565398067743e-05 nIters: 4
+Time step continuity errors : sum local = 3.454870271950844e-06
+                                 global = -7.270770924524386e-07
+                             cumulative = -0.01356076705652739
+nuTilda initRes: 6.594837138900947e-06 finalRes: 3.133418797922843e-07 nIters: 3
+CD: 0.01992132885510953 average: 0.01988074811819483 std: 0.002308619875336932 slope: 0.0002460457244944067
+CL: 0.3946811809711004 average: 0.3921102292799722 std: 0.004728315452973197 slope: 0.0005418596858156277
+CM: 0.07831729638296764 average: 0.07831207049592025
+yPlus min: 5.22883354193738 max: 90.62574401578398 mean: 46.60804839919502
+ExecutionTime = 889.59 s  ClockTime = 900 s
+
+Time = 160
+
+U0 initRes: 1.037940444581736e-05 finalRes: 8.597963186363956e-07 nIters: 5
+U1 initRes: 6.742593975419182e-05 finalRes: 4.659399924102217e-06 nIters: 5
+U2 initRes: 0.0001194194136221182 finalRes: 8.74286623459572e-06 nIters: 5
+he initRes: 8.278171563593786e-05 finalRes: 5.195490923085957e-06 nIters: 5
+p initRes: 9.224404350577934e-05 finalRes: 8.349024158026273e-06 nIters: 4
+Time step continuity errors : sum local = 2.88341120734366e-06
+                                 global = 1.602278000971624e-06
+                             cumulative = -0.01355916477852642
+nuTilda initRes: 4.092448304260381e-06 finalRes: 4.083452535884606e-07 nIters: 2
+CD: 0.01993396921552696 average: 0.01991066527727142 std: 0.000987898842468528 slope: 0.0001009508722660921
+CL: 0.3958176560019395 average: 0.3937260281227056 std: 0.003784069443063392 slope: 0.000406752910647939
+CM: 0.07831754126164203 average: 0.07830410241168963
+yPlus min: 5.245472071115409 max: 90.67499623914914 mean: 46.62176881636231
+ExecutionTime = 937.0700000000001 s  ClockTime = 947 s
+
+Time = 170
+
+U0 initRes: 7.189881250504853e-06 finalRes: 6.218806629038035e-07 nIters: 5
+U1 initRes: 4.901156921729332e-05 finalRes: 3.41237138686556e-06 nIters: 5
+U2 initRes: 9.122686790106021e-05 finalRes: 6.589081619061147e-06 nIters: 5
+he initRes: 4.619091064497612e-05 finalRes: 3.176008209217514e-06 nIters: 5
+p initRes: 7.351784818867909e-05 finalRes: 6.58526505871229e-06 nIters: 4
+Time step continuity errors : sum local = 2.28197994879746e-06
+                                 global = 1.338860821956395e-06
+                             cumulative = -0.01355782591770446
+nuTilda initRes: 2.732115038408468e-06 finalRes: 2.71883523951403e-07 nIters: 2
+CD: 0.01994749492455712 average: 0.01992606068285179 std: 0.0006552646055076656 slope: 6.66490433772239e-05
+CL: 0.3966967595315232 average: 0.3949643032760236 std: 0.003107573185292554 slope: 0.000314642659889902
+CM: 0.07830942788540418 average: 0.07831070990518058
+yPlus min: 5.262917035838162 max: 90.71223288810674 mean: 46.63110410195669
+ExecutionTime = 985.59 s  ClockTime = 996 s
+
+Time = 180
+
+U0 initRes: 5.375271235791664e-06 finalRes: 4.769264410466659e-07 nIters: 5
+U1 initRes: 3.790005671159394e-05 finalRes: 2.672154394158742e-06 nIters: 5
+U2 initRes: 7.1138636311156e-05 finalRes: 5.058188848173909e-06 nIters: 5
+he initRes: 2.529664427122341e-05 finalRes: 2.125258948930002e-06 nIters: 5
+p initRes: 5.788528526938284e-05 finalRes: 5.669535197810651e-06 nIters: 4
+Time step continuity errors : sum local = 1.970010648561266e-06
+                                 global = 1.253681875523904e-06
+                             cumulative = -0.01355657223582893
+nuTilda initRes: 1.685263945204799e-06 finalRes: 7.2538652376477e-08 nIters: 3
+CD: 0.01995661158212698 average: 0.0199373883518798 std: 0.0006579321451443471 slope: 6.32379696033028e-05
+CL: 0.3973504314779674 average: 0.3959286252746053 std: 0.002587218054336729 slope: 0.0002471783997549684
+CM: 0.07830903847250775 average: 0.07831328672329117
+yPlus min: 5.273832825250055 max: 90.74021662000523 mean: 46.63805782701213
+ExecutionTime = 1039.78 s  ClockTime = 1440 s
+
+Time = 190
+
+U0 initRes: 4.193890167559096e-06 finalRes: 3.648151507792683e-07 nIters: 5
+U1 initRes: 2.917557333550642e-05 finalRes: 2.055787914229038e-06 nIters: 5
+U2 initRes: 5.331737610005259e-05 finalRes: 3.779880264802691e-06 nIters: 5
+he initRes: 2.029709902707558e-05 finalRes: 1.701492359225233e-06 nIters: 5
+p initRes: 4.421412046126313e-05 finalRes: 4.247518450909166e-06 nIters: 4
+Time step continuity errors : sum local = 1.479049852458245e-06
+                                 global = 9.302190700488083e-07
+                             cumulative = -0.01355564201675889
+nuTilda initRes: 9.488030736006082e-07 finalRes: 4.792781804277786e-08 nIters: 3
+CD: 0.01996041781791034 average: 0.01994691065127788 std: 0.0005900345001125367 slope: 5.291606812365947e-05
+CL: 0.3978228669535289 average: 0.396682045636675 std: 0.002130319176097794 slope: 0.0001923181977920318
+CM: 0.0783169939406308 average: 0.07831287029009902
+yPlus min: 5.27854983893883 max: 90.76145289505524 mean: 46.64394298145397
+ExecutionTime = 1089.71 s  ClockTime = 1490 s
+
+Time = 200
+
+U0 initRes: 3.193881653958006e-06 finalRes: 2.686979314562114e-07 nIters: 5
+U1 initRes: 2.15073556930594e-05 finalRes: 1.500788570551567e-06 nIters: 5
+U2 initRes: 3.831507878055446e-05 finalRes: 2.737005013496078e-06 nIters: 5
+he initRes: 1.726621167725892e-05 finalRes: 1.370994288377686e-06 nIters: 5
+p initRes: 3.272144469258093e-05 finalRes: 3.142304136058006e-06 nIters: 4
+Time step continuity errors : sum local = 1.09596484053756e-06
+                                 global = 6.839662373576432e-07
+                             cumulative = -0.01355495805052153
+nuTilda initRes: 5.591599852677128e-07 finalRes: 4.044107846515359e-08 nIters: 3
+CD: 0.01996156195827019 average: 0.01995399798489374 std: 0.0004212570994318629 slope: 3.440320685510964e-05
+CL: 0.3981642955065074 average: 0.3972637972567333 std: 0.001715537718031155 slope: 0.0001466870954320866
+CM: 0.07832602427090962 average: 0.0783139354342173
+yPlus min: 5.279460440351616 max: 90.77753644369538 mean: 46.64922985558413
+ExecutionTime = 1138 s  ClockTime = 1539 s
+
+Time = 210
+
+U0 initRes: 2.337468429150067e-06 finalRes: 1.946114670470233e-07 nIters: 5
+U1 initRes: 1.545279172449414e-05 finalRes: 1.073368158931528e-06 nIters: 5
+U2 initRes: 2.758237945749425e-05 finalRes: 1.99303316603945e-06 nIters: 5
+he initRes: 1.356052001397751e-05 finalRes: 1.033570404393037e-06 nIters: 5
+p initRes: 2.389631213144473e-05 finalRes: 2.346908133631494e-06 nIters: 4
+Time step continuity errors : sum local = 8.195244661577095e-07
+                                 global = 5.128131764413461e-07
+                             cumulative = -0.01355444523734509
+nuTilda initRes: 4.490712027163175e-07 finalRes: 4.020299606405724e-08 nIters: 3
+CD: 0.01996285247949874 average: 0.01995852215071956 std: 0.0002412536089998378 slope: 1.797692926492717e-05
+CL: 0.3984215623787724 average: 0.3977081914165598 std: 0.001360238528981808 slope: 0.0001105903175109225
+CM: 0.07833074230478321 average: 0.07831762663403517
+yPlus min: 5.279567468924362 max: 90.78953681912076 mean: 46.65384132725383
+ExecutionTime = 1186.31 s  ClockTime = 1587 s
+
+Time = 220
+
+U0 initRes: 1.694813309744274e-06 finalRes: 1.450178169374275e-07 nIters: 5
+U1 initRes: 1.137294321016854e-05 finalRes: 7.972812347378371e-07 nIters: 5
+U2 initRes: 2.08624465524075e-05 finalRes: 1.519088849240626e-06 nIters: 5
+he initRes: 9.684832261995917e-06 finalRes: 7.313680736864658e-07 nIters: 5
+p initRes: 1.758281089498921e-05 finalRes: 1.487010096641048e-06 nIters: 5
+Time step continuity errors : sum local = 5.197111671991889e-07
+                                 global = -3.754700127935852e-07
+                             cumulative = -0.01355482070735788
+nuTilda initRes: 4.268247081279483e-07 finalRes: 3.651327977303902e-08 nIters: 3
+CD: 0.01996527592054438 average: 0.01996128187626885 std: 0.0001313459361740546 slope: 9.77656352496115e-06
+CL: 0.3986262187192915 average: 0.3980479763328897 std: 0.001082345146124397 slope: 8.405427268190249e-05
+CM: 0.07833075292116465 average: 0.07832233775019853
+yPlus min: 5.280259963695542 max: 90.79841233179816 mean: 46.657635247298
+ExecutionTime = 1237.72 s  ClockTime = 1638 s
+
+Time = 230
+
+U0 initRes: 1.274811010170261e-06 finalRes: 1.142712950290724e-07 nIters: 5
+U1 initRes: 8.876770613965668e-06 finalRes: 6.334385101336823e-07 nIters: 5
+U2 initRes: 1.671520471184122e-05 finalRes: 1.21962274896969e-06 nIters: 5
+he initRes: 6.567898601023864e-06 finalRes: 5.245608609036691e-07 nIters: 5
+p initRes: 1.30297301392201e-05 finalRes: 1.120913658238288e-06 nIters: 4
+Time step continuity errors : sum local = 3.920219070235066e-07
+                                 global = 2.190537819081554e-07
+                             cumulative = -0.01355460165357597
+nuTilda initRes: 3.949306441485096e-07 finalRes: 2.974827946049829e-08 nIters: 3
+CD: 0.01996840274918513 average: 0.01996323571582367 std: 0.0001198420645325215 slope: 8.831122916993392e-06
+CL: 0.398793304425006 average: 0.3983105790424684 std: 0.0008802302095930949 slope: 6.552446977041979e-05
+CM: 0.07832819007742547 average: 0.07832615236413465
+yPlus min: 5.281510828895112 max: 90.80505589104141 mean: 46.66062817259089
+ExecutionTime = 1287.85 s  ClockTime = 1689 s
+
+Time = 240
+
+U0 initRes: 1.01298228957028e-06 finalRes: 9.358885380228358e-08 nIters: 5
+U1 initRes: 7.234780034260358e-06 finalRes: 5.225127922138443e-07 nIters: 5
+U2 initRes: 1.373712498949421e-05 finalRes: 1.00088008596189e-06 nIters: 5
+he initRes: 4.758769909853376e-06 finalRes: 4.092375152178933e-07 nIters: 5
+p initRes: 1.035876056722165e-05 finalRes: 9.79667069116035e-07 nIters: 5
+Time step continuity errors : sum local = 3.427984967147652e-07
+                                 global = -2.423331130669504e-07
+                             cumulative = -0.01355484398668904
+nuTilda initRes: 3.532204935536901e-07 finalRes: 2.348385294359125e-08 nIters: 3
+CD: 0.01997124254128291 average: 0.01996514392005148 std: 0.0001557100727405033 slope: 1.100618659773945e-05
+CL: 0.3989278809235675 average: 0.3985185520274889 std: 0.0007354549456123575 slope: 5.257728966253685e-05
+CM: 0.07832542483900018 average: 0.07832802348122229
+yPlus min: 5.282986629994941 max: 90.81017489294237 mean: 46.66295123147245
+ExecutionTime = 1337.06 s  ClockTime = 1738 s
+
+Time = 250
+
+U0 initRes: 8.306421641738146e-07 finalRes: 7.754389346838305e-08 nIters: 5
+U1 initRes: 5.986936321092339e-06 finalRes: 4.345650132738128e-07 nIters: 5
+U2 initRes: 1.128914062969756e-05 finalRes: 8.23888147317706e-07 nIters: 5
+he initRes: 3.866381723794139e-06 finalRes: 3.420745993045516e-07 nIters: 5
+p initRes: 8.027395945295561e-06 finalRes: 7.15353023725434e-07 nIters: 4
+Time step continuity errors : sum local = 2.504136059501892e-07
+                                 global = 5.069425558738067e-08
+                             cumulative = -0.01355479329243345
+nuTilda initRes: 3.075028382947703e-07 finalRes: 1.899407020182187e-08 nIters: 3
+CD: 0.01997371112765817 average: 0.01996723831420761 std: 0.0001892421675251366 slope: 1.304937723578888e-05
+CL: 0.3990382990243875 average: 0.3986868212427459 std: 0.0006291589746234907 slope: 4.320596485071581e-05
+CM: 0.0783230584821919 average: 0.07832803232815319
+yPlus min: 5.284337455288809 max: 90.8142437041779 mean: 46.66475438185105
+ExecutionTime = 1385.05 s  ClockTime = 1786 s
+
+Time = 260
+
+U0 initRes: 6.819730314259075e-07 finalRes: 6.34526691219776e-08 nIters: 5
+U1 initRes: 4.894803582192362e-06 finalRes: 3.545869042464052e-07 nIters: 5
+U2 initRes: 9.141688464767672e-06 finalRes: 6.685301356291956e-07 nIters: 5
+he initRes: 3.287713804814423e-06 finalRes: 2.887021980631619e-07 nIters: 5
+p initRes: 6.461759034455322e-06 finalRes: 5.681602250158204e-07 nIters: 4
+Time step continuity errors : sum local = 1.98952065894316e-07
+                                 global = -1.308882022912766e-08
+                             cumulative = -0.01355480638125368
+nuTilda initRes: 2.566801387807576e-07 finalRes: 1.52685905490385e-08 nIters: 3
+CD: 0.01997558504936444 average: 0.01996946005329013 std: 0.000201553849261247 slope: 1.340408636375626e-05
+CL: 0.3991265377157054 average: 0.3988252033692443 std: 0.0005430026552121142 slope: 3.58435828971236e-05
+CM: 0.07832134235743166 average: 0.07832679677410036
+yPlus min: 5.285519607654052 max: 90.81752788907139 mean: 46.66615535484433
+ExecutionTime = 1434.9 s  ClockTime = 1836 s
+
+Time = 270
+
+U0 initRes: 5.530346910990476e-07 finalRes: 5.109583554763587e-08 nIters: 5
+U1 initRes: 3.94930050155671e-06 finalRes: 2.850815934515614e-07 nIters: 5
+U2 initRes: 7.329662368217945e-06 finalRes: 5.364382932888258e-07 nIters: 5
+he initRes: 2.747056281130214e-06 finalRes: 2.382637058766149e-07 nIters: 5
+p initRes: 5.142706764192718e-06 finalRes: 4.511292968060965e-07 nIters: 4
+Time step continuity errors : sum local = 1.580121535969994e-07
+                                 global = -2.271550233238408e-08
+                             cumulative = -0.01355482909675601
+nuTilda initRes: 2.066534058321512e-07 finalRes: 1.184878331590694e-08 nIters: 3
+CD: 0.01997703116842606 average: 0.01997163200085012 std: 0.0001932498070830636 slope: 1.231751460038517e-05
+CL: 0.399197250534199 average: 0.3989400167342914 std: 0.0004689468513091929 slope: 2.977540669833709e-05
+CM: 0.07832008505665689 average: 0.07832503825356489
+yPlus min: 5.286501114158964 max: 90.82018728160081 mean: 46.66723845986611
+ExecutionTime = 1482.55 s  ClockTime = 1884 s
+
+Time = 280
+
+U0 initRes: 4.431213392519341e-07 finalRes: 4.060614999577385e-08 nIters: 5
+U1 initRes: 3.155257143542887e-06 finalRes: 2.269202189037285e-07 nIters: 5
+U2 initRes: 5.841052563204242e-06 finalRes: 4.267675432671422e-07 nIters: 5
+he initRes: 2.22547686239989e-06 finalRes: 1.921570015379693e-07 nIters: 5
+p initRes: 4.198186869188656e-06 finalRes: 3.697331661488991e-07 nIters: 5
+Time step continuity errors : sum local = 1.295289414139949e-07
+                                 global = -8.710940057682226e-08
+                             cumulative = -0.01355491620615659
+nuTilda initRes: 1.626827812360224e-07 finalRes: 8.936388059687119e-09 nIters: 3
+CD: 0.01997812973561969 average: 0.01997358040763899 std: 0.0001716043919740041 slope: 1.048096856685861e-05
+CL: 0.3992534500532321 average: 0.3990351683425155 std: 0.0004030719944786792 slope: 2.464273478838351e-05
+CM: 0.07831919641183377 average: 0.07832327760916906
+yPlus min: 5.287318496488481 max: 90.82233042841204 mean: 46.66807054062039
+ExecutionTime = 1533.19 s  ClockTime = 1934 s
+
+Time = 290
+
+U0 initRes: 3.52465996800331e-07 finalRes: 3.217930898926721e-08 nIters: 5
+U1 initRes: 2.507027829884221e-06 finalRes: 1.79697432675984e-07 nIters: 5
+U2 initRes: 4.624785995416325e-06 finalRes: 3.374304861358746e-07 nIters: 5
+he initRes: 1.767487449114648e-06 finalRes: 1.522388512848549e-07 nIters: 5
+p initRes: 3.328976658996632e-06 finalRes: 3.188985783567786e-07 nIters: 4
+Time step continuity errors : sum local = 1.117384624157336e-07
+                                 global = -5.908532339678125e-09
+                             cumulative = -0.01355492211468893
+nuTilda initRes: 1.25677892020339e-07 finalRes: 6.655055780262348e-09 nIters: 3
+CD: 0.01997895411349342 average: 0.01997523018543632 std: 0.0001453458320802511 slope: 8.529294937858872e-06
+CL: 0.399297661776739 average: 0.3991138277864649 std: 0.0003443228215288442 slope: 2.02924055748848e-05
+CM: 0.07831859619827009 average: 0.07832177098697148
+yPlus min: 5.287991898247034 max: 90.82404929823078 mean: 46.66870911462176
+ExecutionTime = 1581.79 s  ClockTime = 1983 s
+
+Time = 300
+
+U0 initRes: 2.788818459179545e-07 finalRes: 2.534627875378154e-08 nIters: 5
+U1 initRes: 1.980407722364131e-06 finalRes: 1.415233014874563e-07 nIters: 5
+U2 initRes: 3.638290677696544e-06 finalRes: 2.652939586139764e-07 nIters: 5
+he initRes: 1.399219699186617e-06 finalRes: 1.199753006588542e-07 nIters: 5
+p initRes: 2.599243965996154e-06 finalRes: 2.306073113038034e-07 nIters: 4
+Time step continuity errors : sum local = 8.08127684845502e-08
+                                 global = 2.136190321267574e-08
+                             cumulative = -0.01355490075278572
+nuTilda initRes: 9.535730218728348e-08 finalRes: 4.975959038865416e-09 nIters: 3
+CD: 0.01997956372783957 average: 0.01997656866948132 std: 0.0001197466612349948 slope: 6.769375166810093e-06
+CL: 0.3993323172215177 average: 0.399178507049723 std: 0.0002922016093799198 slope: 1.661807882070806e-05
+CM: 0.07831822478161904 average: 0.07832059191054933
+yPlus min: 5.288508967551976 max: 90.82542099065826 mean: 46.66920314946565
+ExecutionTime = 1633.07 s  ClockTime = 2035 s
+
+Time = 310
+
+U0 initRes: 2.193212006310685e-07 finalRes: 1.977982888528291e-08 nIters: 5
+U1 initRes: 1.550667306478262e-06 finalRes: 1.103588848956399e-07 nIters: 5
+U2 initRes: 2.836873403526895e-06 finalRes: 2.063740319077672e-07 nIters: 5
+he initRes: 1.107041209076135e-06 finalRes: 9.443349184658602e-08 nIters: 5
+p initRes: 2.055712911812986e-06 finalRes: 1.757273582962684e-07 nIters: 4
+Time step continuity errors : sum local = 6.158731184252957e-08
+                                 global = 1.144505126589659e-08
+                             cumulative = -0.01355488930773445
+nuTilda initRes: 7.141140132898649e-08 finalRes: 3.769621018936921e-09 nIters: 3
+CD: 0.01998000413517897 average: 0.01997762761158331 std: 9.720090163225602e-05 slope: 5.300042387811739e-06
+CL: 0.3993592179496461 average: 0.39923140354995 std: 0.0002464185109578531 slope: 1.35365770310909e-05
+CM: 0.07831801785027481 average: 0.0783197143934251
+yPlus min: 5.288886016256383 max: 90.8265058307617 mean: 46.66958924426063
+ExecutionTime = 1680.19 s  ClockTime = 2082 s
+
+Time = 320
+
+U0 initRes: 1.712674039769441e-07 finalRes: 1.536627165453029e-08 nIters: 5
+U1 initRes: 1.207499356537387e-06 finalRes: 8.574644194424347e-08 nIters: 5
+U2 initRes: 2.202793369605818e-06 finalRes: 1.602844980388188e-07 nIters: 5
+he initRes: 8.721322098733784e-07 finalRes: 7.376600166805723e-08 nIters: 5
+p initRes: 1.613944197922339e-06 finalRes: 1.355817933528378e-07 nIters: 4
+Time step continuity errors : sum local = 4.752130719443839e-08
+                                 global = 2.100148807222065e-08
+                             cumulative = -0.01355486830624638
+nuTilda initRes: 5.33646345233912e-08 finalRes: 2.899848200347302e-09 nIters: 3
+CD: 0.01998032709753959 average: 0.01997845602783955 std: 7.813221063400819e-05 slope: 4.112287426615272e-06
+CL: 0.3993800870448474 average: 0.3992744708350698 std: 0.0002065752829564246 slope: 1.097098125504772e-05
+CM: 0.07831790048537218 average: 0.07831907798000483
+yPlus min: 5.289171868347063 max: 90.82735918195394 mean: 46.66989329089751
+ExecutionTime = 1727.19 s  ClockTime = 2129 s
+
+Time = 330
+
+U0 initRes: 1.330897629046548e-07 finalRes: 1.188164320045998e-08 nIters: 5
+U1 initRes: 9.355374675575208e-07 finalRes: 6.627646808012116e-08 nIters: 5
+U2 initRes: 1.705748290856476e-06 finalRes: 1.239466034452482e-07 nIters: 5
+he initRes: 6.805659110876893e-07 finalRes: 5.735781537646887e-08 nIters: 5
+p initRes: 1.282304927857987e-06 finalRes: 1.142433212835566e-07 nIters: 5
+Time step continuity errors : sum local = 4.004471642576997e-08
+                                 global = -2.829776438462329e-08
+                             cumulative = -0.01355489660401076
+nuTilda initRes: 4.028443837746146e-08 finalRes: 2.262275701659021e-09 nIters: 3
+CD: 0.01998057198361554 average: 0.01997909980035086 std: 6.227356881138252e-05 slope: 3.167416641680083e-06
+CL: 0.3993962938881865 average: 0.3993093766285119 std: 0.0001722050747316781 slope: 8.850354139497182e-06
+CM: 0.07831781927829762 average: 0.0783186252786412
+yPlus min: 5.289380437068083 max: 90.82802644259417 mean: 46.67013369788453
+ExecutionTime = 1775.27 s  ClockTime = 2177 s
+
+Time = 340
+
+U0 initRes: 1.03242320598122e-07 finalRes: 9.23476920524559e-09 nIters: 5
+U1 initRes: 7.273398281715041e-07 finalRes: 5.159048305785414e-08 nIters: 5
+U2 initRes: 1.326538446968853e-06 finalRes: 9.653637296531071e-08 nIters: 5
+he initRes: 5.266652371781441e-07 finalRes: 4.430803929628089e-08 nIters: 5
+p initRes: 9.80994932288588e-07 finalRes: 7.24776853210606e-08 nIters: 4
+Time step continuity errors : sum local = 2.540622746709439e-08
+                                 global = 1.202943506921766e-08
+                             cumulative = -0.01355488457457569
+nuTilda initRes: 3.094924404569344e-08 finalRes: 1.784503169645089e-09 nIters: 3
+CD: 0.01998076579151551 average: 0.01997960014353572 std: 4.93675183561473e-05 slope: 2.431967576333073e-06
+CL: 0.3994089304941277 average: 0.3993375892743151 std: 0.0001428818981548111 slope: 7.113854706303658e-06
+CM: 0.07831775037909522 average: 0.07831830815399748
+yPlus min: 5.289540458478108 max: 90.8285471786447 mean: 46.67032379474506
+ExecutionTime = 1824.24 s  ClockTime = 2226 s
+
+Time = 350
+
+U0 initRes: 8.023538522192794e-08 finalRes: 7.181832701329475e-09 nIters: 5
+U1 initRes: 5.654413552854687e-07 finalRes: 4.008885297981745e-08 nIters: 5
+U2 initRes: 1.03292937158164e-06 finalRes: 7.512469174278979e-08 nIters: 5
+he initRes: 4.070760434077921e-07 finalRes: 3.434507395688422e-08 nIters: 5
+p initRes: 7.846014230782565e-07 finalRes: 6.504879874815226e-08 nIters: 5
+Time step continuity errors : sum local = 2.280302414739069e-08
+                                 global = -1.570933893987181e-08
+                             cumulative = -0.01355490028391463
+nuTilda initRes: 2.421124605167166e-08 finalRes: 1.419493942963331e-09 nIters: 3
+CD: 0.01998091907756903 average: 0.01997998821840158 std: 3.907875770286634e-05 slope: 1.870529692758339e-06
+CL: 0.3994187926268307 average: 0.3993603204763992 std: 0.0001181364619618263 slope: 5.704508068470638e-06
+CM: 0.07831768786861421 average: 0.07831808964022589
+yPlus min: 5.289663069740675 max: 90.82895233429615 mean: 46.67047405444943
+ExecutionTime = 1872.58 s  ClockTime = 2274 s
+
+Time = 360
+
+U0 initRes: 6.256625662761618e-08 finalRes: 5.625790851884633e-09 nIters: 5
+U1 initRes: 4.426132271696679e-07 finalRes: 3.145097149380367e-08 nIters: 5
+U2 initRes: 8.091924877683065e-07 finalRes: 5.894268524086967e-08 nIters: 5
+he initRes: 3.158280491303326e-07 finalRes: 2.670887633287554e-08 nIters: 5
+p initRes: 6.028150238374766e-07 finalRes: 4.745133829324273e-08 nIters: 4
+Time step continuity errors : sum local = 1.663465930868432e-08
+                                 global = 8.641234108926321e-09
+                             cumulative = -0.01355489164268052
+nuTilda initRes: 1.919888884883712e-08 finalRes: 1.134627662714551e-09 nIters: 3
+CD: 0.01998104466376112 average: 0.01998028970730716 std: 3.115564520274076e-05 slope: 1.452946250270022e-06
+CL: 0.3994265428797577 average: 0.3993786024224958 std: 9.749677389640788e-05 slope: 4.571063175660876e-06
+CM: 0.07831762850907231 average: 0.07831793991533838
+yPlus min: 5.289759814707393 max: 90.82926848366186 mean: 46.67059266341298
+ExecutionTime = 1920.26 s  ClockTime = 2322 s
+
+Time = 370
+
+U0 initRes: 4.898723266500578e-08 finalRes: 4.412067105256604e-09 nIters: 5
+U1 initRes: 3.468632921600267e-07 finalRes: 2.46541731344743e-08 nIters: 5
+U2 initRes: 6.348040660743201e-07 finalRes: 4.622879420178755e-08 nIters: 5
+he initRes: 2.464705493116761e-07 finalRes: 2.091096328958056e-08 nIters: 5
+p initRes: 4.84368442323091e-07 finalRes: 3.530573874932348e-08 nIters: 5
+Time step continuity errors : sum local = 1.23771604461521e-08
+                                 global = -7.816939129721233e-09
+                             cumulative = -0.01355489945961965
+nuTilda initRes: 1.535091056626363e-08 finalRes: 9.08306739004801e-10 nIters: 3
+CD: 0.01998114510084059 average: 0.01998052596745953 std: 2.518152239244586e-05 slope: 1.14573245560981e-06
+CL: 0.3994326331944471 average: 0.3993933003189158 std: 8.043912155852889e-05 slope: 3.665364818961668e-06
+CM: 0.07831757700941167 average: 0.0783178345292611
+yPlus min: 5.289836643995372 max: 90.82951535669896 mean: 46.67068618630606
+ExecutionTime = 1967.75 s  ClockTime = 2369 s
+
+Time = 380
+
+U0 initRes: 3.846243938938555e-08 finalRes: 3.477142987582331e-09 nIters: 5
+U1 initRes: 2.731292141518914e-07 finalRes: 1.944674075767996e-08 nIters: 5
+U2 initRes: 4.999458365538597e-07 finalRes: 3.64562669661279e-08 nIters: 5
+he initRes: 1.932578218067554e-07 finalRes: 1.642491413187917e-08 nIters: 5
+p initRes: 3.755520741216601e-07 finalRes: 2.931469147262955e-08 nIters: 4
+Time step continuity errors : sum local = 1.027708464299185e-08
+                                 global = 4.851586921285136e-09
+                             cumulative = -0.01355489460803273
+nuTilda initRes: 1.231928004369135e-08 finalRes: 7.253177784671966e-10 nIters: 3
+CD: 0.01998122637086031 average: 0.0199807126099468 std: 2.064669068890807e-05 slope: 9.172037212494468e-07
+CL: 0.3994374312144398 average: 0.3994051160957998 std: 6.638947550645235e-05 slope: 2.94305702331418e-06
+CM: 0.07831753114336826 average: 0.07831775689529519
+yPlus min: 5.289898221130638 max: 90.82970894190407 mean: 46.67075975805631
+ExecutionTime = 2014.62 s  ClockTime = 2416 s
+
+Time = 390
+
+U0 initRes: 3.027862371707228e-08 finalRes: 2.741584324398709e-09 nIters: 5
+U1 initRes: 2.152655925170417e-07 finalRes: 1.53340626709899e-08 nIters: 5
+U2 initRes: 3.941947894672297e-07 finalRes: 2.875635703630499e-08 nIters: 5
+he initRes: 1.519858373560036e-07 finalRes: 1.293615935017483e-08 nIters: 5
+p initRes: 2.999528054861732e-07 finalRes: 2.465225857628339e-08 nIters: 4
+Time step continuity errors : sum local = 8.642659841444549e-09
+                                 global = 4.032846031746678e-09
+                             cumulative = -0.0135548905751867
+nuTilda initRes: 9.891389990975489e-09 finalRes: 5.768255799418768e-10 nIters: 3
+CD: 0.01998129128043576 average: 0.01998086248575584 std: 1.719644310779875e-05 slope: 7.452561396952907e-07
+CL: 0.3994412145900155 average: 0.3994146335431652 std: 5.487956258220829e-05 slope: 2.368430757881418e-06
+CM: 0.07831749300184654 average: 0.07831769514802218
+yPlus min: 5.289948093008721 max: 90.82986089817514 mean: 46.67081752459185
+ExecutionTime = 2062.45 s  ClockTime = 2464 s
+
+Time = 400
+
+U0 initRes: 2.386850203141997e-08 finalRes: 2.163819880618915e-09 nIters: 5
+U1 initRes: 1.698145329108416e-07 finalRes: 1.209839460679329e-08 nIters: 5
+U2 initRes: 3.108406890177207e-07 finalRes: 2.26752213428578e-08 nIters: 5
+he initRes: 1.197091977776596e-07 finalRes: 1.021105776956247e-08 nIters: 5
+p initRes: 2.442848327387511e-07 finalRes: 2.352400099951086e-08 nIters: 4
+Time step continuity errors : sum local = 8.247205177575834e-09
+                                 global = 4.364919717032735e-09
+                             cumulative = -0.01355488621026698
+nuTilda initRes: 7.926372515758314e-09 finalRes: 4.566192442980613e-10 nIters: 3
+CD: 0.01998134359796132 average: 0.01998098392543579 std: 1.445886866863253e-05 slope: 6.109973023197601e-07
+CL: 0.3994442084074861 average: 0.3994223083628408 std: 4.543595774348397e-05 slope: 1.910169074337973e-06
+CM: 0.07831746128961198 average: 0.07831764318110504
+yPlus min: 5.289987988623239 max: 90.82998041667571 mean: 46.67086277808754
+ExecutionTime = 2127.5 s  ClockTime = 2529 s
+
+Time = 410
+
+U0 initRes: 1.883156902407062e-08 finalRes: 1.707229171004776e-09 nIters: 5
+U1 initRes: 1.340083472687378e-07 finalRes: 9.547540902374971e-09 nIters: 5
+U2 initRes: 2.452545676848557e-07 finalRes: 1.788885164690773e-08 nIters: 5
+he initRes: 9.440672210029991e-08 finalRes: 8.060315103194157e-09 nIters: 5
+p initRes: 1.956956863015326e-07 finalRes: 1.636013916521104e-08 nIters: 4
+Time step continuity errors : sum local = 5.735703188224991e-09
+                                 global = 2.279479895373836e-09
+                             cumulative = -0.01355488393078709
+nuTilda initRes: 6.330627509999346e-09 finalRes: 3.602196104595234e-10 nIters: 3
+CD: 0.01998138424628425 average: 0.01998108350822887 std: 1.2211122402744e-05 slope: 5.03010845243568e-07
+CL: 0.3994465606681956 average: 0.3994285128282479 std: 3.766664957989754e-05 slope: 1.54347188723575e-06
+CM: 0.07831743691949988 average: 0.07831759767405785
+yPlus min: 5.290019816635186 max: 90.83007462734562 mean: 46.67089820530005
+ExecutionTime = 2239.42 s  ClockTime = 2843 s
+
+Time = 420
+
+U0 initRes: 1.485549933557263e-08 finalRes: 1.346242520771647e-09 nIters: 5
+U1 initRes: 1.057039962315576e-07 finalRes: 7.528041922074474e-09 nIters: 5
+U2 initRes: 1.933202578440757e-07 finalRes: 1.409974269481977e-08 nIters: 5
+he initRes: 7.45004022060777e-08 finalRes: 6.36169778513061e-09 nIters: 5
+p initRes: 1.580260049189936e-07 finalRes: 1.189098732663628e-08 nIters: 4
+Time step continuity errors : sum local = 4.168873037028057e-09
+                                 global = 1.159461848180211e-09
+                             cumulative = -0.01355488277132524
+nuTilda initRes: 5.038828282442237e-09 finalRes: 2.836726803448277e-10 nIters: 3
+CD: 0.01998141627042302 average: 0.01998116532968608 std: 1.0321960184559e-05 slope: 4.143957601375901e-07
+CL: 0.3994484151119326 average: 0.3994335350414905 std: 3.126070074341179e-05 slope: 1.249139473472657e-06
+CM: 0.07831741795562303 average: 0.07831755776365426
+yPlus min: 5.290045210876415 max: 90.83014889497969 mean: 46.67092592902927
+ExecutionTime = 2343.71 s  ClockTime = 2948 s
+
+Time = 430
+
+U0 initRes: 1.17040993387543e-08 finalRes: 1.054001534452541e-09 nIters: 5
+U1 initRes: 8.273960650438095e-08 finalRes: 5.858324172560084e-09 nIters: 5
+U2 initRes: 1.51148148525503e-07 finalRes: 1.094150984657589e-08 nIters: 5
+he initRes: 5.880238476831563e-08 finalRes: 5.04652355820909e-09 nIters: 5
+p initRes: 1.303542397784876e-07 finalRes: 1.043615760832128e-08 nIters: 4
+Time step continuity errors : sum local = 3.658862874339869e-09
+                                 global = 6.830001971349851e-10
+                             cumulative = -0.01355488208832504
+nuTilda initRes: 4.00111262082622e-09 finalRes: 2.233789994658706e-10 nIters: 3
+CD: 0.01998144162389436 average: 0.01998123269297196 std: 8.709746017066811e-06 slope: 3.407509079218106e-07
+CL: 0.399449875462814 average: 0.399437606474715 std: 2.596242450002113e-05 slope: 1.012030571839301e-06
+CM: 0.07831740333313597 average: 0.07831752291901323
+yPlus min: 5.290064276114492 max: 90.83020727525569 mean: 46.6709476359914
+ExecutionTime = 2392.66 s  ClockTime = 2997 s
+
+Time = 440
+
+U0 initRes: 9.221081172448106e-09 finalRes: 8.341482724859178e-10 nIters: 5
+U1 initRes: 6.555051642711542e-08 finalRes: 4.66750110581082e-09 nIters: 5
+U2 initRes: 1.196890352474338e-07 finalRes: 8.734412666299318e-09 nIters: 5
+he initRes: 4.636983352455142e-08 finalRes: 3.946716224818125e-09 nIters: 5
+p initRes: 1.06778477903453e-07 finalRes: 7.87943044695109e-09 nIters: 4
+Time step continuity errors : sum local = 2.762487737914796e-09
+                                 global = 3.680574913924982e-10
+                             cumulative = -0.01355488172026755
+nuTilda initRes: 3.175720771968145e-09 finalRes: 1.762203632808192e-10 nIters: 3
+CD: 0.01998146106582888 average: 0.01998128815179061 std: 7.326702408934649e-06 slope: 2.794174015947104e-07
+CL: 0.3994510306498331 average: 0.3994409113968052 std: 2.156879221107342e-05 slope: 8.205149970173353e-07
+CM: 0.07831739265017451 average: 0.07831749285387468
+yPlus min: 5.29008115279751 max: 90.83025340119806 mean: 46.67096462038506
+ExecutionTime = 2441.37 s  ClockTime = 3045 s
+
+Time = 444
+Minimal residual 9.859094044715611e-08 satisfied the prescribed tolerance 1e-07
+
+CD: 0.01998146699825316 average: 0.01998130672628596 std: 6.708294727732131e-06 slope: 2.525918746269822e-07
+CL: 0.3994513887107767 average: 0.3994420101321207 std: 1.965809883879288e-05 slope: 7.388620836609663e-07
+CM: 0.07831738914654307 average: 0.07831748250960961
+End
+
+Printing Primal Residual Statistics.
+U Residual Norm2: (156.5026908492599 44.17181789477412 149.4508107262608)
+U Residual Mean: (0.02327601396670204 0.01259552259143115 0.01385345024049243)
+U Residual Max: (103.6689693112348 2.377502195013221 88.66963280615164)
+p Residual Norm2: 34.60176521046095
+p Residual Mean: 0.0003346291946107498
+p Residual Max: 25.54084768735656
+T Residual Norm2: 6760.925245699657
+T Residual Mean: 3.003054194135553
+T Residual Max: 559.1393488630908
+nuTilda Residual Norm2: 0.8552982766552296
+nuTilda Residual Mean: 4.588455693771767e-06
+nuTilda Residual Max: 0.7247309142439502
+phi Residual Norm2: 0.04602648617201224
+phi Residual Mean: 6.506651575727034e-07
+phi Residual Max: 0.02881441463943525
+Total Residual Norm2: 6764.620313093275
+ 
+ 
+DAFoamVSPVolume: reference volume for volume_val = 0.246898
+FindFeasibleDesign Iter:  0
+DesignVars:  [np.float64(5.4)]
+Constraints:  [0.39944201]
+Residual Norm:  0.0013949746696982623
+DAInputVolCoord. 
+Setting volume coordinates. 
+DAInputPatchVelocity. 
+Setting UMag = 104.1566128481528 AoA = 5.41 degs at 1(inout)
+Checking mesh quality for time = 444
+    Overall domain bounding box (-9.999999992979999 0 -10.0398565839) (10.9913140977 13.0445896095 10.0398567646)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (4.774627331374283e-17 1.307707707985957e-16 1.221305563416615e-16) OK.
+    Max cell openness = 6.131509874646547e-16 OK.
+    Max aspect ratio = 330.0573363189947 OK.
+    Minimum face area = 4.219993718890932e-08. Maximum face area = 0.7097139659054439.  Face area magnitudes OK.
+    Min volume = 2.443860593929595e-11. Max volume = 0.1795488840704927.  Total volume = 3110.844335078024.  Cell volumes OK.
+    Mesh non-orthogonality Max: 64.04207650493933 average: 9.751101888640953
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 1.753256046160208 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+Running Primal Solver 002
+Previous solution time 444 found and deleted.
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+U0 initRes: 1.86822298214954e-05 finalRes: 1.363020544575287e-06 nIters: 4
+U1 initRes: 4.586560747448934e-05 finalRes: 3.591671214480283e-06 nIters: 4
+U2 initRes: 0.0007170711125716027 finalRes: 5.203711020860342e-05 nIters: 5
+he initRes: 4.37414472569051e-05 finalRes: 2.861378399282616e-06 nIters: 4
+p initRes: 0.0009218821642446867 finalRes: 4.649655984958642e-05 nIters: 4
+Time step continuity errors : sum local = 1.63035341374655e-05
+                                 global = 7.108466823032265e-07
+                             cumulative = -0.01355417087358525
+nuTilda initRes: 1.82140533721017e-07 finalRes: 1.706542441815299e-08 nIters: 5
+CD: 0.02005247097429431 average: 0.02005247097429431 std: 0 slope: 0
+CL: 0.3994619446801337 average: 0.3994619446801337 std: 0 slope: 0
+CM: 0.07831627964886628 average: 0.07831627964886628
+yPlus min: 5.29002323928724 max: 90.83026646600408 mean: 46.67096803894783
+ExecutionTime = 2592.52 s  ClockTime = 3201 s
+
+Time = 10
+
+U0 initRes: 2.247730681314296e-05 finalRes: 1.472369947112447e-06 nIters: 6
+U1 initRes: 6.133746372248157e-05 finalRes: 4.243155026114258e-06 nIters: 6
+U2 initRes: 0.0005885613890154415 finalRes: 4.494075703147016e-05 nIters: 6
+he initRes: 0.0001735085224258181 finalRes: 1.211303002756993e-05 nIters: 6
+p initRes: 0.0004525901059913183 finalRes: 3.486238977134322e-05 nIters: 3
+Time step continuity errors : sum local = 1.22314003217011e-05
+                                 global = -2.329268570739916e-06
+                             cumulative = -0.01355650014215599
+nuTilda initRes: 3.534204884687873e-07 finalRes: 2.469406462623863e-08 nIters: 6
+CD: 0.02005771394500869 average: 0.02005707600052264 std: 3.472057209797204e-05 slope: 6.944114419594409e-05
+CL: 0.3995378577465747 average: 0.3995290765522098 std: 2.16386913282422e-05 slope: 4.327738265648439e-05
+CM: 0.07831675076767758 average: 0.07831670775850819
+yPlus min: 5.290796300066627 max: 90.83074748028666 mean: 46.67098596751428
+ExecutionTime = 2645.92 s  ClockTime = 3255 s
+
+Time = 20
+
+U0 initRes: 2.033265091627428e-05 finalRes: 1.366296865633209e-06 nIters: 6
+U1 initRes: 5.453458715800587e-05 finalRes: 3.764039637166605e-06 nIters: 6
+U2 initRes: 0.0004376871950570127 finalRes: 3.278041100696877e-05 nIters: 6
+he initRes: 0.0002220432008016066 finalRes: 1.448076596725065e-05 nIters: 6
+p initRes: 0.0001532646401186929 finalRes: 1.443745794227774e-05 nIters: 3
+Time step continuity errors : sum local = 5.066435699814494e-06
+                                 global = -6.074904200442969e-08
+                             cumulative = -0.01355656089119799
+nuTilda initRes: 4.679255573590958e-07 finalRes: 4.153336849124965e-08 nIters: 5
+CD: 0.02007243829716501 average: 0.02007146643973205 std: 8.661989642026657e-05 slope: 7.468164459926806e-05
+CL: 0.3998981004255688 average: 0.3998365246169403 std: 0.0001207800821720717 slope: 0.0001077475639090727
+CM: 0.07834472650752256 average: 0.07833657712138166
+yPlus min: 5.292579369733315 max: 90.8351707245272 mean: 46.67109031438459
+ExecutionTime = 2695.76 s  ClockTime = 3305 s
+
+Time = 30
+
+U0 initRes: 1.583176365638864e-05 finalRes: 1.489063142827904e-06 nIters: 5
+U1 initRes: 4.101303055545349e-05 finalRes: 3.967121164598321e-06 nIters: 5
+U2 initRes: 0.0002600753305197 finalRes: 2.558907549755253e-05 nIters: 5
+he initRes: 0.0002083691805501524 finalRes: 1.898612114259403e-05 nIters: 5
+p initRes: 8.192741463320561e-05 finalRes: 7.225587982096518e-06 nIters: 4
+Time step continuity errors : sum local = 2.539752920973237e-06
+                                 global = 5.148526412252996e-07
+                             cumulative = -0.01355604603855677
+nuTilda initRes: 4.455646019362645e-07 finalRes: 3.076276893066994e-08 nIters: 5
+CD: 0.02005002469282177 average: 0.02005998446828512 std: 0.0002760037241941082 slope: -0.0001604946665661765
+CL: 0.4002441357096798 average: 0.4001901792255002 std: 0.0001221825364519791 slope: 7.133908460246761e-05
+CM: 0.07842737475491651 average: 0.07840582388419777
+yPlus min: 5.292593361627892 max: 90.84914107441489 mean: 46.67140133542978
+ExecutionTime = 2748.32 s  ClockTime = 3357 s
+
+Time = 40
+
+U0 initRes: 1.073660368175233e-05 finalRes: 9.10477564843861e-07 nIters: 5
+U1 initRes: 2.828185985942621e-05 finalRes: 2.520315562699938e-06 nIters: 5
+U2 initRes: 0.0001326970325159902 finalRes: 1.16036362001304e-05 nIters: 5
+he initRes: 0.0001552403257278352 finalRes: 1.245974213107967e-05 nIters: 5
+p initRes: 5.043301199951145e-05 finalRes: 3.011008449654145e-06 nIters: 4
+Time step continuity errors : sum local = 1.059630447760547e-06
+                                 global = 2.374503198903677e-07
+                             cumulative = -0.01355580858823688
+nuTilda initRes: 3.494237766977058e-07 finalRes: 2.16880879785839e-08 nIters: 5
+CD: 0.0200158835539427 average: 0.02002550772834973 std: 0.0003881774826282046 slope: -0.0001689537372464168
+CL: 0.4002338587431871 average: 0.4002544230053017 std: 1.966952578260133e-05 slope: -6.766672749090467e-06
+CM: 0.07847543426303222 average: 0.07846401422815077
+yPlus min: 5.290655938177491 max: 90.86577029367923 mean: 46.67217689710479
+ExecutionTime = 2797.61 s  ClockTime = 3407 s
+
+Time = 50
+
+U0 initRes: 6.396951537489072e-06 finalRes: 4.783448171924686e-07 nIters: 5
+U1 initRes: 1.806630544223529e-05 finalRes: 1.491042024860153e-06 nIters: 5
+U2 initRes: 6.054807315918628e-05 finalRes: 4.922574768327809e-06 nIters: 5
+he initRes: 9.735419954841509e-05 finalRes: 6.913283050160129e-06 nIters: 5
+p initRes: 2.982565036785754e-05 finalRes: 2.73214479777209e-06 nIters: 3
+Time step continuity errors : sum local = 9.616704606131494e-07
+                                 global = -7.565580240881894e-08
+                             cumulative = -0.01355588424403929
+nuTilda initRes: 3.345157824168729e-07 finalRes: 2.054924769626896e-08 nIters: 5
+CD: 0.02001119547279593 average: 0.02001153257145502 std: 8.919442305014781e-05 slope: -2.723587420607681e-05
+CL: 0.400179864091925 average: 0.4001991190391928 std: 4.165808774044073e-05 slope: -1.431491803194959e-05
+CM: 0.07847293026043967 average: 0.07847677054380132
+yPlus min: 5.290358169389081 max: 90.86949053204005 mean: 46.67315780709032
+ExecutionTime = 2845.66 s  ClockTime = 3455 s
+
+Time = 60
+
+U0 initRes: 3.20030164003257e-06 finalRes: 1.929266406085168e-07 nIters: 5
+U1 initRes: 9.570018349694566e-06 finalRes: 6.487979700360868e-07 nIters: 5
+U2 initRes: 2.658536536896629e-05 finalRes: 1.953530223797561e-06 nIters: 5
+he initRes: 5.323954734174452e-05 finalRes: 3.140367107153956e-06 nIters: 5
+p initRes: 2.118375654335051e-05 finalRes: 2.065297651186116e-06 nIters: 2
+Time step continuity errors : sum local = 7.270059212295009e-07
+                                 global = 8.962666097530853e-08
+                             cumulative = -0.01355579461737831
+nuTilda initRes: 3.432964904500448e-07 finalRes: 3.262179429622007e-08 nIters: 4
+CD: 0.02001712218702437 average: 0.02001378154160377 std: 9.749806532087388e-05 slope: 2.808037528921864e-05
+CL: 0.4001800562756883 average: 0.4001783642135961 std: 6.860770909104222e-06 slope: -1.106408077499553e-06
+CM: 0.07845853614792464 average: 0.07846608559872857
+yPlus min: 5.293194691943382 max: 90.86867666219526 mean: 46.67349073617238
+ExecutionTime = 2888.21 s  ClockTime = 3498 s
+
+Time = 70
+
+U0 initRes: 1.38401562079278e-06 finalRes: 1.21042889815782e-07 nIters: 4
+U1 initRes: 3.892010025645955e-06 finalRes: 3.554835319034913e-07 nIters: 4
+U2 initRes: 1.24922472060102e-05 finalRes: 7.845002182394038e-07 nIters: 5
+he initRes: 2.437787362466581e-05 finalRes: 2.084979376453753e-06 nIters: 4
+p initRes: 1.501986575193631e-05 finalRes: 9.167551715758583e-07 nIters: 3
+Time step continuity errors : sum local = 3.227498594290671e-07
+                                 global = -5.964968534302372e-08
+                             cumulative = -0.01355585426706366
+nuTilda initRes: 3.319006514285192e-07 finalRes: 2.218989225552854e-08 nIters: 4
+CD: 0.02002007712561189 average: 0.02001834423777372 std: 8.639647401660938e-05 slope: 2.088952805735479e-05
+CL: 0.4001807739996446 average: 0.4001813488289391 std: 5.049372574615771e-06 slope: 1.088978232885838e-06
+CM: 0.07845638563640162 average: 0.07845740914959211
+yPlus min: 5.293756739723981 max: 90.86793208886895 mean: 46.67330952695315
+ExecutionTime = 2929.98 s  ClockTime = 3539 s
+
+Time = 80
+
+U0 initRes: 5.895568861548972e-07 finalRes: 5.610073225123366e-08 nIters: 4
+U1 initRes: 2.011821806212319e-06 finalRes: 1.308955706614862e-07 nIters: 5
+U2 initRes: 6.47230863425906e-06 finalRes: 3.749746245882664e-07 nIters: 5
+he initRes: 1.081504904741632e-05 finalRes: 9.299793188147287e-07 nIters: 4
+p initRes: 8.768620931068156e-06 finalRes: 7.997413775622175e-07 nIters: 2
+Time step continuity errors : sum local = 2.815791983215689e-07
+                                 global = 8.554279003216207e-09
+                             cumulative = -0.01355584571278465
+nuTilda initRes: 3.22269559861879e-07 finalRes: 2.561108707399377e-08 nIters: 3
+CD: 0.02001891922107969 average: 0.02001968718791404 std: 1.818882151755783e-05 slope: 2.525213907936188e-07
+CL: 0.4001663161941349 average: 0.4001770698921587 std: 1.210671756507672e-05 slope: -2.521321467409087e-06
+CM: 0.07846195931810379 average: 0.07845797555418699
+yPlus min: 5.291843802569012 max: 90.86769791917732 mean: 46.67345545441374
+ExecutionTime = 2971.96 s  ClockTime = 3582 s
+
+Time = 90
+
+U0 initRes: 3.216433132542614e-07 finalRes: 3.043717355522088e-08 nIters: 4
+U1 initRes: 1.205046861812509e-06 finalRes: 7.492388555199227e-08 nIters: 5
+U2 initRes: 3.188925659559571e-06 finalRes: 3.073719688143868e-07 nIters: 4
+he initRes: 5.85378273736951e-06 finalRes: 5.206050681326532e-07 nIters: 4
+p initRes: 4.901620523792752e-06 finalRes: 4.739321751089215e-07 nIters: 2
+Time step continuity errors : sum local = 1.668712693507363e-07
+                                 global = -7.894690931438976e-09
+                             cumulative = -0.01355585360747559
+nuTilda initRes: 2.945446841012693e-07 finalRes: 2.054099349687233e-08 nIters: 3
+CD: 0.0200171265109095 average: 0.02001862136476638 std: 4.637431229586431e-05 slope: -8.909801028540696e-06
+CL: 0.4001513642813694 average: 0.4001642107196827 std: 2.115729725026997e-05 slope: -4.074822483171695e-06
+CM: 0.07846622093956179 average: 0.07846244384032158
+yPlus min: 5.290006213755739 max: 90.86768819558998 mean: 46.6741597103462
+ExecutionTime = 3011.93 s  ClockTime = 3622 s
+
+Time = 100
+
+U0 initRes: 2.012481381608568e-07 finalRes: 1.316252540530231e-08 nIters: 5
+U1 initRes: 8.77786094382107e-07 finalRes: 5.551447910664357e-08 nIters: 5
+U2 initRes: 2.118709078008339e-06 finalRes: 2.004730719377461e-07 nIters: 4
+he initRes: 3.237824065500309e-06 finalRes: 2.815257097010109e-07 nIters: 4
+p initRes: 3.32016439420991e-06 finalRes: 3.149144231103103e-07 nIters: 2
+Time step continuity errors : sum local = 1.10881388752394e-07
+                                 global = -5.602592220465774e-09
+                             cumulative = -0.01355585921006781
+nuTilda initRes: 2.260708873017177e-07 finalRes: 1.866274002095497e-08 nIters: 3
+CD: 0.0200165326750272 average: 0.02001727742587791 std: 3.873409514967022e-05 slope: -6.5204875001415e-06
+CL: 0.4001450599281007 average: 0.4001523104306394 std: 1.669734015907786e-05 slope: -2.836462095783646e-06
+CM: 0.0784665493751705 average: 0.07846564605162838
+yPlus min: 5.289094765026964 max: 90.86764055956436 mean: 46.67493363663111
+ExecutionTime = 3052.45 s  ClockTime = 3662 s
+
+Time = 110
+
+U0 initRes: 1.216278485777591e-07 finalRes: 1.164781939163307e-08 nIters: 4
+U1 initRes: 5.54205898309294e-07 finalRes: 3.467436755326125e-08 nIters: 5
+U2 initRes: 1.275686464368369e-06 finalRes: 1.244796687572356e-07 nIters: 4
+he initRes: 1.694431220421863e-06 finalRes: 1.582404266882519e-07 nIters: 4
+p initRes: 2.188349412618167e-06 finalRes: 1.376815961888314e-07 nIters: 3
+Time step continuity errors : sum local = 4.847702695390008e-08
+                                 global = 7.255830259896578e-10
+                             cumulative = -0.01355585848448478
+nuTilda initRes: 1.50574489379485e-07 finalRes: 1.248093429276346e-08 nIters: 3
+CD: 0.02001722367332311 average: 0.02001679385535369 std: 1.226869678439129e-05 slope: -5.492499545302742e-07
+CL: 0.4001487157101975 average: 0.4001471613135808 std: 6.074393288820285e-06 slope: -6.603690456043656e-07
+CM: 0.07846416899040165 average: 0.07846603363888355
+yPlus min: 5.289041298194214 max: 90.86751220518701 mean: 46.67536449898236
+ExecutionTime = 3092 s  ClockTime = 3702 s
+
+Time = 120
+
+U0 initRes: 1.02569327579815e-07 finalRes: 8.737220881281617e-09 nIters: 4
+U1 initRes: 2.667333442302342e-07 finalRes: 1.777622790753105e-08 nIters: 5
+U2 initRes: 8.345912016389177e-07 finalRes: 5.595444781461443e-08 nIters: 5
+he initRes: 9.763248755429784e-07 finalRes: 8.78385631223124e-08 nIters: 4
+p initRes: 1.275292508097076e-06 finalRes: 1.003803457190662e-07 nIters: 3
+Time step continuity errors : sum local = 3.534319475616007e-08
+                                 global = -3.70814912171538e-10
+                             cumulative = -0.01355585885529969
+nuTilda initRes: 1.038343621955106e-07 finalRes: 5.749131607834743e-09 nIters: 3
+CD: 0.02001824774860663 average: 0.02001718028438626 std: 2.668282247999518e-05 slope: 3.726818062159616e-06
+CL: 0.4001568187021316 average: 0.4001489386374177 std: 8.579089364285342e-06 slope: 1.140998434102696e-06
+CM: 0.07846174858018945 average: 0.07846452036139502
+yPlus min: 5.289486713940171 max: 90.86739122844956 mean: 46.6754854859746
+ExecutionTime = 3134.4 s  ClockTime = 3744 s
+
+Time = 130
+
+U0 initRes: 8.895370760723885e-08 finalRes: 6.507217986182957e-09 nIters: 5
+U1 initRes: 3.494477995695491e-07 finalRes: 2.996650622328196e-08 nIters: 5
+U2 initRes: 9.64589379546931e-07 finalRes: 6.829307447459789e-08 nIters: 5
+he initRes: 8.332624658463462e-07 finalRes: 6.661502095620396e-08 nIters: 4
+p initRes: 9.341120161208044e-07 finalRes: 7.131783109057748e-08 nIters: 3
+Time step continuity errors : sum local = 2.511059385254552e-08
+                                 global = -7.132739600860957e-12
+                             cumulative = -0.01355585886243243
+nuTilda initRes: 8.768536925590911e-08 finalRes: 8.447598256470911e-09 nIters: 2
+CD: 0.02001900677374741 average: 0.0200179496081523 std: 3.578701366563652e-05 slope: 4.764775525181916e-06
+CL: 0.400165456516979 average: 0.4001549387553101 std: 1.510098644603504e-05 slope: 2.006132589309998e-06
+CM: 0.07846032763457716 average: 0.0784625428067634
+yPlus min: 5.289935341006871 max: 90.86738086595741 mean: 46.67549522775015
+ExecutionTime = 3179.51 s  ClockTime = 3789 s
+
+Time = 140
+
+U0 initRes: 6.473560614587025e-08 finalRes: 5.925467933507403e-09 nIters: 5
+U1 initRes: 4.120883539830622e-07 finalRes: 3.306715482232857e-08 nIters: 5
+U2 initRes: 8.572980552698137e-07 finalRes: 6.124144486273155e-08 nIters: 5
+he initRes: 5.676020111841084e-07 finalRes: 3.49212111705964e-08 nIters: 5
+p initRes: 6.931178215266516e-07 finalRes: 5.412196538803574e-08 nIters: 3
+Time step continuity errors : sum local = 1.905628813139094e-08
+                                 global = -1.305495772887446e-10
+                             cumulative = -0.01355585899298201
+nuTilda initRes: 6.330546074492352e-08 finalRes: 2.932508965661968e-09 nIters: 3
+CD: 0.02001933494392587 average: 0.02001865327026231 std: 2.967059056242911e-05 slope: 3.602372861918225e-06
+CL: 0.4001720569464884 average: 0.4001621180825564 std: 1.662880525062696e-05 slope: 2.055448570012295e-06
+CM: 0.07845993098610221 average: 0.07846106072376736
+yPlus min: 5.290133804733705 max: 90.86747454502897 mean: 46.67551053017144
+ExecutionTime = 3222.99 s  ClockTime = 3833 s
+
+Time = 150
+
+U0 initRes: 4.931792545658783e-08 finalRes: 4.439717959537916e-09 nIters: 5
+U1 initRes: 3.352695587198768e-07 finalRes: 2.484403937785796e-08 nIters: 5
+U2 initRes: 5.99928984063776e-07 finalRes: 4.328020431817818e-08 nIters: 5
+he initRes: 3.934852189477242e-07 finalRes: 2.899377518769731e-08 nIters: 5
+p initRes: 4.459657610796619e-07 finalRes: 3.980253196095128e-08 nIters: 3
+Time step continuity errors : sum local = 1.40146239271885e-08
+                                 global = -3.539881625960959e-10
+                             cumulative = -0.01355585934697017
+nuTilda initRes: 3.339418940631704e-08 finalRes: 1.76412371419323e-09 nIters: 3
+CD: 0.02001941287423124 average: 0.0200191031215704 std: 1.753263038165932e-05 slope: 1.902593623214332e-06
+CL: 0.4001766110828162 average: 0.4001685517073598 std: 1.463990047738511e-05 slope: 1.678890467902168e-06
+CM: 0.07845996006639799 average: 0.07846028484780589
+yPlus min: 5.290215382810602 max: 90.86761575203153 mean: 46.6755442222827
+ExecutionTime = 3266.08 s  ClockTime = 3876 s
+
+Time = 160
+
+U0 initRes: 3.588303960057441e-08 finalRes: 2.901483760619729e-09 nIters: 5
+U1 initRes: 2.211083563535653e-07 finalRes: 1.543371515841745e-08 nIters: 5
+U2 initRes: 3.803113013312911e-07 finalRes: 2.781273353498903e-08 nIters: 5
+he initRes: 3.142977501195811e-07 finalRes: 2.153232505595842e-08 nIters: 5
+p initRes: 3.201342141618541e-07 finalRes: 2.988490215130376e-08 nIters: 3
+Time step continuity errors : sum local = 1.052272771712002e-08
+                                 global = -4.214887856672968e-10
+                             cumulative = -0.01355585976845896
+nuTilda initRes: 1.541116765976548e-08 finalRes: 8.625020278840938e-10 nIters: 3
+CD: 0.02001942728830965 average: 0.02001932058401588 std: 7.552283333593049e-06 slope: 7.198233787209276e-07
+CL: 0.4001798462161199 average: 0.4001735852655505 std: 1.159210164170077e-05 slope: 1.241928439104836e-06
+CM: 0.07846001129585928 average: 0.07846001560185878
+yPlus min: 5.290281976700726 max: 90.86775197682924 mean: 46.67557463773927
+ExecutionTime = 3308.96 s  ClockTime = 3919 s
+
+Time = 170
+
+U0 initRes: 2.312793658571987e-08 finalRes: 1.828340959706573e-09 nIters: 5
+U1 initRes: 1.421780931108986e-07 finalRes: 9.635768488115739e-09 nIters: 5
+U2 initRes: 2.561222176449194e-07 finalRes: 1.858911738194578e-08 nIters: 5
+he initRes: 1.93631169420826e-07 finalRes: 1.229754958641955e-08 nIters: 5
+p initRes: 2.492685394085261e-07 finalRes: 2.283580720356948e-08 nIters: 3
+Time step continuity errors : sum local = 8.040770330163793e-09
+                                 global = -3.993130701119648e-10
+                             cumulative = -0.01355586016777203
+nuTilda initRes: 7.97177029269625e-09 finalRes: 4.307239189046153e-10 nIters: 3
+CD: 0.02001944085014007 average: 0.02001940272642555 std: 2.437717813653583e-06 slope: 2.120087909840332e-07
+CL: 0.4001821988201117 average: 0.4001773134508346 std: 9.017655236451956e-06 slope: 9.092769312571173e-07
+CM: 0.07846002532442381 average: 0.07845997885086803
+yPlus min: 5.290347979744065 max: 90.86785982489934 mean: 46.67559121283793
+ExecutionTime = 3355.14 s  ClockTime = 3965 s
+
+Time = 180
+
+U0 initRes: 1.507201320405349e-08 finalRes: 1.232366849924096e-09 nIters: 5
+U1 initRes: 9.938396416372813e-08 finalRes: 6.743090040005676e-09 nIters: 5
+U2 initRes: 1.854714227204924e-07 finalRes: 1.301754783928739e-08 nIters: 5
+he initRes: 9.997713331151659e-08 finalRes: 6.480759917739829e-09 nIters: 5
+p initRes: 1.882701397892032e-07 finalRes: 1.698872866661292e-08 nIters: 3
+Time step continuity errors : sum local = 5.981960936012718e-09
+                                 global = -2.631334565024945e-10
+                             cumulative = -0.01355586043090548
+nuTilda initRes: 5.064995275815522e-09 finalRes: 3.355266612026025e-10 nIters: 3
+CD: 0.0200194464195111 average: 0.02001942917661435 std: 8.224223287751335e-07 slope: 7.593227583485501e-08
+CL: 0.4001838164237037 average: 0.4001800525845589 std: 7.082816890081722e-06 slope: 6.739713812797951e-07
+CM: 0.07846005788927196 average: 0.07846000538578782
+yPlus min: 5.290389634839405 max: 90.86793868258664 mean: 46.67559936299585
+ExecutionTime = 3398.88 s  ClockTime = 4009 s
+
+Time = 190
+
+U0 initRes: 1.068493925374309e-08 finalRes: 8.597004873153594e-10 nIters: 5
+U1 initRes: 7.141959126533434e-08 finalRes: 4.835411797186882e-09 nIters: 5
+U2 initRes: 1.291815652838475e-07 finalRes: 8.849190099564777e-09 nIters: 5
+he initRes: 5.897073205956287e-08 finalRes: 4.318644349257494e-09 nIters: 5
+p initRes: 1.419272739318719e-07 finalRes: 1.214702480258742e-08 nIters: 3
+Time step continuity errors : sum local = 4.277144501040772e-09
+                                 global = -1.22330877131424e-10
+                             cumulative = -0.01355586055323636
+nuTilda initRes: 3.106025360829264e-09 finalRes: 2.587762793386855e-10 nIters: 3
+CD: 0.02001943711036153 average: 0.02001943742180852 std: 4.633423538547597e-07 slope: 3.680765570691777e-08
+CL: 0.4001848413801561 average: 0.4001820570332283 std: 5.498582835311888e-06 slope: 4.934393760349184e-07
+CM: 0.0784601207602682 average: 0.07846003959815616
+yPlus min: 5.290402633922919 max: 90.86799532261074 mean: 46.67560650532638
+ExecutionTime = 3443.12 s  ClockTime = 4053 s
+
+Time = 200
+
+U0 initRes: 7.57117468774045e-09 finalRes: 5.684551172834403e-10 nIters: 5
+U1 initRes: 4.790842989952827e-08 finalRes: 3.175546352556127e-09 nIters: 5
+U2 initRes: 8.180939265841836e-08 finalRes: 5.600691462484873e-09 nIters: 5
+he initRes: 4.423649988889425e-08 finalRes: 3.241233269479918e-09 nIters: 5
+p initRes: 1.054778539293364e-07 finalRes: 8.336912509456316e-09 nIters: 3
+Time step continuity errors : sum local = 2.935559942549151e-09
+                                 global = -4.463200995758945e-11
+                             cumulative = -0.01355586059786837
+nuTilda initRes: 1.930596663083633e-09 finalRes: 1.53860173186994e-10 nIters: 3
+CD: 0.020019420960397 average: 0.02001943800240775 std: 3.592468582659145e-07 slope: -6.024624163568757e-09
+CL: 0.4001854679151493 average: 0.4001834963957512 std: 4.104404113304875e-06 slope: 3.472621609662313e-07
+CM: 0.07846018583185804 average: 0.07846007740719269
+yPlus min: 5.290398315099153 max: 90.8680355648499 mean: 46.67561541136013
+ExecutionTime = 3486.88 s  ClockTime = 4097 s
+
+Time = 202
+Minimal residual 9.91897581962018e-08 satisfied the prescribed tolerance 1e-07
+
+CD: 0.0200194179570054 average: 0.02001943746843746 std: 4.194489784192031e-07 slope: -2.132316752475911e-08
+CL: 0.4001855623350543 average: 0.4001837608756852 std: 3.615077598369124e-06 slope: 3.052824529338073e-07
+CM: 0.07846019655814029 average: 0.07846008638474013
+End
+
+Printing Primal Residual Statistics.
+U Residual Norm2: (143.7145776984205 41.88668179758309 140.1447979933457)
+U Residual Mean: (0.01491250007980783 0.01161567201137552 0.01031452281629062)
+U Residual Max: (101.7555286431379 2.860265990060725 86.66536727541825)
+p Residual Norm2: 32.6686974313858
+p Residual Mean: 0.0002875912227345432
+p Residual Max: 25.2284010340552
+T Residual Norm2: 10984.50815262404
+T Residual Mean: 3.65549800048063
+T Residual Max: 558.2276983129611
+nuTilda Residual Norm2: 0.8201362721651292
+nuTilda Residual Mean: 4.586883100504099e-06
+nuTilda Residual Max: 0.7322993012542822
+phi Residual Norm2: 0.04347607717325563
+phi Residual Mean: 5.108812505685569e-07
+phi Residual Max: 0.02845059510604286
+Total Residual Norm2: 10986.4705985011
+ 
+ 
+DAInputVolCoord. 
+Setting volume coordinates. 
+DAInputPatchVelocity. 
+Setting UMag = 104.1566128481528 AoA = 5.407522606114258 degs at 1(inout)
+Checking mesh quality for time = 202
+    Overall domain bounding box (-9.999999992979999 0 -10.0398565839) (10.9913140977 13.0445896095 10.0398567646)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (4.774627331374283e-17 1.307707707985957e-16 1.221305563416615e-16) OK.
+    Max cell openness = 6.131509874646547e-16 OK.
+    Max aspect ratio = 330.0573363189947 OK.
+    Minimum face area = 4.219993718890932e-08. Maximum face area = 0.7097139659054439.  Face area magnitudes OK.
+    Min volume = 2.443860593929595e-11. Max volume = 0.1795488840704927.  Total volume = 3110.844335078024.  Cell volumes OK.
+    Mesh non-orthogonality Max: 64.04207650493933 average: 9.751101888640953
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 1.753256046160208 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+Running Primal Solver 003
+Previous solution time 202 found and deleted.
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+U0 initRes: 3.244574856848622e-06 finalRes: 2.74836141233109e-07 nIters: 4
+U1 initRes: 7.429215246389442e-06 finalRes: 6.563701791029648e-07 nIters: 4
+U2 initRes: 0.0002158598446218572 finalRes: 2.112273527720057e-05 nIters: 4
+he initRes: 6.457772955149813e-06 finalRes: 4.759153132031432e-07 nIters: 4
+p initRes: 0.0002482449012040415 finalRes: 1.135018743879187e-05 nIters: 4
+Time step continuity errors : sum local = 3.996238320786617e-06
+                                 global = 2.464203632041607e-07
+                             cumulative = -0.01355561417750516
+nuTilda initRes: 5.653422421253481e-08 finalRes: 4.451554223348522e-09 nIters: 5
+CD: 0.02000180174658725 average: 0.02000180174658725 std: 0 slope: 0
+CL: 0.4001830957062238 average: 0.4001830957062238 std: 0 slope: 0
+CM: 0.07846046810688106 average: 0.07846046810688106
+yPlus min: 5.290410913703496 max: 90.86803276484787 mean: 46.67561647645852
+ExecutionTime = 3598.89 s  ClockTime = 4214 s
+
+Time = 10
+
+U0 initRes: 5.500060153389166e-06 finalRes: 3.64210090554377e-07 nIters: 6
+U1 initRes: 1.538936067171023e-05 finalRes: 1.059124299440618e-06 nIters: 6
+U2 initRes: 0.0001482057334935416 finalRes: 1.126264081598316e-05 nIters: 6
+he initRes: 4.548299976757057e-05 finalRes: 3.157425919696663e-06 nIters: 6
+p initRes: 0.000106495031091032 finalRes: 8.38931777693221e-06 nIters: 3
+Time step continuity errors : sum local = 2.953609557761652e-06
+                                 global = 3.530249050966613e-07
+                             cumulative = -0.01355526115260007
+nuTilda initRes: 6.056005252270023e-08 finalRes: 5.998920823560158e-09 nIters: 5
+CD: 0.0200005782631351 average: 0.02000068822358255 std: 6.656048812342704e-06 slope: -1.33120976246854e-05
+CL: 0.4001654050571315 average: 0.4001671162739904 std: 4.486970724396385e-06 slope: -8.973941448792766e-06
+CM: 0.07846034992658907 average: 0.07846040566305471
+yPlus min: 5.290208364767481 max: 90.86795878709457 mean: 46.67562555818566
+ExecutionTime = 3639.76 s  ClockTime = 4255 s
+
+Time = 20
+
+U0 initRes: 5.085729286810443e-06 finalRes: 3.414579951698544e-07 nIters: 6
+U1 initRes: 1.372642491097099e-05 finalRes: 9.454694975520258e-07 nIters: 6
+U2 initRes: 0.0001103081917158277 finalRes: 8.27858384575705e-06 nIters: 6
+he initRes: 5.645410219358234e-05 finalRes: 3.685901689181552e-06 nIters: 6
+p initRes: 3.623915948567572e-05 finalRes: 3.389009039002067e-06 nIters: 3
+Time step continuity errors : sum local = 1.193074869612076e-06
+                                 global = -7.312135710135941e-08
+                             cumulative = -0.01355533427395717
+nuTilda initRes: 8.7775660624914e-08 finalRes: 7.000466562134807e-09 nIters: 5
+CD: 0.01999688525382087 average: 0.01999712734934447 std: 1.930038279550832e-05 slope: -1.664192320944821e-05
+CL: 0.4000771982901496 average: 0.4000920606511263 std: 2.87785220968026e-05 slope: -2.567230732034389e-05
+CM: 0.0784535464097349 average: 0.07845559747331637
+yPlus min: 5.289796714012352 max: 90.86691479236856 mean: 46.67561340329245
+ExecutionTime = 3685.32 s  ClockTime = 4301 s
+
+Time = 30
+
+U0 initRes: 3.982016638290577e-06 finalRes: 3.749338845039923e-07 nIters: 5
+U1 initRes: 1.031424345503058e-05 finalRes: 9.95173872006741e-07 nIters: 5
+U2 initRes: 6.534256312290773e-05 finalRes: 6.437833197284358e-06 nIters: 5
+he initRes: 5.255893669617183e-05 finalRes: 4.796984734702355e-06 nIters: 5
+p initRes: 1.905062145146015e-05 finalRes: 1.800849803734575e-06 nIters: 4
+Time step continuity errors : sum local = 6.337149877424395e-07
+                                 global = -1.193123440575151e-07
+                             cumulative = -0.01355545358630122
+nuTilda initRes: 8.843242474652755e-08 finalRes: 8.661620640868239e-09 nIters: 4
+CD: 0.02000235018356422 average: 0.01999989168311556 std: 6.668022431300698e-05 slope: 3.87518729897378e-05
+CL: 0.3999906754614533 average: 0.4000039580974936 std: 3.169097193344102e-05 slope: -1.847422772461193e-05
+CM: 0.07843307454738196 average: 0.078438440914123
+yPlus min: 5.289748519851781 max: 90.86348071619622 mean: 46.67554858386935
+ExecutionTime = 3733.42 s  ClockTime = 4349 s
+
+Time = 40
+
+U0 initRes: 2.70318703543176e-06 finalRes: 2.289717223271634e-07 nIters: 5
+U1 initRes: 7.104447840513238e-06 finalRes: 6.320537026723893e-07 nIters: 5
+U2 initRes: 3.331292077493141e-05 finalRes: 2.915362153231591e-06 nIters: 5
+he initRes: 3.917874939813529e-05 finalRes: 3.148728631395732e-06 nIters: 5
+p initRes: 1.189258117806761e-05 finalRes: 7.496560823845365e-07 nIters: 4
+Time step continuity errors : sum local = 2.637232726231296e-07
+                                 global = -5.626651836005843e-08
+                             cumulative = -0.01355550985281958
+nuTilda initRes: 7.391394754022819e-08 finalRes: 7.098171045871264e-09 nIters: 4
+CD: 0.02001090097113293 average: 0.02000849205951818 std: 9.708298078241874e-05 slope: 4.2256543531062e-05
+CL: 0.3999933188277534 average: 0.3999880422816611 std: 5.111432292389931e-06 slope: 1.751534944411e-06
+CM: 0.07842104936899169 average: 0.07842391048589151
+yPlus min: 5.290258731365746 max: 90.85934382185296 mean: 46.6753617308944
+ExecutionTime = 3779.57 s  ClockTime = 4395 s
+
+Time = 50
+
+U0 initRes: 1.611672497917042e-06 finalRes: 1.203969528317418e-07 nIters: 5
+U1 initRes: 4.551002699573821e-06 finalRes: 3.761455410370451e-07 nIters: 5
+U2 initRes: 1.525336735155211e-05 finalRes: 1.241027947925925e-06 nIters: 5
+he initRes: 2.451459409658708e-05 finalRes: 1.737400226710394e-06 nIters: 5
+p initRes: 6.894452334910988e-06 finalRes: 6.887216360538948e-07 nIters: 2
+Time step continuity errors : sum local = 2.42276257034152e-07
+                                 global = -6.29910204452999e-09
+                             cumulative = -0.01355551615192163
+nuTilda initRes: 7.658528737322388e-08 finalRes: 4.569834926581466e-09 nIters: 5
+CD: 0.02001208037419695 average: 0.02001199840529213 std: 2.238169527498114e-05 slope: 6.849923106608115e-06
+CL: 0.4000069222051672 average: 0.4000022246038816 std: 1.078617111818907e-05 slope: 3.713906780990479e-06
+CM: 0.07842159458026066 average: 0.07842069970298468
+yPlus min: 5.290327165120723 max: 90.8584262918361 mean: 46.67512012361244
+ExecutionTime = 3822.24 s  ClockTime = 4438 s
+
+Time = 60
+
+U0 initRes: 8.021949722086521e-07 finalRes: 4.824902909231167e-08 nIters: 5
+U1 initRes: 2.386959047488419e-06 finalRes: 1.617904694186164e-07 nIters: 5
+U2 initRes: 6.647087309139785e-06 finalRes: 4.884165674350462e-07 nIters: 5
+he initRes: 1.335427711061429e-05 finalRes: 7.840904031039339e-07 nIters: 5
+p initRes: 5.110823193433545e-06 finalRes: 4.031429437183583e-07 nIters: 3
+Time step continuity errors : sum local = 1.418138755376235e-07
+                                 global = 3.267566062239782e-08
+                             cumulative = -0.01355548347626101
+nuTilda initRes: 8.226488003781249e-08 finalRes: 7.844428389256252e-09 nIters: 4
+CD: 0.02001055121953284 average: 0.02001143160716274 std: 2.420141057507684e-05 slope: -6.970833482207158e-06
+CL: 0.4000071806105172 average: 0.4000076217281891 std: 1.853117586517614e-06 slope: 3.384997751215589e-07
+CM: 0.07842536581886772 average: 0.07842337229278035
+yPlus min: 5.289616717440632 max: 90.85863844002085 mean: 46.67504013446483
+ExecutionTime = 3863.15 s  ClockTime = 4479 s
+
+Time = 70
+
+U0 initRes: 3.456468153354688e-07 finalRes: 3.013536379904924e-08 nIters: 4
+U1 initRes: 9.706644375268337e-07 finalRes: 8.874060025382793e-08 nIters: 4
+U2 initRes: 3.119646258800397e-06 finalRes: 1.960131466916472e-07 nIters: 5
+he initRes: 6.085487415845049e-06 finalRes: 5.192277887297975e-07 nIters: 4
+p initRes: 3.698575423687043e-06 finalRes: 2.130388818450164e-07 nIters: 3
+Time step continuity errors : sum local = 7.493832253938355e-08
+                                 global = 1.368122282404651e-08
+                             cumulative = -0.01355546979503818
+nuTilda initRes: 8.274551438091535e-08 finalRes: 5.595026912091504e-09 nIters: 4
+CD: 0.02000985409739721 average: 0.02001029574578019 std: 2.147341015505076e-05 slope: -5.200811350663735e-06
+CL: 0.400007175775434 average: 0.4000070316484904 std: 1.106015916483659e-06 slope: -2.276173548720025e-07
+CM: 0.07842581248414887 average: 0.07842553951010721
+yPlus min: 5.289482746739142 max: 90.85883203599474 mean: 46.67509030018707
+ExecutionTime = 3902.29 s  ClockTime = 4518 s
+
+Time = 80
+
+U0 initRes: 1.469025763934157e-07 finalRes: 1.398386368645104e-08 nIters: 4
+U1 initRes: 5.038759630303006e-07 finalRes: 3.287335906084926e-08 nIters: 5
+U2 initRes: 1.618303290648034e-06 finalRes: 9.393772123918731e-08 nIters: 5
+he initRes: 2.697681926004548e-06 finalRes: 2.314427256494411e-07 nIters: 4
+p initRes: 2.177952024418497e-06 finalRes: 1.901301555616435e-07 nIters: 2
+Time step continuity errors : sum local = 6.687857535826442e-08
+                                 global = -1.923469687882578e-09
+                             cumulative = -0.01355547171850787
+nuTilda initRes: 8.096127511979445e-08 finalRes: 6.423489958343786e-09 nIters: 3
+CD: 0.0200101537277479 average: 0.02000996142882825 std: 4.646787510198597e-06 slope: -6.152685663311189e-08
+CL: 0.4000109880596412 average: 0.4000082216393171 std: 3.172665648310826e-06 slope: 6.60986759428014e-07
+CM: 0.07842440167936421 average: 0.0784254042386973
+yPlus min: 5.289990985335979 max: 90.85889530451215 mean: 46.67505874214497
+ExecutionTime = 3941.43 s  ClockTime = 4557 s
+
+Time = 90
+
+U0 initRes: 8.067551180938925e-08 finalRes: 7.662536103711606e-09 nIters: 4
+U1 initRes: 3.037523239931022e-07 finalRes: 1.887013484071281e-08 nIters: 5
+U2 initRes: 8.025930584694116e-07 finalRes: 7.743859517248612e-08 nIters: 4
+he initRes: 1.458682435398812e-06 finalRes: 1.294562493944953e-07 nIters: 4
+p initRes: 1.243882085157349e-06 finalRes: 1.23868549482616e-07 nIters: 2
+Time step continuity errors : sum local = 4.357060095406576e-08
+                                 global = 1.887084161706897e-09
+                             cumulative = -0.01355546983142371
+nuTilda initRes: 7.405095285090545e-08 finalRes: 5.123369499480754e-09 nIters: 3
+CD: 0.02001061017162131 average: 0.02001023197622166 std: 1.168827710535665e-05 slope: 2.243920293895566e-06
+CL: 0.4000148866422641 average: 0.4000115593401281 std: 5.466427774609654e-06 slope: 1.052897863497784e-06
+CM: 0.078423320724892 average: 0.07842427515342625
+yPlus min: 5.29043310239185 max: 90.85890147325506 mean: 46.67488549206216
+ExecutionTime = 3983.42 s  ClockTime = 4599 s
+
+Time = 100
+
+U0 initRes: 5.105026464974053e-08 finalRes: 3.371776877490176e-09 nIters: 5
+U1 initRes: 2.248418995117424e-07 finalRes: 1.431759734884876e-08 nIters: 5
+U2 initRes: 5.387966018167683e-07 finalRes: 5.123568959599522e-08 nIters: 4
+he initRes: 8.094754843711061e-07 finalRes: 7.046817429123451e-08 nIters: 4
+p initRes: 8.507260042037895e-07 finalRes: 8.146579199136268e-08 nIters: 2
+Time step continuity errors : sum local = 2.865549654588381e-08
+                                 global = 1.411039592574592e-09
+                             cumulative = -0.01355546842038411
+nuTilda initRes: 5.686955560869866e-08 finalRes: 4.666552637686863e-09 nIters: 3
+CD: 0.02001076302232089 average: 0.02001057292243825 std: 9.880516774482727e-06 slope: 1.665268528642795e-06
+CL: 0.4000165812208858 average: 0.4000146533645775 std: 4.38102948742813e-06 slope: 7.450539498623803e-07
+CM: 0.07842323019645586 average: 0.07842346517785999
+yPlus min: 5.290658849882261 max: 90.85891664373818 mean: 46.67469323555707
+ExecutionTime = 4026.37 s  ClockTime = 4642 s
+
+Time = 110
+
+U0 initRes: 3.08105447841025e-08 finalRes: 2.986563522259296e-09 nIters: 4
+U1 initRes: 1.442689326192303e-07 finalRes: 9.140254012643539e-09 nIters: 5
+U2 initRes: 3.261034275174483e-07 finalRes: 3.196922466624252e-08 nIters: 4
+he initRes: 4.264340078330949e-07 finalRes: 4.001717533890934e-08 nIters: 4
+p initRes: 5.66867257483059e-07 finalRes: 5.61360974919669e-08 nIters: 2
+Time step continuity errors : sum local = 1.974591513383967e-08
+                                 global = 4.021480935322395e-10
+                             cumulative = -0.01355546801823602
+nuTilda initRes: 3.772872284992875e-08 finalRes: 3.116909018852634e-09 nIters: 3
+CD: 0.02001060085602237 average: 0.02001069865267601 std: 3.131503332062515e-06 slope: 1.632287646398211e-07
+CL: 0.4000158446498538 average: 0.4000160575388161 std: 1.6616606659734e-06 slope: 1.948604799822409e-07
+CM: 0.07842379862696441 average: 0.07842336031263709
+yPlus min: 5.290669169521564 max: 90.85895190022553 mean: 46.6745865755535
+ExecutionTime = 4066.57 s  ClockTime = 4682 s
+
+Time = 120
+
+U0 initRes: 2.554079725602917e-08 finalRes: 2.145812180423259e-09 nIters: 4
+U1 initRes: 6.732383751259855e-08 finalRes: 4.378035941690531e-09 nIters: 5
+U2 initRes: 2.072029520478616e-07 finalRes: 1.378993540022757e-08 nIters: 5
+he initRes: 2.468167948283586e-07 finalRes: 2.240685452434643e-08 nIters: 4
+p initRes: 3.364456590308354e-07 finalRes: 2.643269075716851e-08 nIters: 3
+Time step continuity errors : sum local = 9.297708776561366e-09
+                                 global = 5.654994312108954e-11
+                             cumulative = -0.01355546796168608
+nuTilda initRes: 2.589237522685095e-08 finalRes: 1.4341761030034e-09 nIters: 3
+CD: 0.02001033874679871 average: 0.02001060419902568 std: 6.617577032112118e-06 slope: -9.231205775876948e-07
+CL: 0.4000138331011445 average: 0.400015700397703 std: 2.009697729683742e-06 slope: -2.625498972484812e-07
+CM: 0.07842442541968808 average: 0.0784237380759228
+yPlus min: 5.290563372168867 max: 90.8589851130186 mean: 46.67455739120066
+ExecutionTime = 4108.28 s  ClockTime = 4724 s
+
+Time = 130
+
+U0 initRes: 2.213511546787416e-08 finalRes: 1.598314695293047e-09 nIters: 5
+U1 initRes: 8.511840569708004e-08 finalRes: 7.302715890120169e-09 nIters: 5
+U2 initRes: 2.375752390114069e-07 finalRes: 1.678919740795703e-08 nIters: 5
+he initRes: 2.089517581441857e-07 finalRes: 1.662709252547848e-08 nIters: 4
+p initRes: 2.524353715045732e-07 finalRes: 2.249635812095014e-08 nIters: 3
+Time step continuity errors : sum local = 7.913110632050799e-09
+                                 global = 9.527178026553059e-11
+                             cumulative = -0.0135554678664143
+nuTilda initRes: 2.188358333146867e-08 finalRes: 2.10942820302477e-09 nIters: 2
+CD: 0.020010148734604 average: 0.02001041317930825 std: 8.946075110967436e-06 slope: -1.191097786752083e-06
+CL: 0.4000117186309808 average: 0.4000142717445577 std: 3.647875120098143e-06 slope: -4.843923925415981e-07
+CM: 0.07842478686032728 average: 0.07842423272449055
+yPlus min: 5.290446967052917 max: 90.85899041843008 mean: 46.67455577444789
+ExecutionTime = 4153.04 s  ClockTime = 4769 s
+
+Time = 140
+
+U0 initRes: 1.599999064175845e-08 finalRes: 1.455590905908586e-09 nIters: 5
+U1 initRes: 1.008387931600106e-07 finalRes: 8.109456652249696e-09 nIters: 5
+U2 initRes: 2.107392356308589e-07 finalRes: 1.503695795471981e-08 nIters: 5
+he initRes: 1.419397743265708e-07 finalRes: 1.408935977932915e-08 nIters: 4
+p initRes: 1.910029847421168e-07 finalRes: 1.777494878616043e-08 nIters: 3
+Time step continuity errors : sum local = 6.252347245885619e-09
+                                 global = 2.897127198657309e-11
+                             cumulative = -0.01355546783744302
+nuTilda initRes: 1.584875863656808e-08 finalRes: 7.34375243160347e-10 nIters: 3
+CD: 0.02001006728166711 average: 0.02001023782893841 std: 7.399631050105295e-06 slope: -8.984576046015684e-07
+CL: 0.4000101105902787 average: 0.4000125326491796 std: 4.044321729254156e-06 slope: -4.999271704250487e-07
+CM: 0.07842488500817396 average: 0.07842460275154484
+yPlus min: 5.290399364947093 max: 90.85896897859612 mean: 46.67455237738789
+ExecutionTime = 4197.42 s  ClockTime = 4813 s
+
+Time = 150
+
+U0 initRes: 1.210971039129322e-08 finalRes: 1.087647167453504e-09 nIters: 5
+U1 initRes: 8.201064628806588e-08 finalRes: 6.083938171540084e-09 nIters: 5
+U2 initRes: 1.468161160486572e-07 finalRes: 1.059193830081698e-08 nIters: 5
+he initRes: 9.779555824468128e-08 finalRes: 7.185174355419801e-09 nIters: 5
+p initRes: 1.263021171213468e-07 finalRes: 1.248123347303706e-08 nIters: 3
+Time step continuity errors : sum local = 4.390241368117628e-09
+                                 global = -1.695452906152679e-11
+                             cumulative = -0.01355546785439755
+nuTilda initRes: 8.418050762191842e-09 finalRes: 4.446271848719134e-10 nIters: 3
+CD: 0.02001004832274895 average: 0.02001012549035964 std: 4.368224607264694e-06 slope: -4.736659024961779e-07
+CL: 0.4000090063877948 average: 0.4000109664583367 std: 3.566210720099355e-06 slope: -4.089150633197268e-07
+CM: 0.07842487696440154 average: 0.07842479707688604
+yPlus min: 5.290380006939438 max: 90.85893512313906 mean: 46.67454438621923
+ExecutionTime = 4241.53 s  ClockTime = 4857 s
+
+Time = 158
+Minimal residual 9.816053130909134e-08 satisfied the prescribed tolerance 1e-07
+
+CD: 0.0200100456475422 average: 0.0200100802309529 std: 2.109808560066892e-06 slope: -2.020167664231183e-07
+CL: 0.400008360440216 average: 0.400009989377759 std: 2.919756718505558e-06 slope: -3.127670294738613e-07
+CM: 0.07842486561030915 average: 0.07842485527419896
+End
+
+Printing Primal Residual Statistics.
+U Residual Norm2: (144.5579262340177 17.63988942656663 141.6879598535623)
+U Residual Mean: (0.01471851062132148 0.006144394370358595 0.009971789183545651)
+U Residual Max: (102.6235111144961 1.541882295416144 87.45934317747015)
+p Residual Norm2: 33.24323475732888
+p Residual Mean: 0.0002924101178342901
+p Residual Max: 25.42008849630013
+T Residual Norm2: 20047.81875660055
+T Residual Mean: 6.163908124395032
+T Residual Max: 636.7387736243794
+nuTilda Residual Norm2: 0.8316419542467873
+nuTilda Residual Mean: 4.209951852140806e-06
+nuTilda Residual Max: 0.7339739920282495
+phi Residual Norm2: 0.04422266574893317
+phi Residual Mean: 5.070262252956838e-07
+phi Residual Max: 0.02866814922860652
+Total Residual Norm2: 20048.87593710554
+ 
+ 
+FindFeasibleDesign Iter:  1
+DesignVars:  [np.float64(5.407522606114258)]
+Constraints:  [0.40000999]
+Residual Norm:  2.4973444397446976e-05
+FindFeasibleDesign Converged! 
+DAInputVolCoord. 
+Setting volume coordinates. 
+DAInputPatchVelocity. 
+Setting UMag = 104.1566128481528 AoA = 5.407522606114258 degs at 1(inout)
+Checking mesh quality for time = 158
+    Overall domain bounding box (-9.999999992979999 0 -10.0398565839) (10.9913140977 13.0445896095 10.0398567646)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (4.774627331374283e-17 1.307707707985957e-16 1.221305563416615e-16) OK.
+    Max cell openness = 6.131509874646547e-16 OK.
+    Max aspect ratio = 330.0573363189947 OK.
+    Minimum face area = 4.219993718890932e-08. Maximum face area = 0.7097139659054439.  Face area magnitudes OK.
+    Min volume = 2.443860593929595e-11. Max volume = 0.1795488840704927.  Total volume = 3110.844335078024.  Cell volumes OK.
+    Mesh non-orthogonality Max: 64.04207650493933 average: 9.751101888640953
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 1.753256046160208 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+Running Primal Solver 004
+Previous solution time 158 found and deleted.
+No finite volume options present
+
+Starting time loop
+
+Time = 1
+
+U0 initRes: 9.13289223672608e-09 finalRes: 7.422367521889448e-10 nIters: 5
+U1 initRes: 5.637942476579457e-08 finalRes: 3.954472730290203e-09 nIters: 5
+U2 initRes: 9.684213391218719e-08 finalRes: 7.07932790383157e-09 nIters: 5
+he initRes: 8.516004892125191e-08 finalRes: 5.78319972186242e-09 nIters: 5
+p initRes: 1.337699956843372e-07 finalRes: 9.843830262647104e-09 nIters: 4
+Time step continuity errors : sum local = 3.462550791759227e-09
+                                 global = -7.841079901352582e-10
+                             cumulative = -0.01355546863850554
+nuTilda initRes: 4.354049278135889e-09 finalRes: 2.392339350115575e-10 nIters: 3
+CD: 0.02001002523533909 average: 0.02001002523533909 std: 0 slope: 0
+CL: 0.4000081934461386 average: 0.4000081934461386 std: 0 slope: 0
+CM: 0.07842488057764252 average: 0.07842488057764252
+yPlus min: 5.290369651777757 max: 90.85891612969814 mean: 46.67453617785718
+ExecutionTime = 4384.13 s  ClockTime = 5005 s
+
+Time = 10
+
+U0 initRes: 6.213870866065783e-09 finalRes: 4.926728695752159e-10 nIters: 5
+U1 initRes: 3.760067766734831e-08 finalRes: 2.556812999264869e-09 nIters: 5
+U2 initRes: 6.689824321516441e-08 finalRes: 4.86396335191884e-09 nIters: 5
+he initRes: 5.237484644931818e-08 finalRes: 3.732321424423167e-09 nIters: 5
+p initRes: 9.477994947611506e-08 finalRes: 8.77438789504303e-09 nIters: 3
+Time step continuity errors : sum local = 3.086359471349204e-09
+                                 global = -9.885855803755676e-11
+                             cumulative = -0.0135554687373641
+nuTilda initRes: 2.360805619544994e-09 finalRes: 1.261507383644396e-10 nIters: 3
+CD: 0.02001003937803967 average: 0.02001003950384223 std: 1.847472526253455e-08 slope: -3.694945052506909e-08
+CL: 0.4000077298548776 average: 0.4000077610775833 std: 7.777342979035785e-08 slope: -1.555468595807157e-07
+CM: 0.07842486678817617 average: 0.07842486795564182
+yPlus min: 5.290343857466192 max: 90.85888133820046 mean: 46.67453376042852
+ExecutionTime = 4424.16 s  ClockTime = 5045 s
+
+Time = 20
+
+U0 initRes: 3.992883345697813e-09 finalRes: 3.201209725827559e-10 nIters: 5
+U1 initRes: 2.585206331417275e-08 finalRes: 1.751413179710738e-09 nIters: 5
+U2 initRes: 4.840005646946404e-08 finalRes: 3.444318736029506e-09 nIters: 5
+he initRes: 3.03900654793006e-08 finalRes: 2.740345863381866e-09 nIters: 4
+p initRes: 7.223881816349936e-08 finalRes: 5.431211257331098e-09 nIters: 3
+Time step continuity errors : sum local = 1.91040516936176e-09
+                                 global = -1.032467070385238e-10
+                             cumulative = -0.01355546884061081
+nuTilda initRes: 1.535777548552532e-09 finalRes: 9.443735201947749e-11 nIters: 3
+CD: 0.02001003988952191 average: 0.02001004032018874 std: 5.542320665640424e-08 slope: -4.612245799853569e-08
+CL: 0.4000073143379108 average: 0.4000073719715236 std: 1.229221848776605e-07 slope: -1.098503979228412e-07
+CM: 0.07842485562695756 average: 0.07842485803654783
+yPlus min: 5.290336753258337 max: 90.85885966239979 mean: 46.6745317435593
+ExecutionTime = 4468.18 s  ClockTime = 5089 s
+
+Time = 30
+
+U0 initRes: 2.769542203681942e-09 finalRes: 2.227534706653058e-10 nIters: 5
+U1 initRes: 1.841310241728681e-08 finalRes: 1.24862176069113e-09 nIters: 5
+U2 initRes: 3.387926005608415e-08 finalRes: 2.329961682019369e-09 nIters: 5
+he initRes: 1.690825838884976e-08 finalRes: 1.573383685219328e-09 nIters: 4
+p initRes: 5.475351364384109e-08 finalRes: 3.805931029588192e-09 nIters: 3
+Time step continuity errors : sum local = 1.338707416916072e-09
+                                 global = -8.452311711185711e-11
+                             cumulative = -0.01355546892513393
+nuTilda initRes: 1.01591325096783e-09 finalRes: 7.696401029838823e-11 nIters: 3
+CD: 0.02001004262294119 average: 0.0200100422126497 std: 1.850255297865135e-08 slope: -1.166844496471753e-09
+CL: 0.4000070501014181 average: 0.400007108289681 std: 1.133336017215653e-07 slope: -6.621803496642708e-08
+CM: 0.07842483993712446 average: 0.07842484480996405
+yPlus min: 5.290334181866191 max: 90.8588449904687 mean: 46.67453021003735
+ExecutionTime = 4511.19 s  ClockTime = 5132 s
+
+Time = 40
+
+U0 initRes: 1.965951221438746e-09 finalRes: 1.490178489190041e-10 nIters: 5
+U1 initRes: 1.249079278420263e-08 finalRes: 8.308512530524467e-10 nIters: 5
+U2 initRes: 2.168412737047515e-08 finalRes: 1.479013458895566e-09 nIters: 5
+he initRes: 1.035625366918067e-08 finalRes: 8.392422306654851e-10 nIters: 5
+p initRes: 4.263728774888424e-08 finalRes: 2.543100580476722e-09 nIters: 3
+Time step continuity errors : sum local = 8.945592687459549e-10
+                                 global = -3.450075904005098e-11
+                             cumulative = -0.01355546895963469
+nuTilda initRes: 6.794710449111235e-10 finalRes: 4.987950382406461e-11 nIters: 3
+CD: 0.02001004684580818 average: 0.02001004566140012 std: 4.821776914214469e-08 slope: 2.026243920801247e-08
+CL: 0.4000068878018397 average: 0.400006938686604 std: 9.157330659781278e-08 slope: -3.988382036678198e-08
+CM: 0.07842482299849735 average: 0.07842482912889678
+yPlus min: 5.290334987125982 max: 90.8588345347051 mean: 46.67452820417407
+ExecutionTime = 4558.76 s  ClockTime = 5180 s
+
+Time = 50
+
+U0 initRes: 1.32085689842399e-09 finalRes: 9.307891759586428e-11 nIters: 5
+U1 initRes: 7.763280813588326e-09 finalRes: 5.047478781751103e-10 nIters: 5
+U2 initRes: 1.299118032011908e-08 finalRes: 9.023596810115351e-10 nIters: 5
+he initRes: 8.308728268455391e-09 finalRes: 5.874645120025703e-10 nIters: 5
+p initRes: 3.486226708284295e-08 finalRes: 3.375694734213012e-09 nIters: 2
+Time step continuity errors : sum local = 1.187387901360291e-09
+                                 global = -1.441022998581818e-11
+                             cumulative = -0.01355546897404492
+nuTilda initRes: 6.094313082064371e-10 finalRes: 3.333837376192781e-11 nIters: 3
+CD: 0.02001005160534 average: 0.02001004926804598 std: 6.329699637212477e-08 slope: 2.055904153592064e-08
+CL: 0.4000067847643931 average: 0.4000068297031593 std: 7.529332613552672e-08 slope: -2.61257389289357e-08
+CM: 0.07842481092938769 average: 0.07842481621188288
+yPlus min: 5.290337087001063 max: 90.85882738160871 mean: 46.67452586789768
+ExecutionTime = 4601.48 s  ClockTime = 5222 s
+
+Time = 60
+
+U0 initRes: 8.292628323159875e-10 finalRes: 5.822860946154473e-11 nIters: 5
+U1 initRes: 4.652576641391394e-09 finalRes: 3.008067026839924e-10 nIters: 5
+U2 initRes: 8.20218069266638e-09 finalRes: 5.841372495928176e-10 nIters: 5
+he initRes: 5.836703484873081e-09 finalRes: 3.60796422343597e-10 nIters: 5
+p initRes: 2.993461565890069e-08 finalRes: 1.769323143057349e-09 nIters: 3
+Time step continuity errors : sum local = 6.223532147258165e-10
+                                 global = 7.734607900344892e-12
+                             cumulative = -0.01355546896631031
+nuTilda initRes: 5.765447006315643e-10 finalRes: 3.112696256409152e-11 nIters: 3
+CD: 0.02001005152620801 average: 0.02001005145567954 std: 4.166208047457785e-08 slope: 8.619086061609428e-09
+CL: 0.4000067103919669 average: 0.4000067516732106 std: 6.565285725715613e-08 slope: -1.89481163132225e-08
+CM: 0.07842480617418129 average: 0.07842480872363711
+yPlus min: 5.290338730206211 max: 90.85882262833415 mean: 46.67452364638164
+ExecutionTime = 4645.51 s  ClockTime = 5266 s
+
+Time = 70
+
+U0 initRes: 5.360910073675981e-10 finalRes: 4.307543561762862e-11 nIters: 5
+U1 initRes: 3.243791305870134e-09 finalRes: 2.252512155934681e-10 nIters: 5
+U2 initRes: 6.373716932123121e-09 finalRes: 4.685529934524308e-10 nIters: 5
+he initRes: 3.186330135846952e-09 finalRes: 2.104709679641081e-10 nIters: 5
+p initRes: 2.646427920147263e-08 finalRes: 2.532038577424131e-09 nIters: 2
+Time step continuity errors : sum local = 8.906582573196273e-10
+                                 global = -2.461814199947006e-11
+                             cumulative = -0.01355546899092845
+nuTilda initRes: 4.719372951333177e-10 finalRes: 2.961600926641334e-11 nIters: 3
+CD: 0.02001005206965169 average: 0.02001005196326681 std: 2.429820326445559e-08 slope: -1.673314807867245e-09
+CL: 0.400006645814984 average: 0.4000066883599449 std: 6.707265148333409e-08 slope: -1.659659876471365e-08
+CM: 0.07842480612881542 average: 0.0784248063588245
+yPlus min: 5.290339055540973 max: 90.85881946978948 mean: 46.67452179614973
+ExecutionTime = 4688.69 s  ClockTime = 5310 s
+
+Time = 80
+
+U0 initRes: 4.117475272327508e-10 finalRes: 3.694722867216602e-11 nIters: 5
+U1 initRes: 2.66293417294126e-09 finalRes: 1.929357835559695e-10 nIters: 5
+U2 initRes: 5.560657958864023e-09 finalRes: 4.023584828156669e-10 nIters: 5
+he initRes: 1.867963186983157e-09 finalRes: 1.53367441888924e-10 nIters: 5
+p initRes: 2.430093536862397e-08 finalRes: 1.448073248503665e-09 nIters: 3
+Time step continuity errors : sum local = 5.093419698511021e-10
+                                 global = -1.926538835880432e-11
+                             cumulative = -0.01355546901019384
+nuTilda initRes: 3.979685839538047e-10 finalRes: 2.532747303140033e-11 nIters: 3
+CD: 0.02001004944340754 average: 0.0200100510907834 std: 3.273814244411381e-08 slope: -5.290222155745852e-09
+CL: 0.4000065882900115 average: 0.4000066323498691 std: 6.862355727314155e-08 slope: -1.485132612375021e-08
+CM: 0.07842480811229141 average: 0.07842480697474383
+yPlus min: 5.290339104374624 max: 90.85881730157608 mean: 46.67452037770978
+ExecutionTime = 4730.83 s  ClockTime = 5352 s
+
+Time = 90
+
+U0 initRes: 3.707589007535808e-10 finalRes: 3.536141746224452e-11 nIters: 5
+U1 initRes: 2.504037368398185e-09 finalRes: 1.892028231495922e-10 nIters: 5
+U2 initRes: 5.209355890589076e-09 finalRes: 3.863716674496176e-10 nIters: 5
+he initRes: 1.590370055031509e-09 finalRes: 1.381031679752506e-10 nIters: 5
+p initRes: 2.299096081261932e-08 finalRes: 2.197138459291978e-09 nIters: 2
+Time step continuity errors : sum local = 7.728560322402742e-10
+                                 global = -1.513707334046291e-11
+                             cumulative = -0.01355546902533091
+nuTilda initRes: 3.711255974431863e-10 finalRes: 2.139488467862737e-11 nIters: 3
+CD: 0.02001004893828127 average: 0.02001004979158042 std: 4.352606791693883e-08 slope: -7.456456312376846e-09
+CL: 0.4000065365369825 average: 0.4000065815187023 std: 6.974563605664133e-08 slope: -1.342137783707247e-08
+CM: 0.07842481014318642 average: 0.07842480875803909
+yPlus min: 5.290338478525944 max: 90.85881561980021 mean: 46.6745192815456
+ExecutionTime = 4771.87 s  ClockTime = 5393 s
+
+Time = 100
+
+U0 initRes: 3.306454325683311e-10 finalRes: 3.143936074576664e-11 nIters: 5
+U1 initRes: 2.228186171089529e-09 finalRes: 1.663348032489812e-10 nIters: 5
+U2 initRes: 4.558195814248617e-09 finalRes: 3.333962651643347e-10 nIters: 5
+he initRes: 1.454974878501091e-09 finalRes: 1.308824241144517e-10 nIters: 5
+p initRes: 2.134324462837212e-08 finalRes: 1.204918124537452e-09 nIters: 3
+Time step continuity errors : sum local = 4.238476032001161e-10
+                                 global = -2.993618940279134e-12
+                             cumulative = -0.01355546902832453
+nuTilda initRes: 3.733091323327278e-10 finalRes: 1.946833088861039e-11 nIters: 3
+CD: 0.02001004645859988 average: 0.02001004840272198 std: 4.523278355116376e-08 slope: -7.08759037253334e-09
+CL: 0.4000064928110814 average: 0.4000065365555724 std: 6.889235663742032e-08 slope: -1.192039533118893e-08
+CM: 0.07842481208120028 average: 0.07842481065330134
+yPlus min: 5.290338108446393 max: 90.85881423662664 mean: 46.67451864433497
+ExecutionTime = 4814 s  ClockTime = 5435 s
+
+Time = 101
+Minimal residual 2.198642621860984e-08 satisfied the prescribed tolerance 1e-07
+
+CD: 0.02001004713982717 average: 0.02001004825892159 std: 4.754937834624557e-08 slope: -7.507423478030826e-09
+CL: 0.4000064899733253 average: 0.4000065318836379 std: 6.712513373613736e-08 slope: -1.161355362563583e-08
+CM: 0.07842481297548554 average: 0.07842481084500155
+End
+
+Printing Primal Residual Statistics.
+U Residual Norm2: (139.8245650379253 2.598196818184461 141.1452555168047)
+U Residual Mean: (0.002641851490446022 0.0006108550768608494 0.002117736909379789)
+U Residual Max: (102.1672049329318 0.5572505270874046 87.44078955840087)
+p Residual Norm2: 33.46401964078834
+p Residual Mean: 0.000226219773006879
+p Residual Max: 25.54115166738636
+T Residual Norm2: 1475.358206303026
+T Residual Mean: 0.2237250072089602
+T Residual Max: 552.4191272790168
+nuTilda Residual Norm2: 0.498756433559483
+nuTilda Residual Mean: 2.189662459068517e-06
+nuTilda Residual Max: 0.4125089831294655
+phi Residual Norm2: 0.04430881509156543
+phi Residual Mean: 1.611373658793789e-07
+phi Residual Max: 0.02878049344871351
+Total Residual Norm2: 1489.053918099378
+ 
+ 
+Finalising parallel run
+Finalising parallel run
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : reconstructPar -withZero
+Date   : Oct 01 2026
+Time   : 22:47:53
+Host   : docker-desktop
+PID    : 4302
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+
+
+Reconstructing fields
+region=region0
+
+Time = 0
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        T
+        alphat
+        epsilon
+        k
+        nuTilda
+        nut
+        omega
+        p
+
+    Reconstructing volVectorFields
+
+        U
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+No FA fields
+
+Time = 101
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        T
+        alphat
+        betaFINuTilda
+        fvSourceEnergy
+        nuTilda
+        nut
+        p
+        rho
+
+    Reconstructing volVectorFields
+
+        U
+        forcePerS
+        fvSource
+
+    Reconstructing surfaceScalarFields
+
+        meshPhi
+        phi
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+No FA fields
+
+
+End
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2506                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _615aae61d7-20250627 OPENFOAM=2506 version=v2506
+Arch   : "LSB;label=32;scalar=64"
+Exec   : foamToVTK -latestTime -patches (wing sym) -fields (U p T rho nut forcePerS) -one-boundary
+Date   : Oct 01 2026
+Time   : 22:51:14
+Host   : docker-desktop
+PID    : 4311
+I/O    : uncollated
+Case   : /home/dafoamuser/mount/wing_cfd_0001
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Including patches (wing sym)
+
+Including fields (U p T rho nut forcePerS)
+
+Create time
+
+Overriding DebugSwitches according to controlDict
+    SolverPerformance 0;
+
+Initial memory 371812 kB
+Create mesh for time = 101
+
+VTK mesh topology: 23.9 s, 538092 kB
+Time: 101
+    volScalar    : T nut p rho
+    volVector    : U forcePerS
+    Internal  : "VTK/wing_cfd_0001_101/internal.vtu"
+    Boundaries: "VTK/wing_cfd_0001_101/boundary.vtp"
+Wrote in 25.96 s, 693064 kB
+
+End: 49.86 s, 727400 kB (peak)
+

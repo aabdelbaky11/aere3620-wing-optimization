@@ -1,0 +1,10 @@
+#!/bin/bash
+. /home/dafoamuser/dafoam/loadDAFoam.sh
+python script_workflow_helpers.py prepare-wing-case --airfoil-profiles naca0012 naca0012 --profile-fit-coeff-count 6 --solver-name DARhoSimpleFoam --turbulence-model SpalartAllmaras --case-dir . --cst-coeffs 0.1682915080473138 0.15600065841740193 0.1567973020370946 0.1376475474449218 0.14042624642881985 0.1411463888145998 -0.1682915080473138 -0.15620688903886806 -0.1564056537872372 -0.13794936766690943 -0.14032973232258295 -0.14114591186438002 0.1682915080473138 0.15600065841740193 0.1567973020370946 0.1376475474449218 0.14042624642881985 0.1411463888145998 -0.1682915080473138 -0.15620688903886806 -0.1564056537872372 -0.13794936766690943 -0.14032973232258295 -0.14114591186438002 > log_simulation.txt 2>&1
+mpirun -np 10 python script_run_dafoam.py -task=run_model -angle_of_attack=5.4 -fixed_lift_coeff=0.4 -mach_number=0.3 -solver_name=DARhoSimpleFoam -turbulence_model=SpalartAllmaras -max_flow_iters=1500 -reynolds_number=5000000.0 -primal_func_std_tol=1e-06 -primal_func_slope_tol=1e-06 -reference_area=3.0 -reference_length=0.9913140978290321 -moment_center 0.4166819803399121 0.0 -4.251319539336134e-07 -profile_fit_coeff_count=6 -cst_coeffs 0.1682915080473138 0.15600065841740193 0.1567973020370946 0.1376475474449218 0.14042624642881985 0.1411463888145998 -0.1682915080473138 -0.15620688903886806 -0.1564056537872372 -0.13794936766690943 -0.14032973232258295 -0.14114591186438002 0.1682915080473138 0.15600065841740193 0.1567973020370946 0.1376475474449218 0.14042624642881985 0.1411463888145998 -0.1682915080473138 -0.15620688903886806 -0.1564056537872372 -0.13794936766690943 -0.14032973232258295 -0.14114591186438002 -chords 1 1 -spans 3 -sweeps 0 -dihedrals 0 -twists 0 >> log_simulation.txt 2>&1
+reconstructPar -withZero >> log_simulation.txt 2>&1
+rm -rf processor* >> log_simulation.txt 2>&1
+rm -rf VTK >> log_simulation.txt 2>&1
+foamToVTK -latestTime -patches '(wing sym)' -fields '(U p T rho nut forcePerS)' -one-boundary >> log_simulation.txt 2>&1
+mv VTK/*/boundary.vtp VTK/ >> log_simulation.txt 2>&1 || true
+touch run_finished.pid

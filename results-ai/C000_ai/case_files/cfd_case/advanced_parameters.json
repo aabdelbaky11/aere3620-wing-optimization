@@ -1,0 +1,956 @@
+{
+  "skill-commons": {
+    "active_design_vars": {
+      "type": "list[str]",
+      "description": "Design variable groups that the optimizer is allowed to change. Supported values: cst_coeffs, twists, spans, sweeps, dihedrals, chords. Variables not listed here are still parameterized but frozen during optimization.",
+      "value": [
+        "cst_coeffs",
+        "twists"
+      ]
+    },
+    "adjoint_residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum adjoint residual drop in log10 orders.",
+      "value": 5.0
+    },
+    "adjoint_residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum adjoint residual drop in log10 orders.",
+      "value": 1.0
+    },
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "cst_coeffs": {
+      "type": "list[float]",
+      "description": "User-supplied wing CST coefficients, ordered section by section as `[upper..., lower...]`. `len(cst_coeffs)` must equal `2 * profile_fit_coeff_count * number_of_sections`. Set this only when the user explicitly provides or requests numeric CST values to parameterize the wing airfoil profiles. Leave it `null` (default) to use the named profiles defined by `airfoil_profiles`.",
+      "value": null
+    },
+    "cp_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": -2.0
+    },
+    "cp_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": 2.0
+    },
+    "plot_tail_fraction": {
+      "type": "float",
+      "description": "Fraction of the CD/CL/CM history to plot from the end. 1.0 plots the full history; 0.2 plots the final 20 percent.",
+      "value": 1.0
+    },
+    "farfield_scale": {
+      "type": "float",
+      "description": "Outer-boundary distance scale used to compute the volume-mesh march distance as `farfield_scale * root_chord`.",
+      "value": 20.0
+    },
+    "final_feasibility_pass": {
+      "type": "float",
+      "description": "Pass threshold for final feasibility.",
+      "value": 0.0001
+    },
+    "final_feasibility_warning": {
+      "type": "float",
+      "description": "Warning threshold for final feasibility.",
+      "value": 0.01
+    },
+    "flow_residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum flow residual drop in log10 orders.",
+      "value": 6.0
+    },
+    "flow_residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum flow residual drop in log10 orders.",
+      "value": 3.0
+    },
+    "force_std_pass": {
+      "type": "float",
+      "description": "Pass threshold for raw force-coefficient standard deviation.",
+      "value": 0.0001
+    },
+    "force_std_warning": {
+      "type": "float",
+      "description": "Warning threshold for raw force-coefficient standard deviation.",
+      "value": 0.05
+    },
+    "initialize_from": {
+      "type": "str",
+      "description": "Warm-start source case name. When set, the field staged into 0/ is kept instead of resetting to the uniform freestream.",
+      "value": null
+    },
+    "max_adj_iters": {
+      "type": "int",
+      "description": "Maximum GMRES iterations used by the DAFoam adjoint linear solve.",
+      "value": 1000
+    },
+    "max_flow_iters": {
+      "type": "int",
+      "description": "Maximum number of flow iterations written to the case controlDict endTime/writeInterval settings.",
+      "value": 10000
+    },
+    "neighbor_rings": {
+      "type": "int",
+      "description": "Neighbor-ring depth used by the diffusion mesh extrusion smoother.",
+      "value": 10
+    },
+    "nlbgs_abs_tol": {
+      "type": "float",
+      "description": "Absolute tolerance for the aerostructural OpenMDAO `NonlinearBlockGS` nonlinear block Gauss-Seidel solver.",
+      "value": 2.0
+    },
+    "nlbgs_rel_tol": {
+      "type": "float",
+      "description": "Relative tolerance for the aerostructural OpenMDAO `NonlinearBlockGS` nonlinear block Gauss-Seidel solver.",
+      "value": 1e-07
+    },
+    "objective_reduction_pct_pass": {
+      "type": "float",
+      "description": "Pass threshold for objective reduction in percent.",
+      "value": 5.0
+    },
+    "objective_reduction_pct_warning": {
+      "type": "float",
+      "description": "Warning threshold for objective reduction in percent.",
+      "value": 1.0
+    },
+    "pc_fill_level": {
+      "type": "int",
+      "description": "ILU fill level used by the DAFoam adjoint preconditioner.",
+      "value": 1
+    },
+    "pressure_profile_fractions": {
+      "type": "list[float]",
+      "description": "Spanwise fractions used for wing pressure-profile plots, for example `[0.2, 0.4, 0.8]`.",
+      "value": [
+        0.1,
+        0.5,
+        0.9
+      ]
+    },
+    "primal_func_slope_tol": {
+      "type": "float",
+      "description": "DAFoam primal function slope tolerance passed to script_run_dafoam.py.",
+      "value": 1e-06
+    },
+    "primal_func_std_tol": {
+      "type": "float",
+      "description": "DAFoam primal function standard deviation tolerance passed to script_run_dafoam.py.",
+      "value": 0.04
+    },
+    "primal_min_iters": {
+      "type": "int",
+      "description": "Minimum number of primal iterations. This also sets the `nSteps` window used by the primal function standard deviation convergence check.",
+      "value": 200
+    },
+    "profile_fit_coeff_count": {
+      "type": "int",
+      "description": "Number of coefficients used to fit each airfoil surface. For example, `4` fits 4 coefficients for the upper surface and 4 for the lower surface.",
+      "value": 6
+    },
+    "reference_area": {
+      "type": "float",
+      "description": "Reference area used to normalize aerodynamic forces. If null, the skill uses mean chord times span.",
+      "value": null
+    },
+    "reference_length": {
+      "type": "float",
+      "description": "Reference length used to normalize aerodynamic moments. If null, the skill uses the mean chord.",
+      "value": null
+    },
+    "solver_name": {
+      "type": "str",
+      "description": "Explicit solver override. Set this when the user asks for a specific solver. Supported values are `DASimpleFoam` (incompressible), `DARhoSimpleFoam` (compressible), `DARhoSimpleCFoam` (compressible/transonic), and `DAHisaFoam` (compressible/transonic/supersonic). Leave unset, `null`, or `none` to use the default Mach-based selection.",
+      "value": null
+    },
+    "transonic_mach_boundary": {
+      "type": "float",
+      "description": "Transonic Mach split used by the default solver selection when `solver_name` is not set.",
+      "value": 0.4
+    },
+    "turbulence_model": {
+      "type": "str",
+      "description": "OpenFOAM RANS turbulence model. Supported values are `SpalartAllmaras` (SA) and `kOmegaSST` (SST).",
+      "value": "SpalartAllmaras"
+    },
+    "u_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": -1.0
+    },
+    "u_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": 1.0
+    }
+  },
+  "generate-cfd-mesh": {
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "farfield_scale": {
+      "type": "float",
+      "description": "Outer-boundary distance scale used to compute the volume-mesh march distance as `farfield_scale * root_chord`.",
+      "value": 10
+    },
+    "neighbor_rings": {
+      "type": "int",
+      "description": "Neighbor-ring depth used by the diffusion mesh extrusion smoother.",
+      "value": 10
+    },
+    "blunt_te": {
+      "type": "float",
+      "description": "Trailing-edge bluntness as a fraction of chord.",
+      "value": 0.01
+    },
+    "surf_mesh_cells": {
+      "type": "int",
+      "description": "Surface tessellation cell count used for wing.xyz generation density. Set together with n_layers to override mesh_cells-based auto sizing.",
+      "value": null
+    },
+    "n_layers": {
+      "type": "int",
+      "description": "Number of extrusion layers for the volume mesh. Set together with surf_mesh_cells to override mesh_cells-based auto sizing.",
+      "value": null
+    },
+    "trailing_edge_shape": {
+      "type": "str",
+      "description": "Trailing-edge cap style for OpenVSP. ALWAYS use `rounded` unless user explicitly wants the `flat` TE.",
+      "value": "rounded"
+    },
+    "tip_cluster": {
+      "type": "float",
+      "description": "Spanwise clustering factor at the tip, where 0 is dense and 1 is uniform.",
+      "value": 0.1
+    },
+    "le_cluster": {
+      "type": "float",
+      "description": "Chordwise clustering factor at the leading edge, where 0 is dense and 1 is uniform.",
+      "value": 0.1
+    },
+    "te_cluster": {
+      "type": "float",
+      "description": "Chordwise clustering factor at the trailing edge, where 0 is dense and 1 is uniform.",
+      "value": 0.1
+    },
+    "d0": {
+      "type": "float",
+      "description": "First-layer height in meters. Use a negative value to let the wrapper use `y_plus`, `mach_number`, and `reynolds_number` instead.",
+      "value": -1.0
+    },
+    "diffusion_sweeps": {
+      "type": "int",
+      "description": "Number of smoothing sweeps per layer for diffusion mesh extrusion.",
+      "value": 10
+    },
+    "diffuse_start": {
+      "type": "float",
+      "description": "Smoothing onset distance in meters. If null, mesh wrapper default behavior is used.",
+      "value": null
+    },
+    "sym_axis": {
+      "type": "str",
+      "description": "Symmetry plane axis passed to the volume mesh generator.",
+      "value": "y"
+    },
+    "sym_decay": {
+      "type": "float",
+      "description": "Symmetry damping decay length. Use a negative value to let mdo_agent_mesh compute it automatically.",
+      "value": -1.0
+    },
+    "max_nonorthogonality_pass": {
+      "type": "float",
+      "description": "Pass threshold for maximum non-orthogonality.",
+      "value": 70.0
+    },
+    "max_nonorthogonality_warning": {
+      "type": "float",
+      "description": "Warning threshold for maximum non-orthogonality.",
+      "value": 80.0
+    },
+    "max_aspect_ratio_pass": {
+      "type": "float",
+      "description": "Pass threshold for maximum aspect ratio.",
+      "value": 1000.0
+    },
+    "max_aspect_ratio_warning": {
+      "type": "float",
+      "description": "Warning threshold for maximum aspect ratio.",
+      "value": 10000.0
+    },
+    "max_skewness_pass": {
+      "type": "float",
+      "description": "Pass threshold for maximum skewness.",
+      "value": 4.0
+    },
+    "max_skewness_warning": {
+      "type": "float",
+      "description": "Warning threshold for maximum skewness.",
+      "value": 6.0
+    }
+  },
+  "generate-fea-mesh": {
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    }
+  },
+  "run-cfd-simulation": {
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "cst_coeffs": {
+      "type": "list[float]",
+      "description": "User-supplied wing CST coefficients, ordered section by section as `[upper..., lower...]`. `len(cst_coeffs)` must equal `2 * profile_fit_coeff_count * number_of_sections`. Set this only when the user explicitly provides or requests numeric CST values to parameterize the wing airfoil profiles. Leave it `null` (default) to use the named profiles defined by `airfoil_profiles`.",
+      "value": null
+    },
+    "cp_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": -2.0
+    },
+    "cp_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": 2.0
+    },
+    "plot_tail_fraction": {
+      "type": "float",
+      "description": "Fraction of the CD/CL/CM history to plot from the end. 1.0 plots the full history; 0.2 plots the final 20 percent.",
+      "value": 1.0
+    },
+    "force_std_pass": {
+      "type": "float",
+      "description": "Pass threshold for raw force-coefficient standard deviation.",
+      "value": 0.0001
+    },
+    "force_std_warning": {
+      "type": "float",
+      "description": "Warning threshold for raw force-coefficient standard deviation.",
+      "value": 0.05
+    },
+    "initialize_from": {
+      "type": "str",
+      "description": "Warm-start source case name. When set, the field staged into 0/ is kept instead of resetting to the uniform freestream.",
+      "value": null
+    },
+    "max_flow_iters": {
+      "type": "int",
+      "description": "Maximum number of flow iterations written to the case controlDict endTime/writeInterval settings.",
+      "value": 1500
+    },
+    "pressure_profile_fractions": {
+      "type": "list[float]",
+      "description": "Spanwise fractions used for wing pressure-profile plots, for example `[0.2, 0.4, 0.8]`.",
+      "value": [
+        0.1,
+        0.5,
+        0.9
+      ]
+    },
+    "primal_func_slope_tol": {
+      "type": "float",
+      "description": "DAFoam primal function slope tolerance passed to script_run_dafoam.py.",
+      "value": 1e-06
+    },
+    "primal_func_std_tol": {
+      "type": "float",
+      "description": "DAFoam primal function standard deviation tolerance passed to script_run_dafoam.py.",
+      "value": 1e-06
+    },
+    "profile_fit_coeff_count": {
+      "type": "int",
+      "description": "Number of coefficients used to fit each airfoil surface. For example, `4` fits 4 coefficients for the upper surface and 4 for the lower surface.",
+      "value": 6
+    },
+    "reference_area": {
+      "type": "float",
+      "description": "Reference area used to normalize aerodynamic forces. If null, the skill uses mean chord times span.",
+      "value": null
+    },
+    "reference_length": {
+      "type": "float",
+      "description": "Reference length used to normalize aerodynamic moments. If null, the skill uses the mean chord.",
+      "value": null
+    },
+    "solver_name": {
+      "type": "str",
+      "description": "Explicit solver override. Set this when the user asks for a specific solver. Supported values are `DASimpleFoam` (incompressible), `DARhoSimpleFoam` (compressible), `DARhoSimpleCFoam` (compressible/transonic), and `DAHisaFoam` (compressible/transonic/supersonic). Leave unset, `null`, or `none` to use the default Mach-based selection.",
+      "value": null
+    },
+    "transonic_mach_boundary": {
+      "type": "float",
+      "description": "Transonic Mach split used by the default solver selection when `solver_name` is not set.",
+      "value": 0.4
+    },
+    "turbulence_model": {
+      "type": "str",
+      "description": "OpenFOAM RANS turbulence model. Supported values are `SpalartAllmaras` (SA) and `kOmegaSST` (SST).",
+      "value": "SpalartAllmaras"
+    },
+    "u_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": -1.0
+    },
+    "u_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": 1.0
+    },
+    "residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum residual drop in log10 orders.",
+      "value": 6.0
+    },
+    "residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum residual drop in log10 orders.",
+      "value": 3.0
+    }
+  },
+  "generate-aero-struct-mesh": {
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "farfield_scale": {
+      "type": "float",
+      "description": "Outer-boundary distance scale used to compute the volume-mesh march distance as `farfield_scale * root_chord`.",
+      "value": 10.0
+    },
+    "neighbor_rings": {
+      "type": "int",
+      "description": "Neighbor-ring depth used by the diffusion mesh extrusion smoother.",
+      "value": 5
+    }
+  },
+  "run-aero-optimization": {
+    "active_design_vars": {
+      "type": "list[str]",
+      "description": "Design variable groups that the optimizer is allowed to change. Supported values: cst_coeffs, twists, spans, sweeps, dihedrals, chords. Variables not listed here are still parameterized but frozen during optimization.",
+      "value": [
+        "cst_coeffs",
+        "twists"
+      ]
+    },
+    "adjoint_residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum adjoint residual drop in log10 orders.",
+      "value": 5.0
+    },
+    "adjoint_residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum adjoint residual drop in log10 orders.",
+      "value": 1.0
+    },
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "cst_coeffs": {
+      "type": "list[float]",
+      "description": "User-supplied wing CST coefficients, ordered section by section as `[upper..., lower...]`. `len(cst_coeffs)` must equal `2 * profile_fit_coeff_count * number_of_sections`. Set this only when the user explicitly provides or requests numeric CST values to parameterize the wing airfoil profiles. Leave it `null` (default) to use the named profiles defined by `airfoil_profiles`.",
+      "value": null
+    },
+    "cp_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": -2.0
+    },
+    "cp_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": 2.0
+    },
+    "final_feasibility_pass": {
+      "type": "float",
+      "description": "Pass threshold for final feasibility.",
+      "value": 0.0001
+    },
+    "final_feasibility_warning": {
+      "type": "float",
+      "description": "Warning threshold for final feasibility.",
+      "value": 0.01
+    },
+    "flow_residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum flow residual drop in log10 orders.",
+      "value": 6.0
+    },
+    "flow_residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum flow residual drop in log10 orders.",
+      "value": 3.0
+    },
+    "max_adj_iters": {
+      "type": "int",
+      "description": "Maximum GMRES iterations used by the DAFoam adjoint linear solve.",
+      "value": 1000
+    },
+    "max_flow_iters": {
+      "type": "int",
+      "description": "Maximum number of flow iterations written to the case controlDict endTime/writeInterval settings.",
+      "value": 10000
+    },
+    "objective_reduction_pct_pass": {
+      "type": "float",
+      "description": "Pass threshold for objective reduction in percent.",
+      "value": 5.0
+    },
+    "objective_reduction_pct_warning": {
+      "type": "float",
+      "description": "Warning threshold for objective reduction in percent.",
+      "value": 1.0
+    },
+    "pc_fill_level": {
+      "type": "int",
+      "description": "ILU fill level used by the DAFoam adjoint preconditioner.",
+      "value": 1
+    },
+    "pressure_profile_fractions": {
+      "type": "list[float]",
+      "description": "Spanwise fractions used for wing pressure-profile plots, for example `[0.2, 0.4, 0.8]`.",
+      "value": [
+        0.1,
+        0.5,
+        0.9
+      ]
+    },
+    "primal_func_slope_tol": {
+      "type": "float",
+      "description": "DAFoam primal function slope tolerance passed to script_run_dafoam.py.",
+      "value": 1e-06
+    },
+    "primal_func_std_tol": {
+      "type": "float",
+      "description": "DAFoam primal function standard deviation tolerance passed to script_run_dafoam.py.",
+      "value": 0.04
+    },
+    "profile_fit_coeff_count": {
+      "type": "int",
+      "description": "Number of coefficients used to fit each airfoil surface. For example, `4` fits 4 coefficients for the upper surface and 4 for the lower surface.",
+      "value": 6
+    },
+    "reference_area": {
+      "type": "float",
+      "description": "Reference area used to normalize aerodynamic forces. If null, the skill uses mean chord times span.",
+      "value": null
+    },
+    "reference_length": {
+      "type": "float",
+      "description": "Reference length used to normalize aerodynamic moments. If null, the skill uses the mean chord.",
+      "value": null
+    },
+    "solver_name": {
+      "type": "str",
+      "description": "Explicit solver override. Set this when the user asks for a specific solver. Supported values are `DASimpleFoam` (incompressible), `DARhoSimpleFoam` (compressible), `DARhoSimpleCFoam` (compressible/transonic), and `DAHisaFoam` (compressible/transonic/supersonic). Leave unset, `null`, or `none` to use the default Mach-based selection.",
+      "value": null
+    },
+    "transonic_mach_boundary": {
+      "type": "float",
+      "description": "Transonic Mach split used by the default solver selection when `solver_name` is not set.",
+      "value": 0.4
+    },
+    "turbulence_model": {
+      "type": "str",
+      "description": "OpenFOAM RANS turbulence model. Supported values are `SpalartAllmaras` (SA) and `kOmegaSST` (SST).",
+      "value": "SpalartAllmaras"
+    },
+    "u_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": -1.0
+    },
+    "u_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": 1.0
+    },
+    "n_multi_start": {
+      "type": "int",
+      "description": "Number of multi-start points for the EGO internal EI optimization.",
+      "value": 5
+    },
+    "ei_tol": {
+      "type": "float",
+      "description": "EGO internal expected improvmeent (EI) optimization tolerance.",
+      "value": 0.0001
+    },
+    "ego_seed": {
+      "type": "int",
+      "description": "Random seed used by the EGO optimizer DOE and infill sampling.",
+      "value": 0
+    },
+    "ego_tol": {
+      "type": "float",
+      "description": "Objective variation tolerance for the EGO optimization.",
+      "value": 0.001
+    },
+    "ego_cstr_tol": {
+      "type": "float",
+      "description": "Constraint tolerance used by EGO and its lift-trim searches.",
+      "value": 0.001
+    },
+    "ego_dv_bounds": {
+      "type": "dict[str, list[float]]",
+      "description": "EGO design-variable lower/upper bounds. All keys are required. DO NOT change the key, update ONLY the bounds.",
+      "value": {
+        "CSTCoeffs": [
+          -0.5,
+          0.5
+        ],
+        "Twist": [
+          -5.0,
+          5.0
+        ],
+        "Span": [
+          1.0,
+          6.0
+        ],
+        "Chord": [
+          0.5,
+          2.0
+        ],
+        "Sweep": [
+          -15.0,
+          15.0
+        ],
+        "Dihedral": [
+          0.0,
+          5.0
+        ],
+        "AoA": [
+          0.0,
+          10.0
+        ]
+      }
+    }
+  },
+  "run-aero-struct-simulation": {
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "cst_coeffs": {
+      "type": "list[float]",
+      "description": "User-supplied wing CST coefficients, ordered section by section as `[upper..., lower...]`. `len(cst_coeffs)` must equal `2 * profile_fit_coeff_count * number_of_sections`. Set this only when the user explicitly provides or requests numeric CST values to parameterize the wing airfoil profiles. Leave it `null` (default) to use the named profiles defined by `airfoil_profiles`.",
+      "value": null
+    },
+    "cp_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": -2.0
+    },
+    "cp_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": 2.0
+    },
+    "force_std_pass": {
+      "type": "float",
+      "description": "Pass threshold for raw force-coefficient standard deviation.",
+      "value": 0.0001
+    },
+    "force_std_warning": {
+      "type": "float",
+      "description": "Warning threshold for raw force-coefficient standard deviation.",
+      "value": 0.05
+    },
+    "initialize_from": {
+      "type": "str",
+      "description": "Warm-start source case name. When set, the field staged into 0/ is kept instead of resetting to the uniform freestream.",
+      "value": null
+    },
+    "nlbgs_abs_tol": {
+      "type": "float",
+      "description": "Absolute tolerance for the aerostructural OpenMDAO `NonlinearBlockGS` nonlinear block Gauss-Seidel solver.",
+      "value": 2.0
+    },
+    "nlbgs_rel_tol": {
+      "type": "float",
+      "description": "Relative tolerance for the aerostructural OpenMDAO `NonlinearBlockGS` nonlinear block Gauss-Seidel solver.",
+      "value": 1e-07
+    },
+    "pressure_profile_fractions": {
+      "type": "list[float]",
+      "description": "Spanwise fractions used for wing pressure-profile plots, for example `[0.2, 0.4, 0.8]`.",
+      "value": [
+        0.1,
+        0.5,
+        0.9
+      ]
+    },
+    "primal_func_slope_tol": {
+      "type": "float",
+      "description": "DAFoam primal function slope tolerance passed to script_run_dafoam.py.",
+      "value": 0.01
+    },
+    "primal_func_std_tol": {
+      "type": "float",
+      "description": "DAFoam primal function standard deviation tolerance passed to script_run_dafoam.py.",
+      "value": 0.01
+    },
+    "primal_min_iters": {
+      "type": "int",
+      "description": "Minimum number of primal iterations. This also sets the `nSteps` window used by the primal function standard deviation convergence check.",
+      "value": 200
+    },
+    "profile_fit_coeff_count": {
+      "type": "int",
+      "description": "Number of coefficients used to fit each airfoil surface. For example, `4` fits 4 coefficients for the upper surface and 4 for the lower surface.",
+      "value": 6
+    },
+    "reference_area": {
+      "type": "float",
+      "description": "Reference area used to normalize aerodynamic forces. If null, the skill uses mean chord times span.",
+      "value": null
+    },
+    "reference_length": {
+      "type": "float",
+      "description": "Reference length used to normalize aerodynamic moments. If null, the skill uses the mean chord.",
+      "value": null
+    },
+    "solver_name": {
+      "type": "str",
+      "description": "Explicit solver override. Set this when the user asks for a specific solver. Supported values are `DASimpleFoam` (incompressible), `DARhoSimpleFoam` (compressible), `DARhoSimpleCFoam` (compressible/transonic), and `DAHisaFoam` (compressible/transonic/supersonic). Leave unset, `null`, or `none` to use the default Mach-based selection.",
+      "value": null
+    },
+    "transonic_mach_boundary": {
+      "type": "float",
+      "description": "Transonic Mach split used by the default solver selection when `solver_name` is not set.",
+      "value": 0.4
+    },
+    "turbulence_model": {
+      "type": "str",
+      "description": "OpenFOAM RANS turbulence model. Supported values are `SpalartAllmaras` (SA) and `kOmegaSST` (SST).",
+      "value": "SpalartAllmaras"
+    },
+    "u_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": -1.0
+    },
+    "u_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": 1.0
+    },
+    "struct_material": {
+      "type": "str",
+      "description": "Structural material. Currently only `aluminum` is supported.",
+      "value": "aluminum"
+    },
+    "nlbgs_rel_tol_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for final relative NLBGS tolerance drop in log10 orders.",
+      "value": 0.0
+    },
+    "nlbgs_rel_tol_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for final relative NLBGS tolerance drop in log10 orders.",
+      "value": 2.0
+    },
+    "nlbgs_abs_tol_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for final absolute NLBGS tolerance drop in log10 orders.",
+      "value": 0.0
+    },
+    "nlbgs_abs_tol_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for final absolute NLBGS tolerance drop in log10 orders.",
+      "value": 2.0
+    },
+    "cd_delta_pass": {
+      "type": "float",
+      "description": "Pass threshold for absolute CD delta between coupled iterations.",
+      "value": 1e-05
+    },
+    "cd_delta_warning": {
+      "type": "float",
+      "description": "Warning threshold for absolute CD delta between coupled iterations.",
+      "value": 0.001
+    },
+    "cl_delta_pass": {
+      "type": "float",
+      "description": "Pass threshold for absolute CL delta between coupled iterations.",
+      "value": 0.0001
+    },
+    "cl_delta_warning": {
+      "type": "float",
+      "description": "Warning threshold for absolute CL delta between coupled iterations.",
+      "value": 0.01
+    }
+  },
+  "run-aero-struct-optimization": {
+    "active_design_vars": {
+      "type": "list[str]",
+      "description": "Design variable groups that the optimizer is allowed to change. Supported values: cst_coeffs, twists, spans, sweeps, dihedrals, chords. Variables not listed here are still parameterized but frozen during optimization.",
+      "value": [
+        "cst_coeffs",
+        "twists"
+      ]
+    },
+    "adjoint_residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum adjoint residual drop in log10 orders.",
+      "value": 5.0
+    },
+    "adjoint_residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum adjoint residual drop in log10 orders.",
+      "value": 1.0
+    },
+    "camera_scale": {
+      "type": "float",
+      "description": "Camera zoom multiplier for the 3D mesh and flow-field plots. Values below 1.0 zoom in, values above 1.0 zoom out; 1.0 is the default framing.",
+      "value": 1.0
+    },
+    "cst_coeffs": {
+      "type": "list[float]",
+      "description": "User-supplied wing CST coefficients, ordered section by section as `[upper..., lower...]`. `len(cst_coeffs)` must equal `2 * profile_fit_coeff_count * number_of_sections`. Set this only when the user explicitly provides or requests numeric CST values to parameterize the wing airfoil profiles. Leave it `null` (default) to use the named profiles defined by `airfoil_profiles`.",
+      "value": null
+    },
+    "cp_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": -2.0
+    },
+    "cp_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the Cp axis and colorbar shared by the pressure-profile and Cp flow-field plots.",
+      "value": 2.0
+    },
+    "final_feasibility_pass": {
+      "type": "float",
+      "description": "Pass threshold for final feasibility.",
+      "value": 0.0001
+    },
+    "final_feasibility_warning": {
+      "type": "float",
+      "description": "Warning threshold for final feasibility.",
+      "value": 0.01
+    },
+    "flow_residual_drop_orders_pass": {
+      "type": "float",
+      "description": "Pass threshold for minimum flow residual drop in log10 orders.",
+      "value": 6.0
+    },
+    "flow_residual_drop_orders_warning": {
+      "type": "float",
+      "description": "Warning threshold for minimum flow residual drop in log10 orders.",
+      "value": 3.0
+    },
+    "max_adj_iters": {
+      "type": "int",
+      "description": "Maximum GMRES iterations used by the DAFoam adjoint linear solve.",
+      "value": 1000
+    },
+    "nlbgs_abs_tol": {
+      "type": "float",
+      "description": "Absolute tolerance for the aerostructural OpenMDAO `NonlinearBlockGS` nonlinear block Gauss-Seidel solver.",
+      "value": 2.0
+    },
+    "nlbgs_rel_tol": {
+      "type": "float",
+      "description": "Relative tolerance for the aerostructural OpenMDAO `NonlinearBlockGS` nonlinear block Gauss-Seidel solver.",
+      "value": 1e-07
+    },
+    "objective_reduction_pct_pass": {
+      "type": "float",
+      "description": "Pass threshold for objective reduction in percent.",
+      "value": 5.0
+    },
+    "objective_reduction_pct_warning": {
+      "type": "float",
+      "description": "Warning threshold for objective reduction in percent.",
+      "value": 1.0
+    },
+    "pc_fill_level": {
+      "type": "int",
+      "description": "ILU fill level used by the DAFoam adjoint preconditioner.",
+      "value": 1
+    },
+    "pressure_profile_fractions": {
+      "type": "list[float]",
+      "description": "Spanwise fractions used for wing pressure-profile plots, for example `[0.2, 0.4, 0.8]`.",
+      "value": [
+        0.1,
+        0.5,
+        0.9
+      ]
+    },
+    "primal_func_slope_tol": {
+      "type": "float",
+      "description": "DAFoam primal function slope tolerance passed to script_run_dafoam.py.",
+      "value": 0.01
+    },
+    "primal_func_std_tol": {
+      "type": "float",
+      "description": "DAFoam primal function standard deviation tolerance passed to script_run_dafoam.py.",
+      "value": 0.01
+    },
+    "primal_min_iters": {
+      "type": "int",
+      "description": "Minimum number of primal iterations. This also sets the `nSteps` window used by the primal function standard deviation convergence check.",
+      "value": 200
+    },
+    "profile_fit_coeff_count": {
+      "type": "int",
+      "description": "Number of coefficients used to fit each airfoil surface. For example, `4` fits 4 coefficients for the upper surface and 4 for the lower surface.",
+      "value": 6
+    },
+    "reference_area": {
+      "type": "float",
+      "description": "Reference area used to normalize aerodynamic forces. If null, the skill uses mean chord times span.",
+      "value": null
+    },
+    "reference_length": {
+      "type": "float",
+      "description": "Reference length used to normalize aerodynamic moments. If null, the skill uses the mean chord.",
+      "value": null
+    },
+    "solver_name": {
+      "type": "str",
+      "description": "Explicit solver override. Set this when the user asks for a specific solver. Supported values are `DASimpleFoam` (incompressible), `DARhoSimpleFoam` (compressible), `DARhoSimpleCFoam` (compressible/transonic), and `DAHisaFoam` (compressible/transonic/supersonic). Leave unset, `null`, or `none` to use the default Mach-based selection.",
+      "value": null
+    },
+    "transonic_mach_boundary": {
+      "type": "float",
+      "description": "Transonic Mach split used by the default solver selection when `solver_name` is not set.",
+      "value": 0.4
+    },
+    "turbulence_model": {
+      "type": "str",
+      "description": "OpenFOAM RANS turbulence model. Supported values are `SpalartAllmaras` (SA) and `kOmegaSST` (SST).",
+      "value": "SpalartAllmaras"
+    },
+    "u_plot_lower_bound": {
+      "type": "float",
+      "description": "Lower bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": -1.0
+    },
+    "u_plot_upper_bound": {
+      "type": "float",
+      "description": "Upper bound of the normalized velocity colorbar for the U flow-field plot.",
+      "value": 1.0
+    },
+    "struct_material": {
+      "type": "str",
+      "description": "Structural material. Currently only `aluminum` is supported.",
+      "value": "aluminum"
+    }
+  }
+}

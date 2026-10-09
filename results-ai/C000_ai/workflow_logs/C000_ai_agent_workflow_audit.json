@@ -1,0 +1,491 @@
+{
+  "version": "0.4.6",
+  "work_dir": "/home/dafoamuser/mount",
+  "description": "AgentDeck audit trail. Each case records the MCP phase returns and the generated bash script names captured by shared BaseSkill command launch helpers. Utility operations such as LHS sample generation are recorded under `utilities`.",
+  "cases": {
+    "airfoil_mesh_0000": {
+      "agent": "airfoil",
+      "skill": "generate-cfd-mesh",
+      "prereq_skill": null,
+      "inputs": {
+        "airfoil_profile": "naca2412",
+        "mesh_cells": 20000,
+        "y_plus": 3,
+        "mach_number": 0.2,
+        "reynolds_number": 5000000.0,
+        "local_refine_box": null
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-18T01:39:56.814626+00:00"
+        },
+        "run": {
+          "commands": "bash_generate-cfd-mesh_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-09-18T01:39:56.942726+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-18T01:41:12.021372+00:00"
+        },
+        "analyze": {
+          "commands": "bash_generate-cfd-mesh_analyze_001.sh",
+          "status": "pass",
+          "last_recorded_at": "2026-09-18T01:42:24.965443+00:00"
+        },
+        "review_analyze": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-18T01:42:25.270503+00:00",
+          "latest_return": {
+            "n_cells": 20792,
+            "max_nonorthogonality": 42.18929119006108,
+            "max_skewness": 0.3907873861604299,
+            "max_aspect_ratio": 504.8540785744356,
+            "html_url": "http://localhost:8001/plots/mesh.html",
+            "trame_url": "http://localhost:8002"
+          }
+        },
+        "monitor_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-18T01:41:12.044777+00:00",
+          "note": "The detached run completion marker was detected."
+        }
+      }
+    },
+    "wing_mesh_0000": {
+      "agent": "wing",
+      "skill": "generate-cfd-mesh",
+      "prereq_skill": null,
+      "inputs": {
+        "airfoil_profiles": [
+          "naca0012",
+          "naca0012"
+        ],
+        "chords": [
+          1,
+          1
+        ],
+        "spans": [
+          3
+        ],
+        "sweeps": [
+          0
+        ],
+        "dihedrals": [
+          0
+        ],
+        "twists": [
+          0
+        ],
+        "mesh_cells": 400000,
+        "y_plus": 50,
+        "mach_number": 0.3,
+        "reynolds_number": 5000000,
+        "local_refine_box": null
+      },
+      "changed_advanced_parameters": {
+        "farfield_scale": 10
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-25T21:45:26.880502+00:00"
+        },
+        "run": {
+          "commands": "bash_generate-cfd-mesh_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-09-25T21:45:27.216536+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-25T21:54:51.139561+00:00"
+        },
+        "analyze": {
+          "commands": "bash_generate-cfd-mesh_analyze_001.sh",
+          "status": "pass",
+          "last_recorded_at": "2026-09-25T21:57:21.818765+00:00"
+        },
+        "review_analyze": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-25T21:57:22.261069+00:00",
+          "latest_return": {
+            "n_cells": 445880,
+            "max_nonorthogonality": 63.83693321147463,
+            "max_skewness": 1.763981594369249,
+            "max_aspect_ratio": 383.379669587284,
+            "html_url": "http://localhost:8001/plots/mesh.html",
+            "trame_url": "http://localhost:8002"
+          }
+        },
+        "monitor_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-25T21:54:51.171204+00:00",
+          "note": "The detached run completion marker was already present."
+        }
+      }
+    },
+    "wing_cfd_0000": {
+      "agent": "wing",
+      "skill": "run-cfd-simulation",
+      "prereq_skill": "generate-cfd-mesh",
+      "inputs": {
+        "fixed_lift_coeff": 0.4,
+        "angle_of_attack": 5,
+        "n_cpu_cores": 10,
+        "airfoil_profiles": [
+          "naca0012",
+          "naca0012"
+        ],
+        "mach_number": 0.3,
+        "reynolds_number": 5000000,
+        "chords": [
+          1,
+          1
+        ],
+        "sweeps": [
+          0
+        ],
+        "dihedrals": [
+          0
+        ],
+        "spans": [
+          3
+        ],
+        "twists": [
+          0
+        ]
+      },
+      "changed_advanced_parameters": {
+        "primal_func_std_tol": 1e-08,
+        "max_flow_iters": 10000
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-09-25T21:57:30.991443+00:00"
+        },
+        "run": {
+          "commands": "bash_run-cfd-simulation_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-09-25T22:00:27.911464+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "fail",
+          "last_recorded_at": "2026-09-25T22:00:27.967303+00:00",
+          "latest_return": {
+            "note": "Aerodynamic simulation log is missing or does not contain solver time information in wing_cfd_0000/log_simulation.txt."
+          }
+        },
+        "monitor_run": {
+          "status": "timeout",
+          "last_recorded_at": "2026-09-25T22:00:27.991796+00:00",
+          "note": "The run did not finish within 0.0 seconds. It may still be staged, queued, or running. Call monitor_run again later."
+        }
+      }
+    },
+    "wing_mesh_0001": {
+      "agent": "wing",
+      "skill": "generate-cfd-mesh",
+      "prereq_skill": null,
+      "inputs": {
+        "airfoil_profiles": [
+          "naca0012",
+          "naca0012"
+        ],
+        "chords": [
+          1,
+          1
+        ],
+        "spans": [
+          3
+        ],
+        "sweeps": [
+          0
+        ],
+        "dihedrals": [
+          0
+        ],
+        "twists": [
+          0
+        ],
+        "mesh_cells": 360000,
+        "y_plus": 70,
+        "mach_number": 0.3,
+        "reynolds_number": 5000000,
+        "local_refine_box": null
+      },
+      "changed_advanced_parameters": {
+        "farfield_scale": 10
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T20:53:20.818941+00:00"
+        },
+        "run": {
+          "commands": "bash_generate-cfd-mesh_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-10-01T20:53:21.167750+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T21:06:24.110431+00:00"
+        },
+        "analyze": {
+          "commands": "bash_generate-cfd-mesh_analyze_001.sh",
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T21:08:52.336463+00:00"
+        },
+        "review_analyze": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T21:08:52.782449+00:00",
+          "latest_return": {
+            "n_cells": 396848,
+            "max_nonorthogonality": 64.04207650493933,
+            "max_skewness": 1.753256046160208,
+            "max_aspect_ratio": 330.0573363189947,
+            "html_url": "http://localhost:8001/plots/mesh.html",
+            "trame_url": "http://localhost:8002"
+          }
+        },
+        "monitor_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T21:06:24.141530+00:00",
+          "note": "The detached run completion marker was already present."
+        }
+      }
+    },
+    "wing_cfd_0001": {
+      "agent": "wing",
+      "skill": "run-cfd-simulation",
+      "prereq_skill": "generate-cfd-mesh",
+      "inputs": {
+        "fixed_lift_coeff": 0.4,
+        "angle_of_attack": 5.4,
+        "n_cpu_cores": 10,
+        "airfoil_profiles": [
+          "naca0012",
+          "naca0012"
+        ],
+        "mach_number": 0.3,
+        "reynolds_number": 5000000,
+        "chords": [
+          1,
+          1
+        ],
+        "sweeps": [
+          0
+        ],
+        "dihedrals": [
+          0
+        ],
+        "spans": [
+          3
+        ],
+        "twists": [
+          0
+        ]
+      },
+      "changed_advanced_parameters": {
+        "primal_func_std_tol": 1e-06,
+        "max_flow_iters": 1500
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T21:09:03.311667+00:00"
+        },
+        "run": {
+          "commands": "bash_run-cfd-simulation_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-10-01T21:12:00.726044+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T23:37:31.932521+00:00",
+          "latest_return": {
+            "progress": {
+              "current_time": 101
+            }
+          }
+        },
+        "analyze": {
+          "commands": "bash_run-cfd-simulation_analyze_001.sh",
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T23:43:20.649850+00:00"
+        },
+        "review_analyze": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T23:43:21.387105+00:00",
+          "latest_return": {
+            "final_cd": 0.02001004825892159,
+            "final_cl": 0.4000065318836379,
+            "final_cm": 0.07842481084500155,
+            "wing_volume": 0.246898,
+            "residual_drop_orders": {
+              "U0": 9.480637472125494,
+              "U1": 8.652048525482586,
+              "U2": 8.341207022020717,
+              "he": 8.837144505112809,
+              "nuTilda": 9.42793138571474,
+              "p": 7.67073955786919
+            },
+            "cd_stddev": 4.754937834624557e-08,
+            "cl_stddev": 6.712513373613736e-08,
+            "cd_slope": -7.507423478030826e-09,
+            "cl_slope": -1.161355362563583e-08,
+            "html_url": "http://localhost:8001/plots/cfd.html",
+            "trame_url": "http://localhost:8002"
+          }
+        },
+        "monitor_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-01T23:37:31.975534+00:00",
+          "note": "The detached run completion marker was already present."
+        }
+      }
+    },
+    "wing_mesh_0002": {
+      "agent": "wing",
+      "skill": "generate-cfd-mesh",
+      "prereq_skill": null,
+      "inputs": {
+        "airfoil_profiles": [
+          "naca2412",
+          "naca2412"
+        ],
+        "chords": [
+          1.01,
+          1.01
+        ],
+        "spans": [
+          3
+        ],
+        "sweeps": [
+          0
+        ],
+        "dihedrals": [
+          0
+        ],
+        "twists": [
+          0
+        ],
+        "mesh_cells": 360000,
+        "y_plus": 70,
+        "mach_number": 0.3,
+        "reynolds_number": 5000000,
+        "local_refine_box": null
+      },
+      "changed_advanced_parameters": {
+        "farfield_scale": 9.901
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-06T01:38:23.552725+00:00"
+        },
+        "run": {
+          "commands": "bash_generate-cfd-mesh_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-10-06T01:38:24.069067+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-09T21:48:14.408557+00:00"
+        },
+        "analyze": {
+          "commands": "bash_generate-cfd-mesh_analyze_001.sh",
+          "status": "pass",
+          "last_recorded_at": "2026-10-09T21:50:48.757553+00:00"
+        },
+        "review_analyze": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-09T21:50:49.222736+00:00",
+          "latest_return": {
+            "n_cells": 396848,
+            "max_nonorthogonality": 64.6917812869664,
+            "max_skewness": 1.787790156916394,
+            "max_aspect_ratio": 323.9166405408264,
+            "html_url": "http://localhost:8001/plots/mesh.html",
+            "trame_url": "http://localhost:8002"
+          }
+        },
+        "monitor_run": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-09T21:48:14.490869+00:00",
+          "note": "The detached run completion marker was already present."
+        }
+      }
+    },
+    "wing_cfd_0002": {
+      "agent": "wing",
+      "skill": "run-cfd-simulation",
+      "prereq_skill": "generate-cfd-mesh",
+      "inputs": {
+        "fixed_lift_coeff": 0.3966,
+        "angle_of_attack": 2.77,
+        "n_cpu_cores": 10,
+        "airfoil_profiles": [
+          "naca2412",
+          "naca2412"
+        ],
+        "mach_number": 0.3,
+        "reynolds_number": 5000000,
+        "chords": [
+          1.01,
+          1.01
+        ],
+        "sweeps": [
+          0
+        ],
+        "dihedrals": [
+          0
+        ],
+        "spans": [
+          3
+        ],
+        "twists": [
+          0
+        ]
+      },
+      "changed_advanced_parameters": {
+        "primal_func_std_tol": 1e-06,
+        "max_flow_iters": 1500
+      },
+      "phases": {
+        "set_skill_inputs": {
+          "status": "pass",
+          "last_recorded_at": "2026-10-09T21:51:02.004250+00:00"
+        },
+        "run": {
+          "commands": "bash_run-cfd-simulation_run_001.sh",
+          "status": "running",
+          "last_recorded_at": "2026-10-09T21:54:02.711833+00:00",
+          "note": "The detached run started successfully and is running in the background."
+        },
+        "review_run": {
+          "status": "running",
+          "last_recorded_at": "2026-10-09T22:26:57.483027+00:00",
+          "latest_return": {
+            "progress": {
+              "current_time": 190
+            }
+          }
+        },
+        "monitor_run": {
+          "status": "timeout",
+          "last_recorded_at": "2026-10-09T22:26:57.536321+00:00",
+          "note": "The run did not finish within 269.98893031199987 seconds. It may still be staged, queued, or running. Call monitor_run again later."
+        }
+      }
+    }
+  },
+  "utilities": {}
+}
