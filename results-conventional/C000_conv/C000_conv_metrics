@@ -1,9 +1,8 @@
-```markdown 
-## CFD Simulation Summary 
-- **Domain radius:** 20 m 
-- **Angle of attack:** 5.84° 
-- **Lift coefficient:** \(C_L = 0.4006155067795393\) 
-- **Drag coefficient:** \(C_D = 0.02062038404338974\) 
+### CFD Simulation Summary 
+Domain radius: 20 m 
+Angle of attack: 5.84° 
+Lift coefficient: C_L = 0.4006155067795393 
+Drag coefficient: C_D = 0.02062038404338974
 The angle of attack changed significantly after implementing a more accurate and refined representation of the airfoil geometry. 
-### Residuals ```text 
+### Residuals
 2.107085e-05 4.778652e-05 1.603164e-05 3.936199e-05 7.130536e-04 2.461740e-04
