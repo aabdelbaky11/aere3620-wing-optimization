@@ -1,12 +1,14 @@
 # CFD Simulation Results
 
+-**
+
 ## Simulation Conditions
 
 - **Domain:** The simulation domain is a half sphere with a 20 m radius and symmetry plane to reduce computational time.
 - **Angle of Attack:** 5.84°
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
-- **wing Volume:** 
+- **Wing Volume:** 2.4688 m^3
 
 > **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry, specifically near the leading edge.
 
