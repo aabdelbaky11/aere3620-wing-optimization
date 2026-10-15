@@ -1,6 +1,8 @@
 # CFD Simulation Results
 
--**
+- **Workflow lead:** Gabriel Cortes (Conventional Workflow Lead)
+- **Tools:** Meshing and Physics solved through Star CCM+, geometry created through SOLIDOWORKS.
+- **Run date:** 10/9/2026
 
 ## Simulation Conditions
 
