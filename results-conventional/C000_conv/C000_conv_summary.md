@@ -11,9 +11,10 @@
 
 ---
 
-## Physics and Solvers
+## Physics
 
-- ** ** 
+- **Solver:** Reynolds Average Navier Stokes (RANS)
+  
 
 ---
 
