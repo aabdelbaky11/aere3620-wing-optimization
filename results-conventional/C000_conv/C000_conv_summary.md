@@ -22,6 +22,12 @@
 - **Energy Solver:** Segregated Fluid Enthalpy
 - **Time:** Steady
 - **Turbulence Model:** Spalart-Allmars
+
+---
+
+##Pressure
+
+- The unnaturally high pressure coefficients stemmed from an incorrect unit conversion occurring in the static pressure field funciton
   
 ---
 
