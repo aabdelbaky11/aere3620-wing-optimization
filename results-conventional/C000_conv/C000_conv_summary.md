@@ -16,8 +16,8 @@
 
 ## Physics
 
-- **Solver:** Reynolds Average Navier Stokes (RANS)
-- **Flow Solver:** Segragated
+- **Solver:** Reynolds-Average Navier-Stokes (RANS)
+- **Flow Solver:** Segregated
 - **Equation of State:** Ideal Gas
 - **Energy Solver:** Segregated Fluid Enthalpy
 - **Time:** Steady
@@ -25,9 +25,10 @@
 
 ---
 
-##Pressure
+## Pressure
 
-- The unnaturally high pressure coefficients stemmed from an incorrect unit conversion occurring in the static pressure field funciton
+- The unnaturally high pressure coefficients stemmed from an incorrect unit conversion occurring in the pressure field function.
+- The poor airfoil geometry was causing unphysical pressure gradients near the leading edge of the wing, so different geometry was created in SOLIDWORKS and imported into STAR CCM+.  
   
 ---
 
