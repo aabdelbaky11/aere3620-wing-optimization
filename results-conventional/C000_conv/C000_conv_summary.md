@@ -7,7 +7,7 @@
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
 
-> **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry.
+> **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry, specifically near the leading edge.
 
 ---
 
