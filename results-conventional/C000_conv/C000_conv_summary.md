@@ -13,7 +13,7 @@
 
 ## Pressure Results
 
-- **Pressure Coefficients are plotted across the wing in 'C000_conv_pressure_profile_midspan.png'**
+- **Pressure Coefficients are plotted across the wing in **'C000_conv_pressure_profile_midspan.png'
 
 ---
 
