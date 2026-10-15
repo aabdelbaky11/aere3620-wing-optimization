@@ -14,6 +14,11 @@
 ## Physics
 
 - **Solver:** Reynolds Average Navier Stokes (RANS)
+- **Flow Solver:** Segragated
+- **Equation of State** Ideal Gas
+- **Energy Solver** Segregated Fluid Enthalpy
+- **Time** Steady
+- 
   
 
 ---
