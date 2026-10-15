@@ -26,7 +26,7 @@
 | Minimum Cell Volume | 3.376389 × 10⁻⁹ m³ |
 | Maximum Aspect Ratio | 1.000000 |
 | Minimum Aspect Ratio | 0.07667843 |
-| Maximum Wall Y+ |  |
+| Maximum Wall Y+ | 96.4 |
 
 ---
 
