@@ -4,13 +4,15 @@
 - **Tools:** Meshing and Physics solved through Star CCM+, Geometry created through SOLIDOWORKS.
 - **Run date:** 10/9/2026
 
+Disregard all information from the previous baseline simulation. It was a mistake on my part to use the Siemens built in CAD desktop. I will use SOLIDWORKS from now on to prevent geometry issues.
+
 ## Simulation Conditions
 
 - **Domain:** The simulation domain is a half sphere with a 20 m radius and symmetry plane to reduce computational time.
 - **Angle of Attack:** 5.84°
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
-- **Wing Volume:** 2.4688 m^3
+- **Wing Volume:** 2.4688 m^3  (SOLIDOWORKS Mass Properties)
 
 > **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry, specifically near the leading edge.
 
