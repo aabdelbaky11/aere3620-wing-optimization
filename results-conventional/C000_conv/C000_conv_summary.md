@@ -1,7 +1,7 @@
-# CFD Simulation Results
+# C000 Conventional Baseline Rerun
 
-- **Workflow lead:** Gabriel Cortes (Conventional Workflow Lead)
-- **Tools:** Meshing and Physics solved through Star CCM+, geometry created through SOLIDOWORKS.
+- **Workflow lead:** Gabriel Cortes 
+- **Tools:** Meshing and Physics solved through Star CCM+, Geometry created through SOLIDOWORKS.
 - **Run date:** 10/9/2026
 
 ## Simulation Conditions
@@ -45,6 +45,7 @@
 | Minimum Aspect Ratio | 0.07667843 |
 | Maximum Wall Y+ | 96.4 |
 
+> **Cell Count Note:** This value is very close to the upper limit. This was done intentionally to increase fidelity and attempt to lower residual convergence. This value will be monitored closely in the following iterations to ensure is does not cross the upper bound.
 ---
 
 ## Residual Convergence
