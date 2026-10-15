@@ -26,7 +26,7 @@
 | Minimum Cell Volume | 3.376389 × 10⁻⁹ m³ |
 | Maximum Aspect Ratio | 1.000000 |
 | Minimum Aspect Ratio | 0.07667843 |
-| Y+ | TBD |
+| Maximum Wall Y+ |  |
 
 ---
 
@@ -43,4 +43,4 @@
 
 ### Convergence Note
 
-The residuals did not reach the required value of 10⁻⁶. Additional reductions could not be achieved without altering the fundamental physical or numerical parameters of the simulation. However, the drag coefficient and other monitored quantities were examined separately to determine whether the solution had stabilized.
+The residuals did not reach the required value of 10⁻⁶. Additional reductions could not be achieved without altering the fundamental physical or numerical parameters of the simulation. I did consult professor He about this issue and he informed me that these residuals are okay and indicate numerical convergence for the simulation. 
