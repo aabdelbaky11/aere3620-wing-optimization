@@ -28,7 +28,7 @@
 ## Pressure
 
 - The unnaturally high pressure coefficients stemmed from an incorrect unit conversion occurring in the pressure field function.
-- The poor airfoil geometry was causing unphysical pressure gradients near the leading edge of the wing, so different geometry was created in SOLIDWORKS and imported into STAR CCM+.  
+- The poor airfoil geometry was still causing unphysical pressure gradients near the leading edge of the wing, so different geometry was created in SOLIDWORKS and imported into STAR CCM+.  
   
 ---
 
