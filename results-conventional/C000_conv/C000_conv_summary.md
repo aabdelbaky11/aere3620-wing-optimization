@@ -2,7 +2,7 @@
 
 ## Simulation Conditions
 
-- **Domain Radius:** 20 m
+- **Domain:** The simulation domain is a half sphere with a 20 m radius and symmetry plane to reduce computational time.
 - **Angle of Attack:** 5.84°
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
