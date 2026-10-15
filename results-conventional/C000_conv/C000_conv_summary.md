@@ -61,6 +61,4 @@ Disregard all information from the previous baseline simulation. It was a mistak
 | Sa_nut | 7.130536 × 10⁻⁴ |
 | Energy | 2.461740 × 10⁻⁴ |
 
-### Convergence Note
-
-The residuals did not reach the required value of 10⁻⁶. Additional reductions could not be achieved without altering the fundamental physical or numerical parameters of the simulation. I did consult professor He about this issue and he informed me that these residuals are okay and indicate numerical convergence for the simulation. 
+> **Convergence Note:** The residuals did not reach the required value of 10⁻⁶. Additional reductions could not be achieved without altering the fundamental physical or numerical parameters of the simulation. I did consult professor He about this issue and he informed me that these residuals are okay and indicate numerical convergence for the simulation. 
