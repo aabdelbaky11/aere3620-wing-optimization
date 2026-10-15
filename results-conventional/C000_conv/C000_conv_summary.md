@@ -6,6 +6,7 @@
 - **Angle of Attack:** 5.84°
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
+- **wing Volume:** 
 
 > **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry, specifically near the leading edge.
 
@@ -15,12 +16,11 @@
 
 - **Solver:** Reynolds Average Navier Stokes (RANS)
 - **Flow Solver:** Segragated
-- **Equation of State** Ideal Gas
-- **Energy Solver** Segregated Fluid Enthalpy
-- **Time** Steady
-- 
+- **Equation of State:** Ideal Gas
+- **Energy Solver:** Segregated Fluid Enthalpy
+- **Time:** Steady
+- **Turbulence Model:** Spalart-Allmars
   
-
 ---
 
 ## Mesh Quality
