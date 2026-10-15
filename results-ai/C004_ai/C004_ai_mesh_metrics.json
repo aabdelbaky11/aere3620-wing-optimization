@@ -1,0 +1,8 @@
+{
+  "avg_nonorthogonality": 10.23563995699053,
+  "max_aspect_ratio": 229.3832277115343,
+  "max_nonorthogonality": 63.28446459503252,
+  "max_skewness": 1.710773194261623,
+  "n_cells": 396848,
+  "severe_nonorthogonal_faces": 0
+}
