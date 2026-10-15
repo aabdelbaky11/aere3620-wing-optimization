@@ -30,7 +30,7 @@
 
 ---
 
-## Residual and Drag Convergence
+## Residual Convergence
 
 | Monitor | Final Value |
 |:--------|------------:|
