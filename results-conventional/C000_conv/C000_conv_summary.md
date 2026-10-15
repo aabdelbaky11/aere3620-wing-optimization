@@ -34,12 +34,12 @@
 
 | Monitor | Final Value |
 |:--------|------------:|
-| Residual 1 | 2.107085 × 10⁻⁵ |
-| Residual 2 | 4.778652 × 10⁻⁵ |
-| Residual 3 | 1.603164 × 10⁻⁵ |
-| Residual 4 | 3.936199 × 10⁻⁵ |
-| Residual 5 | 7.130536 × 10⁻⁴ |
-| Residual 6 | 2.461740 × 10⁻⁴ |
+| Y-momentum | 2.107085 × 10⁻⁵ |
+| X-momentum | 4.778652 × 10⁻⁵ |
+| Z-momentum | 1.603164 × 10⁻⁵ |
+| Continuity | 3.936199 × 10⁻⁵ |
+| Sa_nut | 7.130536 × 10⁻⁴ |
+| Energy | 2.461740 × 10⁻⁴ |
 
 ### Convergence Note
 
