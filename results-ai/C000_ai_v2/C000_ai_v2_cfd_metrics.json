@@ -1,0 +1,24 @@
+{
+  "cd_slope": -6.99715156652899e-09,
+  "cd_stddev": 6.875940288176297e-08,
+  "cl_slope": -1.338104629161694e-08,
+  "cl_stddev": 7.73103820825717e-08,
+  "final_cd": 0.02005210222814341,
+  "final_cl": 0.4005073512100247,
+  "final_cm": 0.07852793029789687,
+  "has_nan_inf": false,
+  "n_iterations": 98,
+  "n_primal_runs": 4,
+  "plot_raw_data_dir": "wing_cfd_0005/plots/data",
+  "residual_drop_orders": {
+    "U0": 9.409987869827939,
+    "U1": 8.567575464571389,
+    "U2": 8.26826375582483,
+    "he": 8.753226411979666,
+    "nuTilda": 9.399226615911779,
+    "p": 7.654118179284302
+  },
+  "tail_fraction": 0.2,
+  "tail_n": 19,
+  "volume_val": 0.246898
+}
