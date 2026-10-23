@@ -46,6 +46,7 @@ Disregard all information from the previous baseline simulation. It was a mistak
 | Maximum Aspect Ratio | 1.000000 |
 | Minimum Aspect Ratio | 0.07667843 |
 | Maximum Wall Y+ | 96.4 |
+| Minimum Wall Y+ | 31 |
 
 > **Cell Count Note:** This value is very close to the upper limit. This was done intentionally to increase fidelity and attempt to lower residual convergence. This value will be monitored closely in the following iterations to ensure is does not cross the upper bound.
 ---
@@ -56,9 +57,9 @@ Disregard all information from the previous baseline simulation. It was a mistak
 |:--------|------------:|
 | Y-momentum | 2.107085 × 10⁻⁵ |
 | X-momentum | 4.778652 × 10⁻⁵ |
-| Z-momentum | 1.603164 × 10⁻⁵ |
-| Continuity | 3.936199 × 10⁻⁵ |
-| Sa_nut | 7.130536 × 10⁻⁴ |
-| Energy | 2.461740 × 10⁻⁴ |
+| Z-momentum | 3.936199 × 10⁻⁵ |    
+| Continuity | 1.603164 × 10⁻⁵ |
+| Sa_nut | 2.461740 × 10⁻⁴ |   
+| Energy | 7.130536 × 10⁻⁴ |
 
 > **Convergence Note:** The residuals did not reach the required value of 10⁻⁶. Additional reductions could not be achieved without altering the fundamental physical or numerical parameters of the simulation. I did consult professor He about this issue and he informed me that these residuals are okay and indicate numerical convergence for the simulation. 
