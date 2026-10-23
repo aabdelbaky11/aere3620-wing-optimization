@@ -9,7 +9,7 @@ Disregard all information from the previous baseline simulation. It was a mistak
 ## Simulation Conditions
 
 - **Domain:** The simulation domain is a half sphere with a 20 m radius and symmetry plane to reduce computational time.
-- **Angle of Attack:** 5.84°
+- **Angle of Attack:** 5.840°
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
 - **Wing Volume:** .24688 m^3  (SOLIDWORKS Mass Properties)
