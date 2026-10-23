@@ -12,7 +12,7 @@ Disregard all information from the previous baseline simulation. It was a mistak
 - **Angle of Attack:** 5.84°
 - **Lift Coefficient:** 0.4006155
 - **Drag Coefficient:** 0.0206204
-- **Wing Volume:** 2.4688 m^3  (SOLIDWORKS Mass Properties)
+- **Wing Volume:** .24688 m^3  (SOLIDWORKS Mass Properties)
 
 > **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry, specifically near the leading edge.
 
