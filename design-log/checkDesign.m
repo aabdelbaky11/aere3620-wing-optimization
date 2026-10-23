@@ -14,6 +14,8 @@ function out = checkDesign(d, V_bl, CD_bl)
 %     .alpha     angle of attack [deg]
 %     .CL        lift coefficient  (NaN if not yet evaluated)
 %     .CD        drag coefficient  (NaN if not yet evaluated)
+%     .V         (optional, week 6) volume reported by the CFD tool [m^3];
+%                used instead of wingVolume.m when present
 %
 %   V_bl   baseline half-wing volume [m^3]
 %   CD_bl  baseline drag coefficient (NaN until the baseline run returns)
@@ -27,7 +29,11 @@ SEMISPAN = 3.00;   % fixed by the project spec
 if nargin < 3, CD_bl = NaN; end
 
 % ---- geometry ------------------------------------------------------------
-V = wingVolume(d.cr, d.ct, d.tc_root, d.tc_tip, SEMISPAN);
+if isfield(d, 'V') && ~isnan(d.V)
+    V = d.V;                                  % CFD tool's own volume
+else
+    V = wingVolume(d.cr, d.ct, d.tc_root, d.tc_tip, SEMISPAN);
+end
 
 % ---- bound checks (Table 1) ---------------------------------------------
 chk = struct();

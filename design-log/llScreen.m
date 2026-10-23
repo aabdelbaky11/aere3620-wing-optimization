@@ -1,7 +1,8 @@
-function r = llScreen(d)
+function r = llScreen(d, Re_cref)
 %LLSCREEN  Low-fidelity drag screening of one candidate wing at CL = 0.4.
 %
 %   r = llScreen(d)
+%   r = llScreen(d, Re_cref)   (week 6: Re on c_ref = 1.00 m, default 5.0e6)
 %
 %   Purpose: rank candidate designs BEFORE spending CFD runs on them, and
 %   give the workflow leads a starting angle of attack for each case.
@@ -32,6 +33,7 @@ AREF     = 3.00;            % reference area [m^2]
 CL_REQ   = 0.40;            % lift constraint
 MACH     = 0.30;
 RE_PER_M = 5.0e6;           % Re based on 1.00 m chord
+if nargin >= 2 && ~isempty(Re_cref), RE_PER_M = Re_cref; end
 N        = 40;              % number of Glauert terms / control points
 
 % 2D lift slope with Prandtl-Glauert correction

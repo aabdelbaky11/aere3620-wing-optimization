@@ -19,7 +19,13 @@ function V = wingVolume(cr, ct, tc_root, tc_tip, semispan, K)
 %     1. Sectional area is A = K * (t/c) * c^2.  For NACA 4-digit sections
 %        K = 0.685 to within about 0.5%.  Camber does not change the
 %        thickness distribution, so K is the same for NACA 2412 as for 0012.
-%     2. Chord and thickness ratio vary LINEARLY from root to tip.
+%     2. Chord and THICKNESS vary linearly from root to tip (a straight
+%        loft between the root and tip sections, as OpenVSP and a
+%        SOLIDWORKS loft build it).
+%        WEEK 6 FIX: before week 6 this assumed linear t/c, which is not
+%        what a loft does when the root and tip t/c differ. That under-
+%        stated C004's volume by 2.6% (0.25156 vs 0.25812 m^3). Results
+%        for equal root/tip t/c (C000, C001, C002, C003) are unchanged.
 %     3. Sweep and twist do not change sectional area, so they do not
 %        appear here.  Sweep shears sections spanwise; twist rotates them.
 %        Neither alters the area of any section.
@@ -37,10 +43,10 @@ end
 n   = 2001;
 eta = linspace(0, 1, n);
 
-c  = cr      + (ct      - cr     ) .* eta;   % chord distribution [m]
-tc = tc_root + (tc_tip  - tc_root) .* eta;   % thickness ratio distribution
+c  = cr + (ct - cr) .* eta;                          % chord [m]
+t  = tc_root*cr + (tc_tip*ct - tc_root*cr) .* eta;   % max thickness [m]
 
-A = K .* tc .* c.^2;                          % sectional area [m^2]
+A = K .* t .* c;                              % sectional area [m^2]
 
 V = trapz(eta, A) * semispan;                 % [m^3]
 
