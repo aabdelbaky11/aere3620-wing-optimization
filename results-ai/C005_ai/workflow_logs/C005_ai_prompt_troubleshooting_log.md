@@ -1,0 +1,167 @@
+# AI Workflow Lead — Agent Prompt & Troubleshooting Log (Team 18)
+
+The spec requires the AI Workflow Lead to "record the agent prompts and troubleshooting."
+
+The AI client is Claude Code (desktop app). It is connected to the MDO Agent Deck MCP server, which runs in Docker (`dafoam/agent:latest`). The work dir is `mdo_agent_work/results`.
+
+Raw Claude Code transcripts (`~/.claude/projects/...jsonl`) contain personal account info. Do NOT commit them to the team repo. Export the relevant excerpts instead.
+
+---
+
+## 2026-09-17 — Week 1 practice run
+- **Prompt (summary):** generate a CFD mesh for the NACA 2412 airfoil with 20k cells and y+ 3.
+- **Agent path:** airfoil / generate-cfd-mesh, scenario single-skill-single-run. The run took 153 s.
+- **Result:** 20,792 cells, max non-orthogonality 42.2, max skewness 0.39, max aspect ratio 505.
+- **Lesson:** Mach was not specified, so the tool silently used its default of M = 0.2. **Every setting must be named explicitly in the prompt.**
+
+## 2026-09-25 — Project/tool study and C000 preparation
+- **Tool study:**
+  - Inventoried the tool's 14 agent/skill pairs. The `wing` agent chain for this project is generate-cfd-mesh → run-cfd-simulation.
+  - Mapped every spec requirement to agent inputs and advanced parameters.
+  - Found tool defaults that conflict with the spec: Mach 0.2, 200k cells, 1 CPU core, far field 20 × root chord, and a loose convergence stop (primal_func_std_tol 0.04).
+  - Confirmed that the tool normalizes by the OpenVSP planform area rather than A_ref.
+- **Problem:** the Claude Code client could not connect to the `mdo_agent_deck` MCP server.
+  - Error: `connection timed out after 30000ms`.
+  - The Docker container did start.
+- **Diagnosis:**
+  - `docker info` reports Architecture aarch64. The laptop has a Snapdragon X Elite (ARM64) processor.
+  - The `dafoam/agent` image is x86-64, so every process runs under QEMU emulation (`/usr/bin/qemu-x86_64`).
+  - Measured server startup is 31.5–36.2 s: about 1.5 s container start, 4.4 s `loadDAFoam.sh`, and 27 s of Python imports (openmdao alone is 18.5 s).
+  - The startup exceeds Claude Code's 30 s default.
+- **Fix:**
+  - Set `MCP_TIMEOUT=120000` in `~/.claude/settings.json` (`env` block) and as a Windows user environment variable.
+  - Restarted the app and reconnected the server.
+- **Consequence to track:** CFD will also run under emulation and be much slower than on an x86 PC. Time every run.
+- **Locked settings:** see `C000_ai_locked_settings.md`.
+- **C000 prompt sent to the agent:** see `C000_ai_prompt.txt`.
+
+## C000 run log (fill in as it progresses)
+| Time | Event | Notes |
+|---|---|---|
+| 2026-09-25 ~16:40 CDT | Reconnected mdo_agent_deck via /mcp after setting MCP_TIMEOUT. It connected successfully. | Timeout fix confirmed |
+| 16:45 CDT | Prompt sent (C000_ai_prompt.txt). must_call_first → get_skill_input_info → get_skill_advanced_parameters → verify_workflow returned `format_verified`, with a one-to-one prompt/payload review passed → run_workflow | workflow_id `wf-single-skill-with-prereq-single-run-20260925T214514Z` |
+| 16:45 CDT | Mesh case `wing_mesh_0000` started (detached). The first pass returned `monitor_timeout` after 266 s, which is normal for long runs. | At 16:49 the OpenVSP geometry (wing.vsp3/.xyz/.stl) was written and the volume mesh was in progress |
+| ~17:00 CDT | Mesh finished and review_analyze passed: 445,880 cells, max non-orth 63.8, max skew 1.76, max AR 383, min vol 1.66e-11. Bounding box x −10.0…11.0, y 0…13.05, z ±10.04 m. | **Cell count is 1.3% over the 440k limit** (tool overshoot +11.5% vs the 400k request). Remesh with mesh_cells ≈ 360000 for the reported case |
+| ~17:00 CDT | CFD case `wing_cfd_0000` started (fixed_lift_coeff 0.4, 10 cores) | Treated as a pilot run (timing and convergence) |
+| | CFD finished (α_bl, C_L, C_D, residual drop) | |
+
+## 2026-10-01 — C000 pilot review and corrected rerun
+- **Pilot `wing_cfd_0000`** (445,880-cell mesh): at α = 5.0°, CL = 0.3707 and CD = 0.01848. Pressure residual fell 1.0 → 1.66e-7 (about 6.8 orders; 6 orders reached at iteration 400). y+ min/max/mean = 4.0 / 65.8 / 33.5.
+- **Why it took 58 h wall time:**
+  1. The laptop slept for 48 h at iteration 50. Wall time was 173,036 s while CPU time was only 71 s.
+  2. The p residual plateaued at 1.66e-7, just above the hard-coded stop of 1e-7. With primal_func_std_tol = 1e-8, the force-based stop could never trigger, so the run kept iterating past convergence until Docker stopped (09-28 03:22).
+- **Actual compute rate:** about 5–8 s per iteration while awake.
+- **Fixes:**
+  - Turned on the app's keep-awake.
+  - primal_func_std_tol 1e-8 → 1e-6 (CD/CL steady to 5+ digits), max_flow_iters 10000 → 1500.
+  - mesh_cells 400000 → 360000 (the tool overshoots by ~11.5%; target ~401k).
+  - y_plus 50 → 70 (the pilot's achieved y+ was ~0.67× the target; this moves the distribution into 30–100).
+  - Starting AoA 5.4° (from the pilot's linear estimate).
+- **15:53 CDT:** the agent ran a new workflow, `wf-single-skill-with-prereq-single-run-20261001T205311Z`. Its mesh case `wing_mesh_0001` started and returned monitor_timeout (normal).
+- **~16:10 CDT:** `wing_mesh_0001` passed the agent's mesh review: **396,848 cells** (inside 360k–440k), max non-orthogonality 64.0, max skewness 1.75, max aspect ratio 330, min volume 2.44e-11 m³. The CFD case `wing_cfd_0001` (CL = 0.4 trim, starting at 5.4°) started.
+- **Evening 10-01:** workflow **completed**. review_analyze **pass**.
+  - α_bl = 5.4075° (last `DesignVars:` line). CL = 0.400007, CD = 0.020010, CM = 0.07842.
+  - Wing volume (OpenVSP) = 0.246898 m³.
+  - Residual drop (orders): U0 9.48, U1 8.65, U2 8.34, he 8.84, nuTilda 9.43, p 7.67. All are ≥ 6.
+  - CD std 4.75e-8, CL std 6.71e-8.
+  - y+ min/max/mean = 5.29 / 90.86 / 46.67.
+  - The Newton search used 3 primal solves (α 5.4 → 5.4075). Total ≈ 900 iterations.
+
+## 2026-10-05 — C001 (camber only)
+- **Prompt:** `C001_ai_prompt.txt`. Same locked settings as C000, with three changes:
+  - Lift target scaled to 0.3966: tool area S_vsp = 3.030 m², so 0.4005 × 3/3.030. The 0.0005 margin covers the 0.1% trim tolerance.
+  - farfield_scale 9.901 keeps a 10 m march distance.
+  - Starting α 2.77°, the Design Lead's lifting-line estimate.
+- **First attempt:** verify_workflow passed format, but I stopped before running. The user's message ("run C001 and C002") did not name explicit values, which the agent's one-to-one prompt review requires. I wrote explicit prompt files, and the user pasted the C001 prompt.
+- **Launch:** workflow `wf-single-skill-with-prereq-single-run-20261006T013814Z` started. Mesh case `wing_mesh_0002` is running; first pass returned monitor_timeout (normal).
+- **2026-10-09 17:18 CDT — C001 lost:** `wing_cfd_0002` died at iteration 190 when the agent's Docker container restarted (MCP reconnect). Partial at α = 2.77°: CL ≈ 0.355 and CD ≈ 0.0177 on A_ref = 3.00 m², not converged.
+- **Earlier in the week:** about 4 days were lost because the mesh did not run while the laptop was asleep.
+- **Fix:** set Windows to never sleep and lid = do nothing while plugged in. Avoid reconnecting `/mcp` during runs.
+
+## 2026-10-13 — C002 (taper 0.45)
+- **Prompt:** `C002_ai_prompt.txt`.
+  - Lift target 0.4060 (S_vsp = 2.9595 m², so 0.4005 × 3/2.9595).
+  - farfield_scale 7.348 (10 m march).
+  - Starting α 5.31°, the Design Lead's updated estimate.
+- **Setup:** the server had restarted, so get_skill_input_info and get_skill_advanced_parameters were re-called before verify_workflow, which returned format_verified.
+- **Launch:** workflow `wf-single-skill-with-prereq-single-run-20261013T204559Z`. Mesh case `wing_mesh_0003` started.
+- **2026-10-13 ~16:39 CDT — C002 first CFD attempt died during startup.** The log ends after the harmless MPI "CMA support not available" warning, which C000 also printed. The MCP server container was then replaced: new containers at 16:45 and 16:52, and the MCP reconnect timed out at 120 s. The Docker VM itself did not restart (uptime check). Cause: the solver runs inside the MCP server's own `--rm` container, so any MCP disconnect or restart kills the CFD. This is the same failure as C001.
+- **Fix (17:05 CDT):** relaunched the agent-generated run script `bash_run-cfd-simulation_run_001.sh`, unchanged, in its own detached container `c002_cfd` (`docker run -d`, same image, same mount). The solve no longer depends on the MCP connection. After it finishes (`run_finished.pid`), the agent's analyze step (resume_workflow, or the `reanalyze-completed-case` scenario) produces the metrics and plots. The crashed log is saved as `log_simulation_attempt1_crashed.txt`.
+- **17:15 CDT:** iterating normally. 10 cores in use, 6.9 GB RAM.
+- **17:25 CDT:** paused at the user's request (`docker pause c002_cfd`). Resume with `docker unpause c002_cfd`.
+- **10-13 19:11 CDT:** unpaused (`docker unpause c002_cfd`).
+- **10-13 20:23 CDT:** paused (`docker pause c002_cfd`).
+- **10-13 21:09 CDT:** unpaused.
+- **10-13 21:37 CDT:** paused.
+- **10-13 22:23 CDT:** unpaused.
+- **2026-10-13 23:14 CDT — C002 solve finished** (`run_finished.pid`).
+  - 4 primal solves: α 5.31° → **5.4764°**.
+  - Tool values on the planform area: CL = 0.406010, CD = 0.0199853, CM = 0.08653.
+  - **On A_ref = 3.00 m²** (× 2.9595/3): **CL = 0.40053, CD = 0.019715**, which is **1.47% below C000** (0.020010).
+  - Residual drop over the whole run (orders): U 8.6–9.7, he 9.2, nuTilda 8.9, p 7.0. Final-tail std: CD 2.3e-8, CL 2.6e-8.
+  - y+ min/max/mean = 8.06 / 86.48 / 45.96.
+  - The agent's analyze step (metrics, Cp and convergence plots) has not run yet because the MCP server is disconnected.
+- **2026-10-14 — C002 analysis:** the user reconnected MCP and `resume_workflow` completed analyze. **review_analyze: pass.** Volume 0.247873 m³. Package pushed to GitHub as `results-ai/C002_ai` (commit 4cd3f58).
+
+## 2026-10-14 — C004 (thick root + taper 0.45)
+- **Prompt:** `C004_ai_prompt.txt`.
+  - Lift target 0.4363 (S_vsp = 2.754 m², so 0.4005 × 3/2.754).
+  - farfield_scale 7.899 (10 m march).
+  - Starting α 3.53°, the Design Lead's value.
+- **Launch:** verify_workflow returned format_verified. Workflow `wf-single-skill-with-prereq-single-run-20261014T160300Z`; mesh case `wing_mesh_0004` running.
+- **C004 mesh `wing_mesh_0004`: pass.** 396,848 cells, max non-orthogonality 63.3, max skewness 1.71, max aspect ratio 229.
+- **C004 CFD moved out of the MCP container (~17:59 CDT):**
+  - The agent started `wing_cfd_0004` inside the MCP container.
+  - I stopped those processes within seconds of the start and relaunched the unchanged agent-generated `bash_run-cfd-simulation_run_001.sh` in the detached container `c004_cfd`, the same approach as C002.
+  - The solver started at α = 3.53° and is iterating (18:09).
+- **2026-10-14 23:38 CDT — C004 finished.** The laptop slept ~19:05–21:27, which paused the run without harm.
+  - α 3.53° → **3.8805°**.
+  - Agent analyze: **pass**. On A_ref = 3.00 m² (S_vsp = 2.754): **CL = 0.40031, CD = 0.019210 (−4.00 % vs C000)**.
+  - Volume 0.262578 m³ (+6.35 % vs C000 AI).
+  - Residual drop: p 6.96, others 8.8–9.7 orders.
+  - y+ min/max/mean = 7.74 / 85.07 / 45.26.
+
+## 2026-10-15 — Fixed-viscosity re-runs (Design Lead request `request_C000_C004_rerun_fixedmu.md`) + C005/C006
+- **Finding:** the agent sets ν = U0·MAC/Re, so μ drifted between cases: C000 2.4302e-5, C002 2.5126e-5, C004 2.3385e-5. These values were confirmed from each case's `thermophysicalProperties`.
+- **Fix:** CFD-skill `reynolds_number = 5e6 × tool MAC`. This gives μ = ρ0·U0/5e6 = 2.4515e-5 for every case.
+  - The mesh prerequisite keeps reynolds_number = 5e6, so the mesh (first-cell height) is identical to the locked meshes. Only μ changes.
+- **Re inputs:**
+  - C000_v2 4,956,570 and C004_v2 4,769,482 (exact MACs from the earlier run scripts).
+  - C005 4,820,345 and C006 4,855,707. These use estimated MACs: trapezoid MAC × the C004 tool/trapezoid ratio 0.99160. Verify μ after case setup.
+- **CL targets:** 0.4005 × 3/S_vsp, giving C000 0.4005, C004 0.4363, C005 0.4438, C006 0.4485.
+- **farfield_scale:** 10/c_root.
+- **Prompt files:** `C000_v2_ai_prompt.txt`, `C004_v2_ai_prompt.txt`, `C005_ai_prompt.txt`, `C006_ai_prompt.txt`.
+- **10-15 22:40 CDT — C000_v2 launched.** Workflow `wf-single-skill-with-prereq-single-run-20261016T033524Z`, mesh case `wing_mesh_0005`.
+- **C000_v2:** the mesh `wing_mesh_0005` finished 10-15 22:44, but the CFD was not started until the next check (10-16 ~09:45).
+  - The CFD then died at about 09:48 when the MCP container restarted. That log is saved as `log_simulation_attempt1_crashed.txt`.
+  - 09:55: relaunched the unchanged agent run script in the detached container `c000v2_cfd`.
+  - **μ check:** `thermophysicalProperties` mu = **2.451491e-5** ✓ (target 2.4515e-5). reynolds_number = 4,956,570.
+  - Iterating at α = 5.408° (10:05).
+- **10-16 10:41 CDT:** C000_v2 paused (`docker pause c000v2_cfd`).
+- **10-16 10:48 CDT:** C000_v2 unpaused.
+- **2026-10-16 11:40 CDT — C000_v2 finished.** Agent analyze: **pass**.
+  - α = **5.4148°**, CL = **0.400507**, CD = **0.0200521** (A_ref = S_vsp = 3.00 m²).
+  - μ = 2.4515e-5 ✓.
+  - Residual drop: p 7.65, others 8.3–9.4 orders.
+  - y+ = 5.27 / 90.19 / 46.31.
+  - Volume 0.246898 m³.
+  - Packaged as `results-ai/C000_ai_v2`. The original `C000_ai` folder is kept.
+- **10-22 20:14 CDT — C004_v2 launched.** Workflow `wf-single-skill-with-prereq-single-run-20261023T011005Z`, mesh case `wing_mesh_0006`. Prompt: `C004_v2_ai_prompt.txt` (CFD Re 4,769,482).
+- C004_v2: mesh `wing_mesh_0006` passed (396,848 cells, non-orthogonality 63.3, skewness 1.71, aspect ratio 229). Solver moved to the detached container `c004v2_cfd`. μ = 2.451490798616451e-05;
+- **10-22 22:24 CDT — C004_v2 solve finished** (α = 3.88906°, CL on S = 0.43630). The post-processing (reconstructPar, foamToVTK, touch) then failed with 'Exec format error': Docker's amd64 emulation (binfmt/QEMU) stopped working, and every amd64 container now fails to start. The solution is intact in processor0–9. Fix: restart Docker Desktop, then re-run lines 5–10 of the agent run script, then run analyze.
+- **10-23 15:07 CDT:** after the Docker Desktop restart, re-ran lines 5–10 of the agent run script (reconstructPar → foamToVTK → run_finished.pid) for C004_v2. Success.
+- **C004_v2 analyze: pass.**
+  - α = 3.8891°. On S = 2.754: CL 0.436302, CD 0.0210322. On A_ref: **CL 0.40053, CD 0.019308**.
+  - **Improvement vs C000_v2 (0.020052): 3.71 %**. The original was 4.00 %; the 0.29-point viscosity effect matches the Design Lead's ~0.3 estimate.
+  - μ 2.451491e-5 ✓. Volume 0.262578 m³.
+  - Residual drop: p 6.96, others 8.3–9.4 orders.
+  - y+ = 7.53 / 81.49 / 43.37.
+- **10-23 15:22 CDT — C005 launched.** Workflow `wf-single-skill-with-prereq-single-run-20261023T201747Z`, mesh case `wing_mesh_0007`. Prompt: `C005_ai_prompt.txt` (CFD Re 4,820,345 from estimated MAC 0.96407; to be verified).
+- C005: mesh `wing_mesh_0007` passed (396,848 cells, non-orthogonality 63.1, skewness 1.68, aspect ratio 232). Tool MAC 0.9640836 (estimate 0.96407, error 0.0015 %). μ = 2.451528122751694e-05;. Solver moved to the detached container `c005_cfd`.
+- **2026-10-23 ~17:40 CDT — C005 finished.** α 3.9° → **4.0390°**. Agent analyze: **pass**.
+  - On S = 2.7075: CL 0.443712, CD 0.0213118. On A_ref: **CL 0.40045, CD 0.019234**.
+  - **Improvement vs C000_v2: 4.08 %** (predicted 4.59 %).
+  - μ 2.45153e-5. Volume 0.263592 m³ (+6.76 %).
+  - Residual drop: p 6.60, others 8.4–9.3 orders.
+  - y+ = 8.21 / 83.22 / 43.18.
+  - The MCP server restarted mid-run (~16:40) without affecting the detached solve.
