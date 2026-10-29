@@ -5,6 +5,8 @@
 **Sent to:** AI Workflow Lead
 **Priority:** run after C005. Same locked mesh and solver settings, and the fixed-viscosity Re rule.
 
+> **SUPERSEDED 2026-10-29 — not run.** Replaced by `request_C008_resized030.md` (same taper 0.30, chords re-sized to a +1% volume margin). Kept for the design record.
+
 ---
 
 ## 1. Geometry (rows marked * differ from C004)
