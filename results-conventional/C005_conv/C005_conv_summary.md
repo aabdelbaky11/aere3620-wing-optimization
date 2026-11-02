@@ -45,9 +45,9 @@
 
 | Monitor | Final Value |
 |:--------|------------:|
-| Y-momentum |  |
-| X-momentum |  |
-| Z-momentum |  |    
-| Continuity |  |
-| Sa_nut |  |   
-| Energy |  |
+| Y-momentum | 1.883820e-05 |
+| X-momentum | 5.394413e-05 |
+| Z-momentum | 4.748741e-05 |    
+| Continuity | 2.423281e-05 |
+| Sa_nut | 3.105477e-04 |   
+| Energy | 7.512714e-04 |
