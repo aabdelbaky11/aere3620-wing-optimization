@@ -1,6 +1,6 @@
 ### CFD Simulation Summary 
 Domain radius: 20 m 
-Angle of attack:  4.970
+Angle of attack:  4.970 deg
 Lift coefficient: C_L = 0.40004886812828294
 Drag coefficient: C_D = 0.020139032850248473
 
