@@ -1,4 +1,4 @@
-# C005 .35 Taper
+# C005 Taper .35 
 
 - **Workflow lead:** Gabriel Cortes 
 - **Tools:** Meshing and Physics solved through Star CCM+, Geometry created through SOLIDOWORKS.
