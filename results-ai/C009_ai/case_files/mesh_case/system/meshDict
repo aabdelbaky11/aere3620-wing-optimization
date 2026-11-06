@@ -1,0 +1,134 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile "constant/triSurface/domain.stl";
+
+maxCellSize 1.0;
+
+surfaceLevel 6;
+
+teLevel 7;
+
+tipLevel 7;
+
+lineLevel 7; 
+
+wing_span 3.0;
+
+nBoundaryLayers 10;
+
+localRefinement
+{
+    wing_upper
+    {
+        additionalRefinementLevels $surfaceLevel;
+        //refinementThickness 0.01; //cm
+    }
+    wing_lower
+    {
+        additionalRefinementLevels $surfaceLevel;
+        //refinementThickness 0.01; //cm
+    }
+    wing_tip
+    {
+        additionalRefinementLevels $tipLevel;
+        //refinementThickness 0.01; //cm
+    }
+    wing_te
+    {
+        additionalRefinementLevels $teLevel;
+        //refinementThickness 0.01; //cm
+    }
+}
+
+edgeMeshRefinement
+{
+    featureEdges
+    {
+        edgeFile "constant/triSurface/wing_lower.eMesh";
+        additionalRefinementLevels $lineLevel;
+    }
+
+    featureEdges2
+    {
+        edgeFile "constant/triSurface/wing_upper.eMesh";
+        additionalRefinementLevels $lineLevel;
+    }
+}
+
+objectRefinements
+{
+  /*
+    line1
+    {
+      type line;
+      additionalRefinementLevels $lineLevel;
+      p0 (0 0 0);
+      p1 (0 0 $wing_span);
+    }
+  */
+}
+
+renameBoundary
+{
+  defaultName inout;
+  defaultType patch;
+  newPatchNames
+  {
+    "(wing.*|te|tip)"
+    {
+      newName wing;
+      type wall;
+    }
+    zMin
+    {
+      newName sym;
+      type symmetry;
+    }
+  }
+}
+
+boundaryLayers
+{
+  boundaryLayerHeightFactor 2.0;
+  boundaryLayerMinHeight 0.01;
+
+  patchBoundaryLayers
+  {
+    "(wing.*|tip|te)"
+    {
+      allowDiscontinuity 1;
+      nLayers $nBoundaryLayers;
+      thicknessRatio 1.3;
+      //maxFirstLayerThickness 1e-4;
+    }
+  }
+
+  optimiseLayer 1;
+
+  optimisationParameters
+  {
+      nSmoothNormals 3;
+      maxNumIterations 2;
+      featureSizeFactor 0.5;
+      reCalculateNormals 1;
+      relThicknessTol 0.5;
+  }
+
+}
