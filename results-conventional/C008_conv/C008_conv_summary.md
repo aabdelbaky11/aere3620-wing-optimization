@@ -32,7 +32,7 @@
 | Mesh Parameter | Value |
 |:---------------|------:|
 | Cell Count | 4.241460e+05  |
-| Maximum Skewness Angle |  |
+| Maximum Skewness Angle | 8.398702e+01 |
 | Minimum Cell Volume |  |
 | Maximum Aspect Ratio |  |
 | Minimum Aspect Ratio |  |
