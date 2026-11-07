@@ -36,8 +36,8 @@
 | Minimum Cell Volume | 4.460089e-10 |
 | Maximum Aspect Ratio | 1.000000e+00 |
 | Minimum Aspect Ratio | 5.520679e-02 |
-| Maximum Wall Y+ |  |
-| Minimum Wall Y+ |  |
+| Maximum Wall Y+ | 95.3 |
+| Minimum Wall Y+ | 30.2 |
 
 ---
 
@@ -45,9 +45,9 @@
 
 | Monitor | Final Value |
 |:--------|------------:|
-| Y-momentum |  |
-| X-momentum |  |
-| Z-momentum |  |    
-| Continuity |  |
-| Sa_nut |  |   
-| Energy |  |
+| Y-momentum | 1.862257e-05 |
+| X-momentum | 5.218539e-05 |
+| Z-momentum | 4.404891e-05 |    
+| Continuity | 2.319940e-05 |
+| Sa_nut | 2.633675e-04 |   
+| Energy | 7.380518e-04 |
