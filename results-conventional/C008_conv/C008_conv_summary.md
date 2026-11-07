@@ -17,7 +17,8 @@
 
 ## Finding alpha for CL = 0.4
 
-I ran C008 initially at the requested alpha1 of 5.15 degrees, this landed CL at .400312. I then ran C008 at a slightly smaller alpha2 of 5.145 degrees, and CL became .40002.
+I ran C008 initially at the requested alpha1 of 5.15 degrees, this landed CL at .400312. 
+I then ran C008 at a slightly smaller alpha2 of 5.145 degrees, and CL landed at .40002.
 
 ---
 
