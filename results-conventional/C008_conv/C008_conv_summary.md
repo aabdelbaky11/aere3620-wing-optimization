@@ -12,7 +12,9 @@
 - **Drag Coefficient:**  0.0199494792246778
 - **Wing Volume:**   0.250497 m^3  (SOLIDWORKS Mass Properties)
 
-> **Geometry Note:** The required angle of attack changed significantly after implementing a more accurate and refined airfoil geometry, specifically near the leading edge.
+---
+
+##
 
 ---
 
