@@ -1,1 +1,9 @@
+### CFD Simulation Summary 
+Domain radius: 20 m 
+Angle of attack:  5.145 deg
+Lift coefficient: C_L = 0.4000218225017766
+Drag coefficient: C_D = 0.0199494792246778
 
+### Residuals
+Continuity     X-momentum     Y-momentum     Z-momentum         Energy         Sa_nut  
+2.319940e-05   5.218539e-05   1.862257e-05   4.404891e-05   7.380518e-04   2.633675e-04  
