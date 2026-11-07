@@ -35,7 +35,7 @@
 | Maximum Skewness Angle | 8.398702e+01 |
 | Minimum Cell Volume | 4.460089e-10 |
 | Maximum Aspect Ratio | 1.000000e+00 |
-| Minimum Aspect Ratio |  |
+| Minimum Aspect Ratio | 5.520679e-02 |
 | Maximum Wall Y+ |  |
 | Minimum Wall Y+ |  |
 
