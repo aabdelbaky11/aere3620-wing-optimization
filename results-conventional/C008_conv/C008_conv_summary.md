@@ -31,13 +31,13 @@
 
 | Mesh Parameter | Value |
 |:---------------|------:|
-| Cell Count | 4.269660e+05 |
-| Maximum Skewness Angle | 8.397823e+01 |
-| Minimum Cell Volume | 7.279439e-11 |
-| Maximum Aspect Ratio | 1.000000e+00 |
-| Minimum Aspect Ratio | 4.999585e-02 |
-| Maximum Wall Y+ | 105 |
-| Minimum Wall Y+ | 29.4 |
+| Cell Count | 4.241460e+05  |
+| Maximum Skewness Angle |  |
+| Minimum Cell Volume |  |
+| Maximum Aspect Ratio |  |
+| Minimum Aspect Ratio |  |
+| Maximum Wall Y+ |  |
+| Minimum Wall Y+ |  |
 
 ---
 
@@ -45,9 +45,9 @@
 
 | Monitor | Final Value |
 |:--------|------------:|
-| Y-momentum | 1.883820e-05 |
-| X-momentum | 5.394413e-05 |
-| Z-momentum | 4.748741e-05 |    
-| Continuity | 2.423281e-05 |
-| Sa_nut | 3.105477e-04 |   
-| Energy | 7.512714e-04 |
+| Y-momentum |  |
+| X-momentum |  |
+| Z-momentum |  |    
+| Continuity |  |
+| Sa_nut |  |   
+| Energy |  |
