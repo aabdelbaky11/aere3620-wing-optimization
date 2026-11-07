@@ -45,6 +45,8 @@ I then ran C008 at a slightly smaller alpha2 of 5.145 degrees, and CL landed at 
 | Maximum Wall Y+ | 95.3 |
 | Minimum Wall Y+ | 30.2 |
 
+> **Wing Wall Y+ Note:** The Maximum Wall Y+ was once again over 100 at 102.4 during the initial alpha1 run. I reduced the Prism Layer Stretching from 1.3 to 1.2, which makes the nearest cells become thinner.
+> This reduced the Maximum Wall Y+ to 95.3. From my investigation, I think it has do with the smaller tip chord length affecting the prism layers. 
 ---
 
 ## Residual Convergence
