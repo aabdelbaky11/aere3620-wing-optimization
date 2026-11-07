@@ -3,6 +3,7 @@
 - **Workflow lead:** Gabriel Cortes 
 - **Tools:** Meshing and Physics solved through Star CCM+, Geometry created through SOLIDOWORKS.
 - **Run date:** 10/9/2026
+- **Request:** `requests/request_C000_baseline.md`
 
 Disregard all information from the previous baseline simulation. It was a mistake on my part to use the Siemens built in CAD desktop. I will use SOLIDWORKS from now on to prevent geometry issues.
 
