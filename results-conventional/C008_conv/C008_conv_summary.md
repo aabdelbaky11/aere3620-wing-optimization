@@ -14,7 +14,9 @@
 
 ---
 
-##
+## Finding alpha for CL = 0.4
+
+I ran C008 initially at the requested aoa of  
 
 ---
 
