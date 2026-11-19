@@ -37,6 +37,7 @@
 | Maximum Wall Y+ | 96.1 |
 | Minimum Wall Y+ | 31.3 |
 
+> **Prism Layer Stretching:** This simulation was rerun with a Prism Layer Stretching of 1.2, instead of the previous 1.3. This is seen in the slight changes in Max Skewness and Wall Y+.
 ---
 
 ## Residual Convergence
