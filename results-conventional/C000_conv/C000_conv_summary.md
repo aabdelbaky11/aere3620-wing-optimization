@@ -1,4 +1,4 @@
-# C000 Conventional Baseline Rerun
+# C000 Conventional Baseline
 
 - **Workflow lead:** Gabriel Cortes 
 - **Tools:** Meshing and Physics solved through Star CCM+, Geometry created through SOLIDOWORKS.
