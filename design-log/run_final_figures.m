@@ -54,18 +54,21 @@ plot([0.4 6.6], [2 2], 'k--', 'LineWidth', 1.0);
 plot([0.4 6.6], [3 3], 'r:',  'LineWidth', 1.2);
 plot([0.4 6.6], [5 5], 'b-.', 'LineWidth', 1.2);
 for k = 1:numel(names)              % value labels on the bars
-    text(k-0.15, impAI(k)+0.12, sprintf('%.2f', impAI(k)), ...
-         'HorizontalAlignment','center', 'FontSize', 8);
+    text(k-0.15, impAI(k)+0.18, sprintf('%.2f', impAI(k)), ...
+         'HorizontalAlignment','center', 'FontSize', 8, ...
+         'BackgroundColor', 'w', 'Margin', 1);
     if ~isnan(impCV(k))
-        text(k+0.15, impCV(k)+0.12, sprintf('%.2f', impCV(k)), ...
-             'HorizontalAlignment','center', 'FontSize', 8, 'Color', cCV);
+        text(k+0.15, impCV(k)+0.18, sprintf('%.2f', impCV(k)), ...
+             'HorizontalAlignment','center', 'FontSize', 8, 'Color', cCV, ...
+             'BackgroundColor', 'w', 'Margin', 1);
     end
 end
 set(gca, 'XTick', 1:6, 'XTickLabel', names);
 ylabel('CD reduction vs own C000  [%]');
 ylim([0 5.6]);  grid on;  box on;
 legend({'AI workflow', 'Conventional workflow (not run where blank)', ...
-        '2% requirement', '3% bonus', '5% bonus'}, 'Location', 'northwest');
+        '2% requirement', '3% bonus', '5% bonus'}, ...
+       'Location', 'southoutside', 'NumColumns', 3);
 title('Design history: CD reduction against each workflow''s own baseline');
 exportgraphics(gcf, fullfile(OUT, 'fig3_1_design_history.png'), 'Resolution', 200);
 
@@ -94,7 +97,7 @@ xlabel('taper ratio \lambda = c_{tip}/c_{root}');
 ylabel('CD reduction vs C000\_ai\_v2  [%]');
 legend({'parabola through the three CFD points', 'AI CFD', ...
         sprintf('parabola minimum (\\lambda = %.3f)', lm), 'final design C008'}, ...
-       'Location', 'southwest');
+       'Location', 'southeast');
 xlim([0.20 0.40]);  ylim([4.35 5.0]);
 title('Taper line search, NACA 2415/2412 re-sized family (AI workflow)');
 exportgraphics(gcf, fullfile(OUT, 'fig3_2_line_search.png'), 'Resolution', 200);
@@ -141,7 +144,7 @@ fill([0 OP_cr OP_ct 0], [0 0 B2 B2], cOP, 'FaceAlpha', 0.25, 'EdgeColor', cOP, '
 axis equal;  grid on;  xlim([-0.1 1.5]);  ylim([0 3.1]);
 xlabel('x [m]');  ylabel('y [m]');
 legend({'C000, S = 3.00 m^2', sprintf('C008, S = %.3f m^2', (OP_cr+OP_ct)/2*B2)}, ...
-       'Location', 'northeast');
+       'Location', 'southoutside');
 title('Planform (top view, flow +x)');
 exportgraphics(gcf, fullfile(OUT, 'fig3_4_wings_3d.png'), 'Resolution', 200);
 
